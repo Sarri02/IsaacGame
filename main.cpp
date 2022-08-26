@@ -11,7 +11,7 @@ int main() {
     Menu menu;
     menu.MainMenu(*game.window);
 
-    //Game loops
+    //Game loop
     while (game.running())
     {
 
