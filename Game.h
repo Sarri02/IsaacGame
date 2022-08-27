@@ -1,10 +1,10 @@
 #pragma once
-
 #include <SFML/Graphics.hpp>
 #include "Menu.h"
 #include "Floor.h"
 #include "Isaac.h"
 
+#define MaxFloor 6
 
 using namespace sf;
 
@@ -40,8 +40,8 @@ public:
     void render();
 
     //Map floor
-    //TODO deve diventare un array di piani
-    Floor floor;
+    Floor floor[MaxFloor];
+    int ActualFloor;
 
     //Isaac
     Isaac Isaac;

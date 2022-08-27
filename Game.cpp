@@ -4,6 +4,7 @@
 void Game::InitVariable() {
 
     this->window = nullptr;
+    this->ActualFloor = 0;
 
 }
 
@@ -84,7 +85,7 @@ void Game::update() {
 
     //Draw game objects
     this->window->draw(this->background);
-    this->floor.DrawMap(*this->window);
+    this->floor[ActualFloor].DrawMap(*this->window);
     this->Isaac.DrawIsaac(*this->window);
 
 }
