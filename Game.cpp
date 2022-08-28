@@ -11,6 +11,7 @@ void Game::InitVariable() {
 void Game::InitWindow() {
 
     this->window = new RenderWindow(VideoMode(WIDHT, HEIGHT), "Main Menu", Style::Default);
+    this->window->setFramerateLimit(60);
 
 }
 
@@ -46,11 +47,10 @@ const bool Game::running() const {
 //Function public
 void Game::pollEvents() {
 
-    //Event polling
-    while (this->window->pollEvent(this->ev))
-    {
+    while (this->window->pollEvent(event)) {
+
         //Close the window
-        if (this->ev.type==Event::Closed)
+        if (this->event.type == Event::Closed)
             this->window->close();
 
         //Game command
@@ -58,25 +58,25 @@ void Game::pollEvents() {
         if (Keyboard::isKeyPressed(Keyboard::Escape)) {
             this->window->close();
         }
-        //Move up
-        if (Keyboard::isKeyPressed(Keyboard::W)) {
-            this->Isaac.Move(0);
-        }
-        //Move right
-        if (Keyboard::isKeyPressed(Keyboard::D)) {
-            this->Isaac.Move(1);
-        }
-        //Move down
-        if (Keyboard::isKeyPressed(Keyboard::S)) {
-            this->Isaac.Move(2);
-        }
-        //Move left
-        if (Keyboard::isKeyPressed(Keyboard::A)){
-            this->Isaac.Move(3);
-        }
     }
-
+    //Move up
+    if (Keyboard::isKeyPressed(Keyboard::W)) {
+        this->Isaac.Move(0);
+    }
+    //Move right
+    if (Keyboard::isKeyPressed(Keyboard::D)) {
+        this->Isaac.Move(1);
+    }
+    //Move down
+    if (Keyboard::isKeyPressed(Keyboard::S)) {
+        this->Isaac.Move(2);
+    }
+    //Move left
+    if (Keyboard::isKeyPressed(Keyboard::A)) {
+        this->Isaac.Move(3);
+    }
 }
+
 
 void Game::update() {
 

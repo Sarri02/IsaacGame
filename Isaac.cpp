@@ -16,7 +16,7 @@ void Isaac::InitIsaac() {
     //Stats
     this->isaac.Life = 4;
     this->isaac.CanFly = false;
-    this->isaac.Speed = 8;
+    this->isaac.Speed = 6;
 
     //TODO this->IsaacTear->InitBullet(10,30, 1, 100);
 

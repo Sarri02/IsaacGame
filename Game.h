@@ -12,7 +12,7 @@ class Game {
 private:
 
     //Variables
-    Event ev;
+    Event event;
 
     //Function private
     //Init
