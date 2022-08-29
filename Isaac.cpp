@@ -21,7 +21,6 @@ void Isaac::InitIsaac() {
     //TODO this->IsaacTear->InitBullet(10,30, 1, 100);
 
 
-
 }
 
 //Init Isaac Figure
@@ -66,5 +65,57 @@ void Isaac::Move(unsigned short int Direction) {
             break;
     }
     this->IsaacFigure.setPosition(this->xPosIsaac,this->yPosIsaac);
+
+}
+
+void Isaac::DrawConsumables(RenderWindow &window) {
+
+    //Bombs
+    int xPosBombs = 420, yPosBombs = 43;
+    for(int k=0; k< this->Bombs; k++)
+    {
+        RectangleShape bomb;
+        bomb.setSize(Vector2f(32,32));
+        bomb.setFillColor(Color::Black);
+        bomb.setPosition(xPosBombs,yPosBombs);
+        //TODO add texture
+
+        window.draw(bomb);
+        xPosBombs += 46;
+    }
+
+    //Keys
+    int xPosKeys = 420, yPosKeys = 123;
+    for(int k=0; k< this->Keys; k++)
+    {
+        RectangleShape key;
+        key.setSize(Vector2f(32,32));
+        key.setFillColor(Color::Yellow);
+        key.setPosition(xPosKeys,yPosKeys);
+        //TODO add texture
+
+        window.draw(key);
+        xPosKeys += 46;
+    }
+
+    //Life
+    int xPosLife = 64, yPosLife = 60;
+    for(int k=0; k < this->isaac.Life; k++)
+    {
+        RectangleShape key;
+        key.setSize(Vector2f(42,42));
+        key.setFillColor(Color::Red);
+        key.setPosition(xPosLife,yPosLife);
+        //TODO add texture
+
+        window.draw(key);
+        if(k==4){
+            xPosLife=64;
+            yPosLife+=52;
+
+        }
+        else
+            xPosLife += 60;
+    }
 
 }

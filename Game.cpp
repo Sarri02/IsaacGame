@@ -87,6 +87,7 @@ void Game::update() {
     this->window->draw(this->background);
     this->floor[ActualFloor].DrawMap(*this->window);
     this->Isaac.DrawIsaac(*this->window);
+    this->Isaac.DrawConsumables(*this->window);
 
 }
 

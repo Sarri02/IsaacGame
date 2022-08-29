@@ -15,8 +15,6 @@ private:
     RectangleShape IsaacFigure;
     //TODO Texture IsaacTexture;
 
-
-
     //Variables
     //Consumables
     int Keys;
@@ -42,6 +40,7 @@ public:
     //TODO void GetItem();
     void Move(unsigned short int Direction);
     void DrawIsaac(RenderWindow &window);
+    void DrawConsumables(RenderWindow &window);
 
 
 };
