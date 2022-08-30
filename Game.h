@@ -12,7 +12,19 @@ class Game {
 private:
 
     //Variables
+    //General
     Event event;
+    //Game Background
+    RectangleShape background;
+    Texture texture;
+    //Map floor
+    Floor floor[MaxFloor];
+    int ActualFloor;
+    //Isaac
+    Isaac Isaac;
+
+
+
 
     //Function private
     //Init
@@ -25,8 +37,6 @@ public:
 
     //Window
     RenderWindow* window;
-    RectangleShape background;
-    Texture texture;
 
     //Constructor and Destructor
     Game();
@@ -38,12 +48,4 @@ public:
     //Function public
     void update();
     void render();
-
-    //Map floor
-    Floor floor[MaxFloor];
-    int ActualFloor;
-
-    //Isaac
-    Isaac Isaac;
-
 };

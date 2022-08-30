@@ -13,11 +13,11 @@ private:
     //Private Functions
     void GenerateFloor();
     void RandomValidRoomCoordinate(int &x, int &y);
+    //Map
+    Room room[FloorDimension][FloorDimension];
 public:
     //Constructor and Destructor
     Floor();
 
-    //Map
-    Room room[FloorDimension][FloorDimension];
     void DrawMap(RenderWindow &window);
 };
