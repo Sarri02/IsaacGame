@@ -16,6 +16,8 @@ private:
     //TODO Texture IsaacTexture;
 
     //Variables
+    int xPosIsaac;
+    int yPosIsaac;
     //Consumables
     int Keys;
     int Bombs;
@@ -29,11 +31,10 @@ public:
     //Constructor
     Isaac();
 
-    Bullet *IsaacTear;
+    //TODO Bullet *IsaacTear;
 
 
-    int xPosIsaac;
-    int yPosIsaac;
+
 
     //Public Functions
     //TODO void Shoot();

@@ -9,13 +9,16 @@ private:
     //Private function
     void InitRoom();
 
+
+
 public:
 
     //Variables
     //TODO bool Visited;
     int TypeRoom;
+    //TODO rendere privato
 
-    //Constructor and Destructor
+    //Constructor
     Room();
 
     //Public function

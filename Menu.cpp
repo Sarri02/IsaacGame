@@ -12,12 +12,6 @@ void Menu::InitBackground() {
     this->MainBackGround.setTexture(&(this->MainTexture));
 }
 
-//Initialization of Font Menu
-void Menu::InitFont() {
-
-    this->MainFont.loadFromFile("../Fonts/DePixelHalbfett.ttf");
-}
-
 //Drawing Selections
 void Menu::DrawMenu(RenderWindow & window) {
 
@@ -30,6 +24,9 @@ void Menu::DrawMenu(RenderWindow & window) {
 
 //Initialization of Selections Menu
 void Menu::InitTextMenu() {
+
+    //Font
+    this->MainFont.loadFromFile("../Fonts/DePixelHalbfett.ttf");
 
     //Start
     this->MenuSelections[0].setFont(this->MainFont);
@@ -69,12 +66,10 @@ void Menu::InitMenu() {
 //Constructor
 Menu::Menu() {
     this->MenuType = 0;
+    this->MenuIsRunning = true;
     this->InitBackground();
-    this->InitFont();
     this->InitTextMenu();
     this->InitMenu();
-    this->MenuIsRunning = true;
-
 }
 
 //Destructor

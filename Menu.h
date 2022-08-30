@@ -11,6 +11,7 @@ using namespace sf;
 class Menu {
 private:
     //Variables
+    bool MenuIsRunning;
     RectangleShape MainBackGround;
     Texture MainTexture;
     Font MainFont;
@@ -24,14 +25,11 @@ private:
 
     //Function private
     void InitBackground();
-    void InitFont();
     void InitTextMenu();
     void InitMenu();
     void DrawMenu(RenderWindow & window);
 
 public:
-    //Accessors
-    bool MenuIsRunning;
 
     //Constructor and Destructor
     Menu();
