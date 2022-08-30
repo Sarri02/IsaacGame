@@ -4,34 +4,19 @@ set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
 
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
-  )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/marks/Desktop/Isaac/Isaac/Bullet.cpp" "C:/Users/marks/Desktop/Isaac/Isaac/cmake-build-debug/CMakeFiles/HelloSFML.dir/Bullet.cpp.obj"
-  "C:/Users/marks/Desktop/Isaac/Isaac/Character.cpp" "C:/Users/marks/Desktop/Isaac/Isaac/cmake-build-debug/CMakeFiles/HelloSFML.dir/Character.cpp.obj"
-  "C:/Users/marks/Desktop/Isaac/Isaac/Door.cpp" "C:/Users/marks/Desktop/Isaac/Isaac/cmake-build-debug/CMakeFiles/HelloSFML.dir/Door.cpp.obj"
-  "C:/Users/marks/Desktop/Isaac/Isaac/Floor.cpp" "C:/Users/marks/Desktop/Isaac/Isaac/cmake-build-debug/CMakeFiles/HelloSFML.dir/Floor.cpp.obj"
-  "C:/Users/marks/Desktop/Isaac/Isaac/Game.cpp" "C:/Users/marks/Desktop/Isaac/Isaac/cmake-build-debug/CMakeFiles/HelloSFML.dir/Game.cpp.obj"
-  "C:/Users/marks/Desktop/Isaac/Isaac/Isaac.cpp" "C:/Users/marks/Desktop/Isaac/Isaac/cmake-build-debug/CMakeFiles/HelloSFML.dir/Isaac.cpp.obj"
-  "C:/Users/marks/Desktop/Isaac/Isaac/Menu.cpp" "C:/Users/marks/Desktop/Isaac/Isaac/cmake-build-debug/CMakeFiles/HelloSFML.dir/Menu.cpp.obj"
-  "C:/Users/marks/Desktop/Isaac/Isaac/Room.cpp" "C:/Users/marks/Desktop/Isaac/Isaac/cmake-build-debug/CMakeFiles/HelloSFML.dir/Room.cpp.obj"
-  "C:/Users/marks/Desktop/Isaac/Isaac/main.cpp" "C:/Users/marks/Desktop/Isaac/Isaac/cmake-build-debug/CMakeFiles/HelloSFML.dir/main.cpp.obj"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
-
-# Preprocessor definitions for this target.
-set(CMAKE_TARGET_DEFINITIONS_CXX
-  "SFML_STATIC"
-  )
-
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "C:/SFML/include"
   )
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/virginiabatignani/Desktop/IsaacGame/Bullet.cpp" "CMakeFiles/HelloSFML.dir/Bullet.cpp.o" "gcc" "CMakeFiles/HelloSFML.dir/Bullet.cpp.o.d"
+  "/Users/virginiabatignani/Desktop/IsaacGame/Character.cpp" "CMakeFiles/HelloSFML.dir/Character.cpp.o" "gcc" "CMakeFiles/HelloSFML.dir/Character.cpp.o.d"
+  "/Users/virginiabatignani/Desktop/IsaacGame/Door.cpp" "CMakeFiles/HelloSFML.dir/Door.cpp.o" "gcc" "CMakeFiles/HelloSFML.dir/Door.cpp.o.d"
+  "/Users/virginiabatignani/Desktop/IsaacGame/Floor.cpp" "CMakeFiles/HelloSFML.dir/Floor.cpp.o" "gcc" "CMakeFiles/HelloSFML.dir/Floor.cpp.o.d"
+  "/Users/virginiabatignani/Desktop/IsaacGame/Game.cpp" "CMakeFiles/HelloSFML.dir/Game.cpp.o" "gcc" "CMakeFiles/HelloSFML.dir/Game.cpp.o.d"
+  "/Users/virginiabatignani/Desktop/IsaacGame/Isaac.cpp" "CMakeFiles/HelloSFML.dir/Isaac.cpp.o" "gcc" "CMakeFiles/HelloSFML.dir/Isaac.cpp.o.d"
+  "/Users/virginiabatignani/Desktop/IsaacGame/Menu.cpp" "CMakeFiles/HelloSFML.dir/Menu.cpp.o" "gcc" "CMakeFiles/HelloSFML.dir/Menu.cpp.o.d"
+  "/Users/virginiabatignani/Desktop/IsaacGame/Room.cpp" "CMakeFiles/HelloSFML.dir/Room.cpp.o" "gcc" "CMakeFiles/HelloSFML.dir/Room.cpp.o.d"
+  "/Users/virginiabatignani/Desktop/IsaacGame/main.cpp" "CMakeFiles/HelloSFML.dir/main.cpp.o" "gcc" "CMakeFiles/HelloSFML.dir/main.cpp.o.d"
   )
 
 # Targets to which this target links.
