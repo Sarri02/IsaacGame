@@ -52,10 +52,10 @@ RM = "C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\marks\Desktop\Isaac\Isaac
+CMAKE_SOURCE_DIR = C:\Users\marks\Desktop\Isaac\IsaacGame
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\marks\Desktop\Isaac\Isaac\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/HelloSFML.dir/depend.make
@@ -68,128 +68,128 @@ include CMakeFiles/HelloSFML.dir/flags.make
 CMakeFiles/HelloSFML.dir/main.cpp.obj: CMakeFiles/HelloSFML.dir/flags.make
 CMakeFiles/HelloSFML.dir/main.cpp.obj: CMakeFiles/HelloSFML.dir/includes_CXX.rsp
 CMakeFiles/HelloSFML.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\marks\Desktop\Isaac\Isaac\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/HelloSFML.dir/main.cpp.obj"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\HelloSFML.dir\main.cpp.obj -c C:\Users\marks\Desktop\Isaac\Isaac\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/HelloSFML.dir/main.cpp.obj"
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\HelloSFML.dir\main.cpp.obj -c C:\Users\marks\Desktop\Isaac\IsaacGame\main.cpp
 
 CMakeFiles/HelloSFML.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HelloSFML.dir/main.cpp.i"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\marks\Desktop\Isaac\Isaac\main.cpp > CMakeFiles\HelloSFML.dir\main.cpp.i
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\marks\Desktop\Isaac\IsaacGame\main.cpp > CMakeFiles\HelloSFML.dir\main.cpp.i
 
 CMakeFiles/HelloSFML.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HelloSFML.dir/main.cpp.s"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\marks\Desktop\Isaac\Isaac\main.cpp -o CMakeFiles\HelloSFML.dir\main.cpp.s
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\marks\Desktop\Isaac\IsaacGame\main.cpp -o CMakeFiles\HelloSFML.dir\main.cpp.s
 
 CMakeFiles/HelloSFML.dir/Game.cpp.obj: CMakeFiles/HelloSFML.dir/flags.make
 CMakeFiles/HelloSFML.dir/Game.cpp.obj: CMakeFiles/HelloSFML.dir/includes_CXX.rsp
 CMakeFiles/HelloSFML.dir/Game.cpp.obj: ../Game.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\marks\Desktop\Isaac\Isaac\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/HelloSFML.dir/Game.cpp.obj"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\HelloSFML.dir\Game.cpp.obj -c C:\Users\marks\Desktop\Isaac\Isaac\Game.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/HelloSFML.dir/Game.cpp.obj"
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\HelloSFML.dir\Game.cpp.obj -c C:\Users\marks\Desktop\Isaac\IsaacGame\Game.cpp
 
 CMakeFiles/HelloSFML.dir/Game.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HelloSFML.dir/Game.cpp.i"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\marks\Desktop\Isaac\Isaac\Game.cpp > CMakeFiles\HelloSFML.dir\Game.cpp.i
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\marks\Desktop\Isaac\IsaacGame\Game.cpp > CMakeFiles\HelloSFML.dir\Game.cpp.i
 
 CMakeFiles/HelloSFML.dir/Game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HelloSFML.dir/Game.cpp.s"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\marks\Desktop\Isaac\Isaac\Game.cpp -o CMakeFiles\HelloSFML.dir\Game.cpp.s
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\marks\Desktop\Isaac\IsaacGame\Game.cpp -o CMakeFiles\HelloSFML.dir\Game.cpp.s
 
 CMakeFiles/HelloSFML.dir/Menu.cpp.obj: CMakeFiles/HelloSFML.dir/flags.make
 CMakeFiles/HelloSFML.dir/Menu.cpp.obj: CMakeFiles/HelloSFML.dir/includes_CXX.rsp
 CMakeFiles/HelloSFML.dir/Menu.cpp.obj: ../Menu.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\marks\Desktop\Isaac\Isaac\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/HelloSFML.dir/Menu.cpp.obj"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\HelloSFML.dir\Menu.cpp.obj -c C:\Users\marks\Desktop\Isaac\Isaac\Menu.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/HelloSFML.dir/Menu.cpp.obj"
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\HelloSFML.dir\Menu.cpp.obj -c C:\Users\marks\Desktop\Isaac\IsaacGame\Menu.cpp
 
 CMakeFiles/HelloSFML.dir/Menu.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HelloSFML.dir/Menu.cpp.i"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\marks\Desktop\Isaac\Isaac\Menu.cpp > CMakeFiles\HelloSFML.dir\Menu.cpp.i
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\marks\Desktop\Isaac\IsaacGame\Menu.cpp > CMakeFiles\HelloSFML.dir\Menu.cpp.i
 
 CMakeFiles/HelloSFML.dir/Menu.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HelloSFML.dir/Menu.cpp.s"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\marks\Desktop\Isaac\Isaac\Menu.cpp -o CMakeFiles\HelloSFML.dir\Menu.cpp.s
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\marks\Desktop\Isaac\IsaacGame\Menu.cpp -o CMakeFiles\HelloSFML.dir\Menu.cpp.s
 
 CMakeFiles/HelloSFML.dir/Floor.cpp.obj: CMakeFiles/HelloSFML.dir/flags.make
 CMakeFiles/HelloSFML.dir/Floor.cpp.obj: CMakeFiles/HelloSFML.dir/includes_CXX.rsp
 CMakeFiles/HelloSFML.dir/Floor.cpp.obj: ../Floor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\marks\Desktop\Isaac\Isaac\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/HelloSFML.dir/Floor.cpp.obj"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\HelloSFML.dir\Floor.cpp.obj -c C:\Users\marks\Desktop\Isaac\Isaac\Floor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/HelloSFML.dir/Floor.cpp.obj"
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\HelloSFML.dir\Floor.cpp.obj -c C:\Users\marks\Desktop\Isaac\IsaacGame\Floor.cpp
 
 CMakeFiles/HelloSFML.dir/Floor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HelloSFML.dir/Floor.cpp.i"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\marks\Desktop\Isaac\Isaac\Floor.cpp > CMakeFiles\HelloSFML.dir\Floor.cpp.i
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\marks\Desktop\Isaac\IsaacGame\Floor.cpp > CMakeFiles\HelloSFML.dir\Floor.cpp.i
 
 CMakeFiles/HelloSFML.dir/Floor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HelloSFML.dir/Floor.cpp.s"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\marks\Desktop\Isaac\Isaac\Floor.cpp -o CMakeFiles\HelloSFML.dir\Floor.cpp.s
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\marks\Desktop\Isaac\IsaacGame\Floor.cpp -o CMakeFiles\HelloSFML.dir\Floor.cpp.s
 
 CMakeFiles/HelloSFML.dir/Room.cpp.obj: CMakeFiles/HelloSFML.dir/flags.make
 CMakeFiles/HelloSFML.dir/Room.cpp.obj: CMakeFiles/HelloSFML.dir/includes_CXX.rsp
 CMakeFiles/HelloSFML.dir/Room.cpp.obj: ../Room.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\marks\Desktop\Isaac\Isaac\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/HelloSFML.dir/Room.cpp.obj"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\HelloSFML.dir\Room.cpp.obj -c C:\Users\marks\Desktop\Isaac\Isaac\Room.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/HelloSFML.dir/Room.cpp.obj"
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\HelloSFML.dir\Room.cpp.obj -c C:\Users\marks\Desktop\Isaac\IsaacGame\Room.cpp
 
 CMakeFiles/HelloSFML.dir/Room.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HelloSFML.dir/Room.cpp.i"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\marks\Desktop\Isaac\Isaac\Room.cpp > CMakeFiles\HelloSFML.dir\Room.cpp.i
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\marks\Desktop\Isaac\IsaacGame\Room.cpp > CMakeFiles\HelloSFML.dir\Room.cpp.i
 
 CMakeFiles/HelloSFML.dir/Room.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HelloSFML.dir/Room.cpp.s"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\marks\Desktop\Isaac\Isaac\Room.cpp -o CMakeFiles\HelloSFML.dir\Room.cpp.s
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\marks\Desktop\Isaac\IsaacGame\Room.cpp -o CMakeFiles\HelloSFML.dir\Room.cpp.s
 
 CMakeFiles/HelloSFML.dir/Door.cpp.obj: CMakeFiles/HelloSFML.dir/flags.make
 CMakeFiles/HelloSFML.dir/Door.cpp.obj: CMakeFiles/HelloSFML.dir/includes_CXX.rsp
 CMakeFiles/HelloSFML.dir/Door.cpp.obj: ../Door.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\marks\Desktop\Isaac\Isaac\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/HelloSFML.dir/Door.cpp.obj"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\HelloSFML.dir\Door.cpp.obj -c C:\Users\marks\Desktop\Isaac\Isaac\Door.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/HelloSFML.dir/Door.cpp.obj"
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\HelloSFML.dir\Door.cpp.obj -c C:\Users\marks\Desktop\Isaac\IsaacGame\Door.cpp
 
 CMakeFiles/HelloSFML.dir/Door.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HelloSFML.dir/Door.cpp.i"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\marks\Desktop\Isaac\Isaac\Door.cpp > CMakeFiles\HelloSFML.dir\Door.cpp.i
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\marks\Desktop\Isaac\IsaacGame\Door.cpp > CMakeFiles\HelloSFML.dir\Door.cpp.i
 
 CMakeFiles/HelloSFML.dir/Door.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HelloSFML.dir/Door.cpp.s"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\marks\Desktop\Isaac\Isaac\Door.cpp -o CMakeFiles\HelloSFML.dir\Door.cpp.s
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\marks\Desktop\Isaac\IsaacGame\Door.cpp -o CMakeFiles\HelloSFML.dir\Door.cpp.s
 
 CMakeFiles/HelloSFML.dir/Character.cpp.obj: CMakeFiles/HelloSFML.dir/flags.make
 CMakeFiles/HelloSFML.dir/Character.cpp.obj: CMakeFiles/HelloSFML.dir/includes_CXX.rsp
 CMakeFiles/HelloSFML.dir/Character.cpp.obj: ../Character.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\marks\Desktop\Isaac\Isaac\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/HelloSFML.dir/Character.cpp.obj"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\HelloSFML.dir\Character.cpp.obj -c C:\Users\marks\Desktop\Isaac\Isaac\Character.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/HelloSFML.dir/Character.cpp.obj"
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\HelloSFML.dir\Character.cpp.obj -c C:\Users\marks\Desktop\Isaac\IsaacGame\Character.cpp
 
 CMakeFiles/HelloSFML.dir/Character.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HelloSFML.dir/Character.cpp.i"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\marks\Desktop\Isaac\Isaac\Character.cpp > CMakeFiles\HelloSFML.dir\Character.cpp.i
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\marks\Desktop\Isaac\IsaacGame\Character.cpp > CMakeFiles\HelloSFML.dir\Character.cpp.i
 
 CMakeFiles/HelloSFML.dir/Character.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HelloSFML.dir/Character.cpp.s"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\marks\Desktop\Isaac\Isaac\Character.cpp -o CMakeFiles\HelloSFML.dir\Character.cpp.s
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\marks\Desktop\Isaac\IsaacGame\Character.cpp -o CMakeFiles\HelloSFML.dir\Character.cpp.s
 
 CMakeFiles/HelloSFML.dir/Isaac.cpp.obj: CMakeFiles/HelloSFML.dir/flags.make
 CMakeFiles/HelloSFML.dir/Isaac.cpp.obj: CMakeFiles/HelloSFML.dir/includes_CXX.rsp
 CMakeFiles/HelloSFML.dir/Isaac.cpp.obj: ../Isaac.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\marks\Desktop\Isaac\Isaac\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/HelloSFML.dir/Isaac.cpp.obj"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\HelloSFML.dir\Isaac.cpp.obj -c C:\Users\marks\Desktop\Isaac\Isaac\Isaac.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/HelloSFML.dir/Isaac.cpp.obj"
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\HelloSFML.dir\Isaac.cpp.obj -c C:\Users\marks\Desktop\Isaac\IsaacGame\Isaac.cpp
 
 CMakeFiles/HelloSFML.dir/Isaac.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HelloSFML.dir/Isaac.cpp.i"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\marks\Desktop\Isaac\Isaac\Isaac.cpp > CMakeFiles\HelloSFML.dir\Isaac.cpp.i
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\marks\Desktop\Isaac\IsaacGame\Isaac.cpp > CMakeFiles\HelloSFML.dir\Isaac.cpp.i
 
 CMakeFiles/HelloSFML.dir/Isaac.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HelloSFML.dir/Isaac.cpp.s"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\marks\Desktop\Isaac\Isaac\Isaac.cpp -o CMakeFiles\HelloSFML.dir\Isaac.cpp.s
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\marks\Desktop\Isaac\IsaacGame\Isaac.cpp -o CMakeFiles\HelloSFML.dir\Isaac.cpp.s
 
 CMakeFiles/HelloSFML.dir/Bullet.cpp.obj: CMakeFiles/HelloSFML.dir/flags.make
 CMakeFiles/HelloSFML.dir/Bullet.cpp.obj: CMakeFiles/HelloSFML.dir/includes_CXX.rsp
 CMakeFiles/HelloSFML.dir/Bullet.cpp.obj: ../Bullet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\marks\Desktop\Isaac\Isaac\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/HelloSFML.dir/Bullet.cpp.obj"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\HelloSFML.dir\Bullet.cpp.obj -c C:\Users\marks\Desktop\Isaac\Isaac\Bullet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/HelloSFML.dir/Bullet.cpp.obj"
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\HelloSFML.dir\Bullet.cpp.obj -c C:\Users\marks\Desktop\Isaac\IsaacGame\Bullet.cpp
 
 CMakeFiles/HelloSFML.dir/Bullet.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HelloSFML.dir/Bullet.cpp.i"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\marks\Desktop\Isaac\Isaac\Bullet.cpp > CMakeFiles\HelloSFML.dir\Bullet.cpp.i
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\marks\Desktop\Isaac\IsaacGame\Bullet.cpp > CMakeFiles\HelloSFML.dir\Bullet.cpp.i
 
 CMakeFiles/HelloSFML.dir/Bullet.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HelloSFML.dir/Bullet.cpp.s"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\marks\Desktop\Isaac\Isaac\Bullet.cpp -o CMakeFiles\HelloSFML.dir\Bullet.cpp.s
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\marks\Desktop\Isaac\IsaacGame\Bullet.cpp -o CMakeFiles\HelloSFML.dir\Bullet.cpp.s
 
 # Object files for target HelloSFML
 HelloSFML_OBJECTS = \
@@ -232,7 +232,7 @@ HelloSFML.exe: C:/SFML/lib/libFLAC.a
 HelloSFML.exe: CMakeFiles/HelloSFML.dir/linklibs.rsp
 HelloSFML.exe: CMakeFiles/HelloSFML.dir/objects1.rsp
 HelloSFML.exe: CMakeFiles/HelloSFML.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\marks\Desktop\Isaac\Isaac\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable HelloSFML.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable HelloSFML.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\HelloSFML.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -244,6 +244,6 @@ CMakeFiles/HelloSFML.dir/clean:
 .PHONY : CMakeFiles/HelloSFML.dir/clean
 
 CMakeFiles/HelloSFML.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\marks\Desktop\Isaac\Isaac C:\Users\marks\Desktop\Isaac\Isaac C:\Users\marks\Desktop\Isaac\Isaac\cmake-build-debug C:\Users\marks\Desktop\Isaac\Isaac\cmake-build-debug C:\Users\marks\Desktop\Isaac\Isaac\cmake-build-debug\CMakeFiles\HelloSFML.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\marks\Desktop\Isaac\IsaacGame C:\Users\marks\Desktop\Isaac\IsaacGame C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles\HelloSFML.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/HelloSFML.dir/depend
 

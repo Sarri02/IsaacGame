@@ -8,15 +8,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/marks/Desktop/Isaac/Isaac/Bullet.cpp" "C:/Users/marks/Desktop/Isaac/Isaac/cmake-build-debug/CMakeFiles/HelloSFML.dir/Bullet.cpp.obj"
-  "C:/Users/marks/Desktop/Isaac/Isaac/Character.cpp" "C:/Users/marks/Desktop/Isaac/Isaac/cmake-build-debug/CMakeFiles/HelloSFML.dir/Character.cpp.obj"
-  "C:/Users/marks/Desktop/Isaac/Isaac/Door.cpp" "C:/Users/marks/Desktop/Isaac/Isaac/cmake-build-debug/CMakeFiles/HelloSFML.dir/Door.cpp.obj"
-  "C:/Users/marks/Desktop/Isaac/Isaac/Floor.cpp" "C:/Users/marks/Desktop/Isaac/Isaac/cmake-build-debug/CMakeFiles/HelloSFML.dir/Floor.cpp.obj"
-  "C:/Users/marks/Desktop/Isaac/Isaac/Game.cpp" "C:/Users/marks/Desktop/Isaac/Isaac/cmake-build-debug/CMakeFiles/HelloSFML.dir/Game.cpp.obj"
-  "C:/Users/marks/Desktop/Isaac/Isaac/Isaac.cpp" "C:/Users/marks/Desktop/Isaac/Isaac/cmake-build-debug/CMakeFiles/HelloSFML.dir/Isaac.cpp.obj"
-  "C:/Users/marks/Desktop/Isaac/Isaac/Menu.cpp" "C:/Users/marks/Desktop/Isaac/Isaac/cmake-build-debug/CMakeFiles/HelloSFML.dir/Menu.cpp.obj"
-  "C:/Users/marks/Desktop/Isaac/Isaac/Room.cpp" "C:/Users/marks/Desktop/Isaac/Isaac/cmake-build-debug/CMakeFiles/HelloSFML.dir/Room.cpp.obj"
-  "C:/Users/marks/Desktop/Isaac/Isaac/main.cpp" "C:/Users/marks/Desktop/Isaac/Isaac/cmake-build-debug/CMakeFiles/HelloSFML.dir/main.cpp.obj"
+  "C:/Users/marks/Desktop/Isaac/IsaacGame/Bullet.cpp" "C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/CMakeFiles/HelloSFML.dir/Bullet.cpp.obj"
+  "C:/Users/marks/Desktop/Isaac/IsaacGame/Character.cpp" "C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/CMakeFiles/HelloSFML.dir/Character.cpp.obj"
+  "C:/Users/marks/Desktop/Isaac/IsaacGame/Door.cpp" "C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/CMakeFiles/HelloSFML.dir/Door.cpp.obj"
+  "C:/Users/marks/Desktop/Isaac/IsaacGame/Floor.cpp" "C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/CMakeFiles/HelloSFML.dir/Floor.cpp.obj"
+  "C:/Users/marks/Desktop/Isaac/IsaacGame/Game.cpp" "C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/CMakeFiles/HelloSFML.dir/Game.cpp.obj"
+  "C:/Users/marks/Desktop/Isaac/IsaacGame/Isaac.cpp" "C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/CMakeFiles/HelloSFML.dir/Isaac.cpp.obj"
+  "C:/Users/marks/Desktop/Isaac/IsaacGame/Menu.cpp" "C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/CMakeFiles/HelloSFML.dir/Menu.cpp.obj"
+  "C:/Users/marks/Desktop/Isaac/IsaacGame/Room.cpp" "C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/CMakeFiles/HelloSFML.dir/Room.cpp.obj"
+  "C:/Users/marks/Desktop/Isaac/IsaacGame/main.cpp" "C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/CMakeFiles/HelloSFML.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

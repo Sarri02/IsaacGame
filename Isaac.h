@@ -21,8 +21,10 @@ private:
     //Consumables
     int Keys;
     int Bombs;
-
+    //Isaac
     Character isaac;
+    Bullet *IsaacTear;
+
     //Private Functions
     void InitIsaac();
     void InitIsaacFigure();
@@ -31,13 +33,8 @@ public:
     //Constructor
     Isaac();
 
-    //TODO Bullet *IsaacTear;
-
-
-
-
     //Public Functions
-    //TODO void Shoot();
+    void Shoot(unsigned short int Direction);
     //TODO void GetItem();
     void Move(unsigned short int Direction);
     void DrawIsaac(RenderWindow &window);

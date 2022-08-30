@@ -12,9 +12,11 @@ private:
     float ShootSpeed;
     float ShootDamage;
     float ShootRange;
+    //BulletPosition
+    float xPosBullet;
+    float yPosBullet;
 
     //BulletFigure
-
     RectangleShape BulletFigure;
     //TODO Texture
 
@@ -29,8 +31,5 @@ public:
     void InitBullet(float tears, float speed, float damage, float range);
     void DrawBullet(RenderWindow &window);
 
-    //BulletPosition
-    float xPosBullet;
-    float yPosBullet;
 
 };
