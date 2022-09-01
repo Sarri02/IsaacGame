@@ -13,7 +13,7 @@ class Isaac {
 private:
     //Isaac figure
     RectangleShape IsaacFigure;
-    //TODO Texture IsaacTexture;
+    Texture * IsaacTexture;
 
     //Variables
     int xPosIsaac;

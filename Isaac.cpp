@@ -30,8 +30,8 @@ void Isaac::InitIsaacFigure() {
     this->yPosIsaac=380;
 
     this->IsaacFigure.setSize(Vector2f(60,70));
-    //TODO this->IsaacTexture.loadFromFile("../Texture/Isaac.png");
-    //TODO this->IsaacFigure.setTexture(&(this->IsaacTexture));
+    this->IsaacTexture->loadFromFile("../Texture/Isaac.png");
+    this->IsaacFigure.setTexture(this->IsaacTexture);
     this->IsaacFigure.setPosition(this->xPosIsaac,this->yPosIsaac);
 
 }
