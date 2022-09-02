@@ -3,7 +3,7 @@ project(Isaac)
 
         set(CMAKE_CXX_STANDARD 14)
 
-        add_executable(HelloSFML main.cpp Game.cpp Menu.cpp Floor.cpp Room.cpp Door.cpp Character.cpp Isaac.cpp Bullet.cpp)
+        add_executable(HelloSFML main.cpp Game.cpp Menu.cpp Floor.cpp Room.cpp Door.cpp Character.cpp Isaac.cpp)
 
         set (SFML_STATIC_LIBRARIES TRUE)
         set (SFML_DIR C:/SFML/lib/cmake/SFML)

@@ -1,6 +1,5 @@
 #include <SFML/Graphics.hpp>
 #include "Character.h"
-#include "Bullet.h"
 
 
 #define MaxLife 10;
@@ -23,7 +22,6 @@ private:
     int Bombs;
     //Isaac
     Character isaac;
-    Bullet *IsaacTear;
 
     //Private Functions
     void InitIsaac();
@@ -34,11 +32,12 @@ public:
     Isaac();
 
     //Public Functions
-    void Shoot(unsigned short int Direction);
+    //TODO void Shoot
     //TODO void GetItem();
     void Move(unsigned short int Direction);
     void DrawIsaac(RenderWindow &window);
     void DrawConsumables(RenderWindow &window);
+
 
 
 };

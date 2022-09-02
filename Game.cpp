@@ -75,6 +75,23 @@ void Game::pollEvents() {
     if (Keyboard::isKeyPressed(Keyboard::A)) {
         this->Isaac.Move(3);
     }
+    /*
+    //Shoot up
+    if (Keyboard::isKeyPressed(Keyboard::Up)) {
+        this->Isaac.Shoot(0, *this->window);
+    }
+    //Shoot right
+    if (Keyboard::isKeyPressed(Keyboard::Right)) {
+        this->Isaac.Shoot(1, *this->window);
+    }
+    //Shoot down
+    if (Keyboard::isKeyPressed(Keyboard::Down)) {
+        this->Isaac.Shoot(2, *this->window);
+    }
+    //Shoot left
+    if (Keyboard::isKeyPressed(Keyboard::Left)) {
+        this->Isaac.Shoot(3, *this->window);
+    }*/
 }
 
 
