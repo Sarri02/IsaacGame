@@ -121,3 +121,4 @@ void Isaac::DrawConsumables(RenderWindow &window) {
 }
 
 
+

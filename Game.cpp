@@ -100,15 +100,16 @@ void Game::update() {
     //Background of game
     this->pollEvents();
 
+
+}
+
+void Game::render() {
+
     //Draw game objects
     this->window->draw(this->background);
     this->floor[ActualFloor].DrawMap(*this->window);
     this->Isaac.DrawIsaac(*this->window);
     this->Isaac.DrawConsumables(*this->window);
-
-}
-
-void Game::render() {
 
     this->window->display();
     this->window->clear();
