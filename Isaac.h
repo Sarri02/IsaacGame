@@ -7,20 +7,24 @@
 
 
 using namespace sf;
+using namespace std;
+
 
 class Isaac {
 
 private:
+    //Consumables
+    int Keys;
+    int Bombs;
+
     //Isaac figure
     RectangleShape IsaacFigure;
     Texture * IsaacTexture;
 
     //Variables
-    int xPosIsaac;
-    int yPosIsaac;
-    //Consumables
-    int Keys;
-    int Bombs;
+    float xPosIsaac;
+    float yPosIsaac;
+
     //Isaac
     Character isaac;
 
@@ -33,14 +37,14 @@ public:
     Isaac();
 
     //Bullet
-    Bullet isaacBullet;
+    vector <Bullet*> IsaacBullets;
     float Tear;
     float ShootSpeed;
     float ShootRange;
-    //TODO float ShootDamage;
+    float ShootDamage;
 
     //Public Functions
-    void Shoot(unsigned short int Direction);
+    void Shoot(unsigned short int Direction, RenderWindow & window);
     //TODO void GetItem();
     void Move(unsigned short int Direction);
     void DrawIsaac(RenderWindow &window);

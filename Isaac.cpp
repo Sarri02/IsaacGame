@@ -18,9 +18,6 @@ void Isaac::InitIsaac() {
     this->isaac.CanFly = false;
     this->isaac.Speed = 6;
 
-    //TODO this->IsaacTear->InitBullet(10,30, 1, 100);
-
-
 }
 
 //Init Isaac Figure
@@ -65,13 +62,12 @@ void Isaac::Move(unsigned short int Direction) {
             break;
     }
     this->IsaacFigure.setPosition(this->xPosIsaac,this->yPosIsaac);
-
 }
 
 void Isaac::DrawConsumables(RenderWindow &window) {
 
     //Bombs
-    int xPosBombs = 420, yPosBombs = 43;
+    float xPosBombs = 420, yPosBombs = 43;
     for(int k=0; k< this->Bombs; k++)
     {
         RectangleShape bomb;
@@ -79,13 +75,12 @@ void Isaac::DrawConsumables(RenderWindow &window) {
         bomb.setFillColor(Color::Black);
         bomb.setPosition(xPosBombs,yPosBombs);
         //TODO add texture
-
         window.draw(bomb);
         xPosBombs += 46;
     }
 
     //Keys
-    int xPosKeys = 420, yPosKeys = 123;
+    float xPosKeys = 420, yPosKeys = 123;
     for(int k=0; k< this->Keys; k++)
     {
         RectangleShape key;
@@ -93,7 +88,6 @@ void Isaac::DrawConsumables(RenderWindow &window) {
         key.setFillColor(Color::Yellow);
         key.setPosition(xPosKeys,yPosKeys);
         //TODO add texture
-
         window.draw(key);
         xPosKeys += 46;
     }
@@ -118,6 +112,12 @@ void Isaac::DrawConsumables(RenderWindow &window) {
             xPosLife += 60;
     }
 
+}
+
+void Isaac::Shoot(unsigned short Direction, RenderWindow & window) {
+
+    this->IsaacBullets.push_back(new Bullet(this->Tear,this->ShootSpeed,this->ShootRange,this->ShootDamage,Direction,this->xPosIsaac, this->yPosIsaac));
+    this->IsaacBullets[this->IsaacBullets.size()-1]->DrawBullet(window);
 }
 
 
