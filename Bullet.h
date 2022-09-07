@@ -15,7 +15,6 @@ private:
 
 public:
     //Constructor and Destructor
-    Bullet();
     Bullet(float Tear, float ShootSpeed, float ShootRange, float ShootDamage, unsigned short int Direction, float xPos, float yPos);
 
     //Public Functions

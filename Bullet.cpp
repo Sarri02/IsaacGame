@@ -33,10 +33,6 @@ Bullet::Bullet(float Tear, float ShootSpeed, float ShootRange, float ShootDamage
 
 }
 
-Bullet::Bullet() {
-
-}
-
 void Bullet::DrawBullet(RenderWindow &window) {
 
     window.draw(this->bullet);
