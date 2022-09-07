@@ -44,7 +44,7 @@ public:
     float ShootDamage;
 
     //Public Functions
-    void Shoot(unsigned short int Direction, RenderWindow & window);
+    void Shoot(unsigned short int Direction);
     //TODO void GetItem();
     void Move(unsigned short int Direction);
     void DrawIsaac(RenderWindow &window);

@@ -30,7 +30,6 @@ Bullet::Bullet(float Tear, float ShootSpeed, float ShootRange, float ShootDamage
         this->bullet.setPosition(xPos,yPos);
         ShootRange-=ShootSpeed;
     }
-
 }
 
 void Bullet::DrawBullet(RenderWindow &window) {

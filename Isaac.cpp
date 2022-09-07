@@ -37,6 +37,9 @@ void Isaac::InitIsaacFigure() {
 void Isaac::DrawIsaac(RenderWindow &window) {
 
     window.draw(this->IsaacFigure);
+    for(auto *bullet:this->IsaacBullets){
+        bullet->DrawBullet(window);
+    }
 
 }
 
@@ -114,10 +117,9 @@ void Isaac::DrawConsumables(RenderWindow &window) {
 
 }
 
-void Isaac::Shoot(unsigned short Direction, RenderWindow & window) {
+void Isaac::Shoot(unsigned short Direction) {
 
     this->IsaacBullets.push_back(new Bullet(this->Tear,this->ShootSpeed,this->ShootRange,this->ShootDamage,Direction,this->xPosIsaac, this->yPosIsaac));
-    this->IsaacBullets[this->IsaacBullets.size()-1]->DrawBullet(window);
 }
 
 
