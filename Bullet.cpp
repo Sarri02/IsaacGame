@@ -3,14 +3,32 @@
 
 Bullet::Bullet(float Tear, float ShootSpeed, float ShootRange, float ShootDamage, unsigned short Direction, float xPos, float yPos) {
 
+    this->Tear = Tear;
+    this->ShootSpeed = ShootSpeed;
+    this->ShootRange = ShootRange;
+    this->ShootDamage = ShootDamage;
+    this->Direction = Direction;
+    this->xPos = xPos;
+    this-> yPos = yPos;
+
     this->bullet.setSize(Vector2f(10,10));
     this->bullet.setFillColor(Color::Blue);
     this->bullet.setPosition(xPos,yPos);
-    while(ShootRange>0){
-        switch (Direction) {
+
+}
+
+void Bullet::DrawBullet(RenderWindow &window) {
+
+    window.draw(this->bullet);
+
+}
+
+void Bullet::UpdateBullet() {
+    if(this->ShootRange>0){
+        switch (this->Direction) {
             case 0:
                 //up
-                yPos-=ShootSpeed;
+                this->yPos-=ShootSpeed;
                 break;
             case 1:
                 //right
@@ -30,10 +48,6 @@ Bullet::Bullet(float Tear, float ShootSpeed, float ShootRange, float ShootDamage
         this->bullet.setPosition(xPos,yPos);
         ShootRange-=ShootSpeed;
     }
-}
-
-void Bullet::DrawBullet(RenderWindow &window) {
-
-    window.draw(this->bullet);
-
+    else
+        this->bullet.setFillColor(Color::Transparent);
 }

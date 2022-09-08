@@ -4,6 +4,7 @@
 void Game::InitVariable() {
 
     this->window = nullptr;
+    this->KeyTime = this->Isaac.Tear;
     this->ActualFloor = 0;
 
 }
@@ -45,7 +46,8 @@ const bool Game::running() const {
 }
 
 //Function public
-void Game::pollEvents() {
+void Game::pollEvents( int &KeyTime) {
+
 
     while (this->window->pollEvent(event)) {
 
@@ -75,21 +77,30 @@ void Game::pollEvents() {
     if (Keyboard::isKeyPressed(Keyboard::A)) {
         this->Isaac.Move(3);
     }
+
+    //KeyTime
+    if (KeyTime < this->Isaac.Tear)
+        KeyTime++;
+
     //Shoot up
-    if (Keyboard::isKeyPressed(Keyboard::Up)) {
+    if (Keyboard::isKeyPressed(Keyboard::Up) && KeyTime >=this->Isaac.Tear) {
         this->Isaac.Shoot(0);
+        KeyTime = 0;
     }
     //Shoot right
-    if (Keyboard::isKeyPressed(Keyboard::Right)) {
+    if (Keyboard::isKeyPressed(Keyboard::Right) && KeyTime >=this->Isaac.Tear) {
         this->Isaac.Shoot(1);
+        KeyTime = 0;
     }
     //Shoot down
-    if (Keyboard::isKeyPressed(Keyboard::Down)) {
+    if (Keyboard::isKeyPressed(Keyboard::Down) && KeyTime >=this->Isaac.Tear) {
         this->Isaac.Shoot(2);
+        KeyTime = 0;
     }
     //Shoot left
-    if (Keyboard::isKeyPressed(Keyboard::Left)) {
+    if (Keyboard::isKeyPressed(Keyboard::Left) && KeyTime >=this->Isaac.Tear) {
         this->Isaac.Shoot(3);
+        KeyTime = 0;
     }
 }
 
@@ -97,7 +108,7 @@ void Game::pollEvents() {
 void Game::update() {
 
     //Background of game
-    this->pollEvents();
+    this->pollEvents(this->KeyTime);
 
 
 }

@@ -14,6 +14,7 @@ private:
     //Variables
     //General
     Event event;
+    int KeyTime;
     //Game Background
     RectangleShape background;
     Texture texture;
@@ -31,7 +32,7 @@ private:
     void InitWindow();
     void InitVariable();
     void InitBackground();
-    void pollEvents();
+    void pollEvents( int & KeyTime);
 
 public:
 

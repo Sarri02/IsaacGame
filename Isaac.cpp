@@ -16,7 +16,12 @@ void Isaac::InitIsaac() {
     //Stats
     this->isaac.Life = 4;
     this->isaac.CanFly = false;
-    this->isaac.Speed = 6;
+    this->isaac.Speed = 4;
+
+    //Bullet
+    this->ShootSpeed = 6;
+    this->ShootRange =400;
+    this->Tear=20;
 
 }
 
@@ -38,6 +43,7 @@ void Isaac::DrawIsaac(RenderWindow &window) {
 
     window.draw(this->IsaacFigure);
     for(auto *bullet:this->IsaacBullets){
+        bullet->UpdateBullet();
         bullet->DrawBullet(window);
     }
 
