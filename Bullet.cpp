@@ -11,7 +11,7 @@ Bullet::Bullet(float Tear, float ShootSpeed, float ShootRange, float ShootDamage
     this->xPos = xPos;
     this-> yPos = yPos;
 
-    this->bullet.setSize(Vector2f(10,10));
+    this->bullet.setSize(Vector2f(20,20));
     this->bullet.setFillColor(Color::Blue);
     this->bullet.setPosition(xPos,yPos);
 

@@ -21,7 +21,7 @@ void Isaac::InitIsaac() {
     //Bullet
     this->ShootSpeed = 6;
     this->ShootRange =400;
-    this->Tear=20;
+    this->Tear=30;
 
 }
 
