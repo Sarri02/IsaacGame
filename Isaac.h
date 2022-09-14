@@ -13,20 +13,26 @@ using namespace std;
 class Isaac {
 
 private:
+
+
     //Consumables
     int Keys;
     int Bombs;
-
-    //Isaac figure
-    RectangleShape IsaacFigure;
-    Texture * IsaacTexture;
 
     //Variables
     float xPosIsaac;
     float yPosIsaac;
 
+    //Isaac figure
+    RectangleShape IsaacFigure;
+    Texture * IsaacTexture;
+
     //Isaac
     Character isaac;
+
+
+
+    Texture * LifeTexture;
 
     //Private Functions
     void InitIsaac();

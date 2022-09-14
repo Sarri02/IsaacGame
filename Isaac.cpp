@@ -111,17 +111,15 @@ void Isaac::DrawConsumables(RenderWindow &window) {
     int xPosLife = 64, yPosLife = 60;
     for(int k=0; k < this->isaac.Life; k++)
     {
-        RectangleShape key;
-        key.setSize(Vector2f(42,42));
-        key.setFillColor(Color::Red);
-        key.setPosition(xPosLife,yPosLife);
-        //TODO add texture
-
-        window.draw(key);
+        RectangleShape life;
+        life.setSize(Vector2f(42,42));
+        life.setPosition(xPosLife,yPosLife);
+        LifeTexture->loadFromFile("../Texture/Life.png");
+        life.setTexture(LifeTexture);
+        window.draw(life);
         if(k==4){
             xPosLife=64;
             yPosLife+=52;
-
         }
         else
             xPosLife += 60;
