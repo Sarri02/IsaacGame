@@ -83,39 +83,39 @@ void Isaac::DrawConsumables(RenderWindow &window) {
 
     //Bombs
     float xPosBombs = 420, yPosBombs = 43;
+    RectangleShape bomb;
+    Texture->loadFromFile("../Texture/Bomb.png");
+    bomb.setTexture(Texture);
+    bomb.setSize(Vector2f(32,32));
     for(int k=0; k< this->Bombs; k++)
     {
-        RectangleShape bomb;
-        bomb.setSize(Vector2f(32,32));
-        bomb.setFillColor(Color::Black);
         bomb.setPosition(xPosBombs,yPosBombs);
-        //TODO add texture
         window.draw(bomb);
         xPosBombs += 46;
     }
 
     //Keys
     float xPosKeys = 420, yPosKeys = 123;
+    RectangleShape key;
+    Texture->loadFromFile("../Texture/Key.png");
+    key.setTexture(Texture);
+    key.setSize(Vector2f(32,32));
     for(int k=0; k< this->Keys; k++)
     {
-        RectangleShape key;
-        key.setSize(Vector2f(32,32));
-        key.setFillColor(Color::Yellow);
         key.setPosition(xPosKeys,yPosKeys);
-        //TODO add texture
         window.draw(key);
         xPosKeys += 46;
     }
 
     //Life
     int xPosLife = 64, yPosLife = 60;
+    Texture->loadFromFile("../Texture/Life.png");
+    RectangleShape life;
+    life.setSize(Vector2f(42,42));
+    life.setTexture(Texture);
     for(int k=0; k < this->isaac.Life; k++)
     {
-        RectangleShape life;
-        life.setSize(Vector2f(42,42));
         life.setPosition(xPosLife,yPosLife);
-        LifeTexture->loadFromFile("../Texture/Life.png");
-        life.setTexture(LifeTexture);
         window.draw(life);
         if(k==4){
             xPosLife=64;
@@ -131,6 +131,7 @@ void Isaac::Shoot(unsigned short Direction) {
 
     this->IsaacBullets.push_back(new Bullet(this->Tear,this->ShootSpeed,this->ShootRange,this->ShootDamage,Direction,this->xPosIsaac, this->yPosIsaac));
 }
+
 
 
 

@@ -19,24 +19,32 @@ private:
     int Keys;
     int Bombs;
 
+
     //Variables
     float xPosIsaac;
     float yPosIsaac;
+
 
     //Isaac figure
     RectangleShape IsaacFigure;
     Texture * IsaacTexture;
 
+
     //Isaac
     Character isaac;
 
 
+    //Texture
+    Texture * Texture;
 
-    Texture * LifeTexture;
+
+
+
 
     //Private Functions
     void InitIsaac();
     void InitIsaacFigure();
+    //void InitTexture();
 
 public:
     //Constructor
