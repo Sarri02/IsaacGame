@@ -24,7 +24,7 @@ void Bullet::DrawBullet(RenderWindow &window) {
 }
 
 void Bullet::UpdateBullet() {
-    if(this->ShootRange>0){
+    if(this->ShootRange>0 && this->xPos>30 && this->xPos<930 && this->yPos<670 && this->yPos>200){
         switch (this->Direction) {
             case 0:
                 //up

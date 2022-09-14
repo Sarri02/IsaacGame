@@ -50,22 +50,28 @@ void Isaac::DrawIsaac(RenderWindow &window) {
 }
 
 void Isaac::Move(unsigned short int Direction) {
-    switch (Direction) {
+   // if(this->ShootRange>0 && this->xPos>30 && this->xPos<930 && this->yPos<670 && this->yPos>200){
+
+        switch (Direction) {
         case 0:
             //up
-            yPosIsaac -=this->isaac.Speed;
+            if(this->yPosIsaac - this->isaac.Speed > 215)
+                this->yPosIsaac -=this->isaac.Speed;
             break;
         case 1:
             //right
-            xPosIsaac +=this->isaac.Speed;
+            if(this->xPosIsaac + this->isaac.Speed < 880)
+                this->xPosIsaac +=this->isaac.Speed;
             break;
         case 2:
             //down
-            yPosIsaac +=this->isaac.Speed;
+            if(this->yPosIsaac + this->isaac.Speed < 615)
+                this->yPosIsaac +=this->isaac.Speed;
             break;
         case 3:
             //left
-            xPosIsaac -=this->isaac.Speed;
+            if(this->xPosIsaac - this->isaac.Speed >40)
+                this->xPosIsaac -=this->isaac.Speed;
             break;
         default:
             break;
