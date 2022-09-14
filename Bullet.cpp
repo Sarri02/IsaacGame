@@ -11,14 +11,18 @@ Bullet::Bullet(float Tear, float ShootSpeed, float ShootRange, float ShootDamage
     this->xPos = xPos;
     this-> yPos = yPos;
 
-    this->bullet.setSize(Vector2f(20,20));
-    this->bullet.setFillColor(Color::Blue);
-    this->bullet.setPosition(xPos,yPos);
+}
 
+Bullet::~Bullet() {
+    delete this->bulletTexture;
 }
 
 void Bullet::DrawBullet(RenderWindow &window) {
 
+    this->bullet.setSize(Vector2f(20,20));
+    //this->bulletTexture->loadFromFile("../Texture/Tear.png");
+    //this->bullet.setTexture(this->bulletTexture);
+    this->bullet.setPosition(xPos,yPos);
     window.draw(this->bullet);
 
 }
@@ -51,3 +55,5 @@ void Bullet::UpdateBullet() {
     else
         this->bullet.setFillColor(Color::Transparent);
 }
+
+

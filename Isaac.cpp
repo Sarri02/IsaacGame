@@ -129,7 +129,7 @@ void Isaac::DrawConsumables(RenderWindow &window) {
 
 void Isaac::Shoot(unsigned short Direction) {
 
-    this->IsaacBullets.push_back(new Bullet(this->Tear,this->ShootSpeed,this->ShootRange,this->ShootDamage,Direction,this->xPosIsaac, this->yPosIsaac));
+    this->IsaacBullets.push_back(new Bullet(this->Tear,this->ShootSpeed,this->ShootRange,this->ShootDamage,Direction,this->xPosIsaac+30, this->yPosIsaac+22));
 }
 
 

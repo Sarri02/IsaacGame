@@ -16,14 +16,14 @@ private:
     float yPos;
 
     RectangleShape bullet;
-    //TODO Texture;
-
+    Texture * bulletTexture;
 
     //Private Functions
 
 public:
     //Constructor and Destructor
     Bullet(float Tear, float ShootSpeed, float ShootRange, float ShootDamage, unsigned short int Direction, float xPos, float yPos);
+    ~Bullet();
 
     //Public Functions
     void UpdateBullet();
