@@ -13,6 +13,7 @@ void Isaac::InitIsaac() {
     //Consumables
     this->Bombs = 1;
     this->Keys = 1;
+
     //Stats
     this->isaac.Life = 4;
     this->isaac.CanFly = false;
@@ -21,7 +22,7 @@ void Isaac::InitIsaac() {
     //Bullet
     this->ShootSpeed = 6;
     this->ShootRange =400;
-    this->Tear=30;
+    this->Tear=28;
 
 }
 
