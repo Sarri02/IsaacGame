@@ -1,14 +1,13 @@
 #include "Game.h"
 
-//Window
 void Game::InitVariable() {
 
     this->window = nullptr;
-    this->KeyTime = this->Isaac.Tear;
     this->ActualFloor = 0;
 
 }
 
+//Window
 void Game::InitWindow() {
 
     this->window = new RenderWindow(VideoMode(WIDHT, HEIGHT), "Main Menu", Style::Default);
@@ -24,6 +23,11 @@ void Game::InitBackground() {
     this->background.setTexture(&(this->texture));
 }
 
+void Game::InitTexture() {
+
+}
+
+
 //Constructor and Destructor
 Game::Game() {
 
@@ -32,6 +36,8 @@ Game::Game() {
     this->InitWindow();
 
     this->InitBackground();
+
+    this->InitTexture();
 
 }
 Game::~Game() {
@@ -45,86 +51,144 @@ const bool Game::running() const {
     return this->window->isOpen();
 }
 
-//Function public
-void Game::pollEvents( int &KeyTime) {
+void Game::updatePollEvents() {
 
-
-    while (this->window->pollEvent(event)) {
-
-        //Close the window
-        if (this->event.type == Event::Closed)
+    Event event;
+    while (this->window->pollEvent(event))
+    {
+        if (event.Event::type == sf::Event::Closed)
             this->window->close();
-
-        //Game command
-        //Close the window (Escape)
-        if (Keyboard::isKeyPressed(Keyboard::Escape)) {
+        if (event.Event::key.code == sf::Keyboard::Escape)
             this->window->close();
-        }
     }
+}
+
+void Game::updateInput() {
+
     //Move up
     if (Keyboard::isKeyPressed(Keyboard::W)) {
-        this->Isaac.Move(0);
+        this->Isaac.Move(0,-1);
     }
     //Move right
     if (Keyboard::isKeyPressed(Keyboard::D)) {
-        this->Isaac.Move(1);
+        this->Isaac.Move(1,0);
     }
     //Move down
     if (Keyboard::isKeyPressed(Keyboard::S)) {
-        this->Isaac.Move(2);
+        this->Isaac.Move(0,1);
     }
     //Move left
     if (Keyboard::isKeyPressed(Keyboard::A)) {
-        this->Isaac.Move(3);
+        this->Isaac.Move(-1,0);
     }
-
-    //KeyTime
-    if (KeyTime < this->Isaac.Tear)
-        KeyTime++;
 
     //Shoot up
-    if (Keyboard::isKeyPressed(Keyboard::Up) && KeyTime >=this->Isaac.Tear) {
+    if (Keyboard::isKeyPressed(Keyboard::Up)) {
         this->Isaac.Shoot(0);
-        KeyTime = 0;
     }
     //Shoot right
-    if (Keyboard::isKeyPressed(Keyboard::Right) && KeyTime >=this->Isaac.Tear) {
+    if (Keyboard::isKeyPressed(Keyboard::Right)) {
         this->Isaac.Shoot(1);
-        KeyTime = 0;
     }
     //Shoot down
-    if (Keyboard::isKeyPressed(Keyboard::Down) && KeyTime >=this->Isaac.Tear) {
+    if (Keyboard::isKeyPressed(Keyboard::Down)) {
         this->Isaac.Shoot(2);
-        KeyTime = 0;
     }
     //Shoot left
-    if (Keyboard::isKeyPressed(Keyboard::Left) && KeyTime >=this->Isaac.Tear) {
+    if (Keyboard::isKeyPressed(Keyboard::Left)) {
         this->Isaac.Shoot(3);
-        KeyTime = 0;
+    }
+
+}
+
+//Map
+void Game::renderMap() {
+    this->floor[ActualFloor].DrawMap(*this->window);
+}
+
+//Background
+void Game::renderBackground() {
+    this->window->draw(this->background);
+}
+
+//Stats
+void Game::renderStats() {
+    //Life
+    this->texture1->loadFromFile("../Texture/Life.png");
+    int xPosLife = 64, yPosLife = 60;
+    for (int k = 0; k < this->Isaac.isaac.Life; k++) {
+        RectangleShape life;
+        life.setSize(Vector2f(42, 42));
+        life.setPosition(xPosLife,yPosLife);
+        life.setTexture(this->texture1);
+        window->draw(life);
+        if (k == 4) {
+            xPosLife = 64;
+            yPosLife += 52;
+        }
+        else
+            xPosLife += 52;
+    }
+    //Bomb
+    this->texture1->loadFromFile("../Texture/Bomb.png");
+    int xPosBomb = 420, yPosBomb = 43;
+    for (int k = 0; k < this->Isaac.Bombs; k++) {
+        RectangleShape bomb;
+        bomb.setSize(Vector2f(42, 42));
+        bomb.setPosition(xPosBomb,yPosBomb);
+        bomb.setTexture(this->texture1);
+        window->draw(bomb);
+        xPosBomb += 46;
+    }
+    //Keys
+    this->texture1->loadFromFile("../Texture/Key.png");
+    int xPosKeys = 420, yPosKeys = 123;
+    for (int k = 0; k < this->Isaac.Keys; k++) {
+        RectangleShape key;
+        key.setSize(Vector2f(42, 42));
+        key.setPosition(xPosKeys,yPosKeys);
+        key.setTexture(this->texture1);
+        window->draw(key);
+        xPosKeys += 46;
     }
 }
 
+//Isaac
+void Game::renderIsaac() {
+    this->Isaac.DrawIsaac(*this->window);
+}
+void Game::updateIsaac() {
+    this->updateInput();
+}
 
+
+//Update
 void Game::update() {
 
-    //Background of game
-    this->pollEvents(this->KeyTime);
-
+    this->updatePollEvents();
+    this->updateIsaac();
 
 }
 
+//Render
 void Game::render() {
 
-    //Draw game objects
-    this->window->draw(this->background);
-    this->floor[ActualFloor].DrawMap(*this->window);
-    this->Isaac.DrawIsaac(*this->window);
-    this->Isaac.DrawConsumables(*this->window);
-
-    this->window->display();
     this->window->clear();
 
+    //Draw game objects
+    this->renderBackground();
+    this->renderMap();
+    this->renderStats();
+    this->renderIsaac();
+
+
+    this->window->display();
 }
+
+
+
+
+
 
 
 

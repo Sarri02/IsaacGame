@@ -1,6 +1,5 @@
 #include <SFML/Graphics.hpp>
 #include "Character.h"
-#include "Bullet.h"
 
 
 #define MaxLife 10;
@@ -11,59 +10,41 @@ using namespace std;
 
 
 class Isaac {
-
 private:
+    //Isaac figure
+    Sprite IsaacFigure;
+    Texture IsaacTexture;
 
-
-    //Consumables
-    int Keys;
-    int Bombs;
-
-
+    //Bullet
+    float Tear;
+    float ShootSpeed;
+    float ShootRange;
+    float ShootDamage;
     //Variables
     float xPosIsaac;
     float yPosIsaac;
 
 
-    //Isaac figure
-    RectangleShape IsaacFigure;
-    Texture * IsaacTexture;
-
-
-    //Isaac
-    Character isaac;
-
-
-    //Texture
-    Texture * Texture;
-
-
-
-
-
     //Private Functions
     void InitIsaac();
     void InitIsaacFigure();
-    //void InitTexture();
+    bool MoveIsPossible(float dirX, float dirY);
 
 public:
+    //Isaac
+    Character isaac;
+
+    //Consumables
+    int Keys;
+    int Bombs;
+
     //Constructor
     Isaac();
-
-    //Bullet
-    vector <Bullet*> IsaacBullets;
-    float Tear;
-    float ShootSpeed;
-    float ShootRange;
-    float ShootDamage;
 
     //Public Functions
     void Shoot(unsigned short int Direction);
     //TODO void GetItem();
-    void Move(unsigned short int Direction);
+    void Move(float dirX, float dirY);
     void DrawIsaac(RenderWindow &window);
-    void DrawConsumables(RenderWindow &window);
-
-
 
 };

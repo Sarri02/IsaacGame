@@ -11,28 +11,26 @@ using namespace sf;
 class Game {
 private:
 
-    //Variables
-    //General
-    Event event;
-    int KeyTime;
     //Game Background
     RectangleShape background;
     Texture texture;
+
     //Map floor
     Floor floor[MaxFloor];
     int ActualFloor;
+
     //Isaac
     Isaac Isaac;
 
-
-
+    //Texture
+    Texture * texture1;
 
     //Function private
     //Init
     void InitWindow();
     void InitVariable();
     void InitBackground();
-    void pollEvents( int & KeyTime);
+    void InitTexture();
 
 public:
 
@@ -47,6 +45,16 @@ public:
     const bool running() const;
 
     //Function public
+    //Update
+    void updatePollEvents();
+    void updateInput();
+    void updateIsaac();
+    void updateCollision();
     void update();
+    //Render
+    void renderBackground();
+    void renderMap();
+    void renderStats();
+    void renderIsaac();
     void render();
 };
