@@ -161,13 +161,27 @@ void Game::updateIsaac() {
     this->updateInput();
 }
 
+//Bullet
+void Game::updateBullet() {
+    for (auto *bullet : this->Isaac.bullets) {
+        bullet->updateBullet();
+    }
+}
+
+void Game::renderBullet() {
+
+    for (auto *bullet : this->Isaac.bullets) {
+        bullet->drawBullet(*this->window);
+    }
+}
+
 
 //Update
 void Game::update() {
 
     this->updatePollEvents();
     this->updateIsaac();
-
+    this->updateBullet();
 }
 
 //Render
@@ -180,6 +194,7 @@ void Game::render() {
     this->renderMap();
     this->renderStats();
     this->renderIsaac();
+    this->renderBullet();
 
 
     this->window->display();

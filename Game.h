@@ -4,6 +4,7 @@
 #include "Floor.h"
 #include "Isaac.h"
 
+
 #define MaxFloor 6
 
 using namespace sf;
@@ -49,12 +50,13 @@ public:
     void updatePollEvents();
     void updateInput();
     void updateIsaac();
-    void updateCollision();
+    void updateBullet();
     void update();
     //Render
     void renderBackground();
     void renderMap();
     void renderStats();
     void renderIsaac();
+    void renderBullet();
     void render();
 };

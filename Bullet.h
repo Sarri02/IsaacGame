@@ -5,10 +5,10 @@ using namespace sf;
 using namespace std;
 
 
-class Bullet {
+class Bullet{
 private:
     //Figure
-    Sprite bulletFigure;
+    RectangleShape bulletFigure;
 
     //Variables
     Vector2<float> direction;
@@ -23,6 +23,6 @@ public:
 
     //Public Functions
     void updateBullet();
-    void drawBullet (RenderWindow &window);
+    void drawBullet (RenderWindow & window);
 
 };

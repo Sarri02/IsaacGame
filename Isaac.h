@@ -19,7 +19,6 @@ private:
 
 
     //Bullet
-    vector <Bullet*> bullets;
     float Tear;
     float ShootSpeed;
     float ShootRange;
@@ -39,6 +38,8 @@ private:
 public:
     //Isaac
     Character isaac;
+    vector <Bullet*> bullets;
+
 
     //Consumables
     int Keys;

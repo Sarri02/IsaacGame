@@ -14,7 +14,7 @@ void Isaac::InitBullet() {
     this->IsaacTexture.loadFromFile("../Texture/Tear.png");
 
     this->Tear = 20;
-    this->ShootSpeed = 4;
+    this->ShootSpeed = 10;
     this->ShootRange = 200;
     this->ShootDamage = 1;
 
@@ -65,6 +65,7 @@ void Isaac::Move(float dirX, float dirY) {
     if(this->MoveIsPossible(dirX,dirY))
         this->IsaacFigure.move(this->isaac.Speed * dirX, this->isaac.Speed * dirY);
 }
+
 
 void Isaac::Shoot(float dirX, float dirY) {
 
