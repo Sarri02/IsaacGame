@@ -84,12 +84,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/marks/Desktop/Isaac/IsaacGame/Bullet.cpp">
-			<Option target="HelloSFML"/>
-		</Unit>
-		<Unit filename="C:/Users/marks/Desktop/Isaac/IsaacGame/Bullet.h">
-			<Option target="HelloSFML"/>
-		</Unit>
 		<Unit filename="C:/Users/marks/Desktop/Isaac/IsaacGame/Character.cpp">
 			<Option target="HelloSFML"/>
 		</Unit>
