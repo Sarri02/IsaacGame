@@ -116,24 +116,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named HelloSFML
+# Target rules for targets named Isaac
 
 # Build rule for target.
-HelloSFML: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HelloSFML
-.PHONY : HelloSFML
+Isaac: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Isaac
+.PHONY : Isaac
 
 # fast build rule for target.
-HelloSFML/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/build
-.PHONY : HelloSFML/fast
+Isaac/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/build
+.PHONY : Isaac/fast
 
 Bullet.obj: Bullet.cpp.obj
 .PHONY : Bullet.obj
 
 # target to build an object file
 Bullet.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/Bullet.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Bullet.cpp.obj
 .PHONY : Bullet.cpp.obj
 
 Bullet.i: Bullet.cpp.i
@@ -141,7 +141,7 @@ Bullet.i: Bullet.cpp.i
 
 # target to preprocess a source file
 Bullet.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/Bullet.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Bullet.cpp.i
 .PHONY : Bullet.cpp.i
 
 Bullet.s: Bullet.cpp.s
@@ -149,7 +149,7 @@ Bullet.s: Bullet.cpp.s
 
 # target to generate assembly for a file
 Bullet.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/Bullet.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Bullet.cpp.s
 .PHONY : Bullet.cpp.s
 
 Character.obj: Character.cpp.obj
@@ -157,7 +157,7 @@ Character.obj: Character.cpp.obj
 
 # target to build an object file
 Character.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/Character.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Character.cpp.obj
 .PHONY : Character.cpp.obj
 
 Character.i: Character.cpp.i
@@ -165,7 +165,7 @@ Character.i: Character.cpp.i
 
 # target to preprocess a source file
 Character.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/Character.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Character.cpp.i
 .PHONY : Character.cpp.i
 
 Character.s: Character.cpp.s
@@ -173,7 +173,7 @@ Character.s: Character.cpp.s
 
 # target to generate assembly for a file
 Character.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/Character.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Character.cpp.s
 .PHONY : Character.cpp.s
 
 Door.obj: Door.cpp.obj
@@ -181,7 +181,7 @@ Door.obj: Door.cpp.obj
 
 # target to build an object file
 Door.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/Door.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Door.cpp.obj
 .PHONY : Door.cpp.obj
 
 Door.i: Door.cpp.i
@@ -189,7 +189,7 @@ Door.i: Door.cpp.i
 
 # target to preprocess a source file
 Door.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/Door.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Door.cpp.i
 .PHONY : Door.cpp.i
 
 Door.s: Door.cpp.s
@@ -197,7 +197,7 @@ Door.s: Door.cpp.s
 
 # target to generate assembly for a file
 Door.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/Door.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Door.cpp.s
 .PHONY : Door.cpp.s
 
 Floor.obj: Floor.cpp.obj
@@ -205,7 +205,7 @@ Floor.obj: Floor.cpp.obj
 
 # target to build an object file
 Floor.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/Floor.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Floor.cpp.obj
 .PHONY : Floor.cpp.obj
 
 Floor.i: Floor.cpp.i
@@ -213,7 +213,7 @@ Floor.i: Floor.cpp.i
 
 # target to preprocess a source file
 Floor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/Floor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Floor.cpp.i
 .PHONY : Floor.cpp.i
 
 Floor.s: Floor.cpp.s
@@ -221,7 +221,7 @@ Floor.s: Floor.cpp.s
 
 # target to generate assembly for a file
 Floor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/Floor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Floor.cpp.s
 .PHONY : Floor.cpp.s
 
 Game.obj: Game.cpp.obj
@@ -229,7 +229,7 @@ Game.obj: Game.cpp.obj
 
 # target to build an object file
 Game.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/Game.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Game.cpp.obj
 .PHONY : Game.cpp.obj
 
 Game.i: Game.cpp.i
@@ -237,7 +237,7 @@ Game.i: Game.cpp.i
 
 # target to preprocess a source file
 Game.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/Game.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Game.cpp.i
 .PHONY : Game.cpp.i
 
 Game.s: Game.cpp.s
@@ -245,7 +245,7 @@ Game.s: Game.cpp.s
 
 # target to generate assembly for a file
 Game.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/Game.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Game.cpp.s
 .PHONY : Game.cpp.s
 
 Isaac.obj: Isaac.cpp.obj
@@ -253,7 +253,7 @@ Isaac.obj: Isaac.cpp.obj
 
 # target to build an object file
 Isaac.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/Isaac.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Isaac.cpp.obj
 .PHONY : Isaac.cpp.obj
 
 Isaac.i: Isaac.cpp.i
@@ -261,7 +261,7 @@ Isaac.i: Isaac.cpp.i
 
 # target to preprocess a source file
 Isaac.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/Isaac.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Isaac.cpp.i
 .PHONY : Isaac.cpp.i
 
 Isaac.s: Isaac.cpp.s
@@ -269,7 +269,7 @@ Isaac.s: Isaac.cpp.s
 
 # target to generate assembly for a file
 Isaac.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/Isaac.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Isaac.cpp.s
 .PHONY : Isaac.cpp.s
 
 Menu.obj: Menu.cpp.obj
@@ -277,7 +277,7 @@ Menu.obj: Menu.cpp.obj
 
 # target to build an object file
 Menu.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/Menu.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Menu.cpp.obj
 .PHONY : Menu.cpp.obj
 
 Menu.i: Menu.cpp.i
@@ -285,7 +285,7 @@ Menu.i: Menu.cpp.i
 
 # target to preprocess a source file
 Menu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/Menu.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Menu.cpp.i
 .PHONY : Menu.cpp.i
 
 Menu.s: Menu.cpp.s
@@ -293,7 +293,7 @@ Menu.s: Menu.cpp.s
 
 # target to generate assembly for a file
 Menu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/Menu.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Menu.cpp.s
 .PHONY : Menu.cpp.s
 
 Room.obj: Room.cpp.obj
@@ -301,7 +301,7 @@ Room.obj: Room.cpp.obj
 
 # target to build an object file
 Room.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/Room.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Room.cpp.obj
 .PHONY : Room.cpp.obj
 
 Room.i: Room.cpp.i
@@ -309,7 +309,7 @@ Room.i: Room.cpp.i
 
 # target to preprocess a source file
 Room.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/Room.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Room.cpp.i
 .PHONY : Room.cpp.i
 
 Room.s: Room.cpp.s
@@ -317,7 +317,7 @@ Room.s: Room.cpp.s
 
 # target to generate assembly for a file
 Room.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/Room.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Room.cpp.s
 .PHONY : Room.cpp.s
 
 main.obj: main.cpp.obj
@@ -325,7 +325,7 @@ main.obj: main.cpp.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -333,7 +333,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -341,7 +341,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -352,7 +352,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... HelloSFML
+	@echo ... Isaac
 	@echo ... Bullet.obj
 	@echo ... Bullet.i
 	@echo ... Bullet.s

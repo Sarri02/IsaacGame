@@ -1,9 +1,11 @@
 #include "Game.h"
+#include <iostream>
 
 void Game::InitVariable() {
 
     this->window = nullptr;
     this->ActualFloor = 0;
+    this->KeyTime=this->Isaac.Tear;
 
 }
 
@@ -64,7 +66,6 @@ void Game::updatePollEvents() {
 }
 
 void Game::updateInput() {
-
     //Move up
     if (Keyboard::isKeyPressed(Keyboard::W)) {
         this->Isaac.Move(0,-1);
@@ -82,21 +83,30 @@ void Game::updateInput() {
         this->Isaac.Move(-1,0);
     }
 
+
+    //KeyTime
+    if (this->KeyTime < this->Isaac.Tear)
+        this->KeyTime++;
+
     //Shoot up
-    if (Keyboard::isKeyPressed(Keyboard::Up)) {
+    if (Keyboard::isKeyPressed(Keyboard::Up) && KeyTime >=this->Isaac.Tear) {
         this->Isaac.Shoot(0,-1);
+        KeyTime = 0;
     }
     //Shoot right
-    if (Keyboard::isKeyPressed(Keyboard::Right)) {
+    if (Keyboard::isKeyPressed(Keyboard::Right) && KeyTime >=this->Isaac.Tear) {
         this->Isaac.Shoot(1,0);
+        KeyTime = 0;
     }
     //Shoot down
-    if (Keyboard::isKeyPressed(Keyboard::Down)) {
+    if (Keyboard::isKeyPressed(Keyboard::Down) && KeyTime >=this->Isaac.Tear) {
         this->Isaac.Shoot(0,1);
+        KeyTime = 0;
     }
     //Shoot left
-    if (Keyboard::isKeyPressed(Keyboard::Left)) {
+    if (Keyboard::isKeyPressed(Keyboard::Left) && KeyTime >=this->Isaac.Tear) {
         this->Isaac.Shoot(-1,0);
+        KeyTime = 0;
     }
 
 }
@@ -114,13 +124,13 @@ void Game::renderBackground() {
 //Stats
 void Game::renderStats() {
     //Life
-    this->texture1->loadFromFile("../Texture/Life.png");
+    this->texture1.loadFromFile("../Texture/Life.png");
     int xPosLife = 64, yPosLife = 60;
     for (int k = 0; k < this->Isaac.isaac.Life; k++) {
         RectangleShape life;
         life.setSize(Vector2f(42, 42));
         life.setPosition(xPosLife,yPosLife);
-        life.setTexture(this->texture1);
+        life.setTexture(&this->texture1);
         window->draw(life);
         if (k == 4) {
             xPosLife = 64;
@@ -130,24 +140,24 @@ void Game::renderStats() {
             xPosLife += 52;
     }
     //Bomb
-    this->texture1->loadFromFile("../Texture/Bomb.png");
+    this->texture1.loadFromFile("../Texture/Bomb.png");
     int xPosBomb = 420, yPosBomb = 43;
     for (int k = 0; k < this->Isaac.Bombs; k++) {
         RectangleShape bomb;
         bomb.setSize(Vector2f(42, 42));
         bomb.setPosition(xPosBomb,yPosBomb);
-        bomb.setTexture(this->texture1);
+        bomb.setTexture(&this->texture1);
         window->draw(bomb);
         xPosBomb += 46;
     }
     //Keys
-    this->texture1->loadFromFile("../Texture/Key.png");
+    this->texture1.loadFromFile("../Texture/Key.png");
     int xPosKeys = 420, yPosKeys = 123;
     for (int k = 0; k < this->Isaac.Keys; k++) {
         RectangleShape key;
         key.setSize(Vector2f(42, 42));
         key.setPosition(xPosKeys,yPosKeys);
-        key.setTexture(this->texture1);
+        key.setTexture(&this->texture1);
         window->draw(key);
         xPosKeys += 46;
     }
@@ -163,15 +173,20 @@ void Game::updateIsaac() {
 
 //Bullet
 void Game::updateBullet() {
-    for (auto *bullet : this->Isaac.bullets) {
-        bullet->updateBullet();
+    for (int i = this->Isaac.bullets.size() - 1; i >= 0; i--)
+    {
+        if(!(this->Isaac.bullets[i]->updateBullet()))
+        {
+            delete this->Isaac.bullets[i];
+            this->Isaac.bullets.erase(this->Isaac.bullets.begin() + i);
+        }
     }
 }
 
 void Game::renderBullet() {
 
     for (auto *bullet : this->Isaac.bullets) {
-        bullet->drawBullet(*this->window);
+        bullet->drawBullet(*(this->window));
     }
 }
 

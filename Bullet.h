@@ -8,11 +8,13 @@ using namespace std;
 class Bullet{
 private:
     //Figure
-    RectangleShape bulletFigure;
+    Sprite bulletFigure;
 
     //Variables
     Vector2<float> direction;
     float speed;
+
+    bool MoveIsPossible(float dirX, float dirY);
 
 public:
 
@@ -22,7 +24,7 @@ public:
     virtual ~Bullet();
 
     //Public Functions
-    void updateBullet();
+    bool updateBullet();
     void drawBullet (RenderWindow & window);
 
 };

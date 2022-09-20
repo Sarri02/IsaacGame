@@ -15,14 +15,7 @@ private:
     //Isaac figure
     Sprite IsaacFigure;
     Texture IsaacTexture;
-    Texture *BulletTexture;
-
-
-    //Bullet
-    float Tear;
-    float ShootSpeed;
-    float ShootRange;
-    float ShootDamage;
+    Texture BulletTexture;
 
     //Variables
     float xPosIsaac;
@@ -38,6 +31,11 @@ private:
 public:
     //Isaac
     Character isaac;
+    //Bullet
+    float Tear;
+    float ShootSpeed;
+    float ShootRange;
+    float ShootDamage;
     vector <Bullet*> bullets;
 
 

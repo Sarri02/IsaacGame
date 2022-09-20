@@ -17,8 +17,8 @@
 					<DistClean command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="HelloSFML">
-				<Option output="C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/HelloSFML.exe" prefix_auto="0" extension_auto="0"/>
+			<Target title="Isaac">
+				<Option output="C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Isaac.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -34,14 +34,14 @@
 					<Add directory="C:/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 HelloSFML"/>
+					<Build command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 Isaac"/>
 					<CompileFile command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="HelloSFML/fast">
-				<Option output="C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/HelloSFML.exe" prefix_auto="0" extension_auto="0"/>
+			<Target title="Isaac/fast">
+				<Option output="C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Isaac.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -57,7 +57,7 @@
 					<Add directory="C:/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 HelloSFML/fast"/>
+					<Build command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 Isaac/fast"/>
 					<CompileFile command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -85,55 +85,55 @@
 			</Target>
 		</Build>
 		<Unit filename="C:/Users/marks/Desktop/Isaac/IsaacGame/Bullet.cpp">
-			<Option target="HelloSFML"/>
+			<Option target="Isaac"/>
 		</Unit>
 		<Unit filename="C:/Users/marks/Desktop/Isaac/IsaacGame/Bullet.h">
-			<Option target="HelloSFML"/>
+			<Option target="Isaac"/>
 		</Unit>
 		<Unit filename="C:/Users/marks/Desktop/Isaac/IsaacGame/Character.cpp">
-			<Option target="HelloSFML"/>
+			<Option target="Isaac"/>
 		</Unit>
 		<Unit filename="C:/Users/marks/Desktop/Isaac/IsaacGame/Character.h">
-			<Option target="HelloSFML"/>
+			<Option target="Isaac"/>
 		</Unit>
 		<Unit filename="C:/Users/marks/Desktop/Isaac/IsaacGame/Door.cpp">
-			<Option target="HelloSFML"/>
+			<Option target="Isaac"/>
 		</Unit>
 		<Unit filename="C:/Users/marks/Desktop/Isaac/IsaacGame/Door.h">
-			<Option target="HelloSFML"/>
+			<Option target="Isaac"/>
 		</Unit>
 		<Unit filename="C:/Users/marks/Desktop/Isaac/IsaacGame/Floor.cpp">
-			<Option target="HelloSFML"/>
+			<Option target="Isaac"/>
 		</Unit>
 		<Unit filename="C:/Users/marks/Desktop/Isaac/IsaacGame/Floor.h">
-			<Option target="HelloSFML"/>
+			<Option target="Isaac"/>
 		</Unit>
 		<Unit filename="C:/Users/marks/Desktop/Isaac/IsaacGame/Game.cpp">
-			<Option target="HelloSFML"/>
+			<Option target="Isaac"/>
 		</Unit>
 		<Unit filename="C:/Users/marks/Desktop/Isaac/IsaacGame/Game.h">
-			<Option target="HelloSFML"/>
+			<Option target="Isaac"/>
 		</Unit>
 		<Unit filename="C:/Users/marks/Desktop/Isaac/IsaacGame/Isaac.cpp">
-			<Option target="HelloSFML"/>
+			<Option target="Isaac"/>
 		</Unit>
 		<Unit filename="C:/Users/marks/Desktop/Isaac/IsaacGame/Isaac.h">
-			<Option target="HelloSFML"/>
+			<Option target="Isaac"/>
 		</Unit>
 		<Unit filename="C:/Users/marks/Desktop/Isaac/IsaacGame/Menu.cpp">
-			<Option target="HelloSFML"/>
+			<Option target="Isaac"/>
 		</Unit>
 		<Unit filename="C:/Users/marks/Desktop/Isaac/IsaacGame/Menu.h">
-			<Option target="HelloSFML"/>
+			<Option target="Isaac"/>
 		</Unit>
 		<Unit filename="C:/Users/marks/Desktop/Isaac/IsaacGame/Room.cpp">
-			<Option target="HelloSFML"/>
+			<Option target="Isaac"/>
 		</Unit>
 		<Unit filename="C:/Users/marks/Desktop/Isaac/IsaacGame/Room.h">
-			<Option target="HelloSFML"/>
+			<Option target="Isaac"/>
 		</Unit>
 		<Unit filename="C:/Users/marks/Desktop/Isaac/IsaacGame/main.cpp">
-			<Option target="HelloSFML"/>
+			<Option target="Isaac"/>
 		</Unit>
 		<Unit filename="C:/Users/marks/Desktop/Isaac/IsaacGame/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

@@ -1,4 +1,6 @@
 #include "Isaac.h"
+#include <iostream>
+
 
 //Constructor
 Isaac::Isaac() {
@@ -11,7 +13,7 @@ Isaac::Isaac() {
 //Bullet
 void Isaac::InitBullet() {
 
-    this->IsaacTexture.loadFromFile("../Texture/Tear.png");
+    this->BulletTexture.loadFromFile("../Texture/Tear.png");
 
     this->Tear = 20;
     this->ShootSpeed = 10;
@@ -68,9 +70,10 @@ void Isaac::Move(float dirX, float dirY) {
 
 
 void Isaac::Shoot(float dirX, float dirY) {
-
-    this->bullets.push_back( new Bullet(this->BulletTexture,this->xPosIsaac,this->yPosIsaac,dirX,dirY,this->ShootSpeed));
-
+    Vector2f pos=this->IsaacFigure.getPosition();
+    this->xPosIsaac = pos.x;
+    this->yPosIsaac = pos.y;
+    this->bullets.push_back( new Bullet(&this->BulletTexture,this->xPosIsaac+20,this->yPosIsaac+10,dirX,dirY,this->ShootSpeed));
 }
 
 

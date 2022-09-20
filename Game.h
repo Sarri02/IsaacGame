@@ -11,7 +11,8 @@ using namespace sf;
 
 class Game {
 private:
-
+    //Variables
+    int KeyTime;
     //Game Background
     RectangleShape background;
     Texture texture;
@@ -23,8 +24,8 @@ private:
     //Isaac
     Isaac Isaac;
 
-    //Texture
-    Texture * texture1;
+    //Texture Stats
+    Texture texture1;
 
     //Function private
     //Init
