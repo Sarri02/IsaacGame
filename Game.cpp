@@ -84,19 +84,19 @@ void Game::updateInput() {
 
     //Shoot up
     if (Keyboard::isKeyPressed(Keyboard::Up)) {
-        this->Isaac.Shoot(0);
+        this->Isaac.Shoot(0,-1);
     }
     //Shoot right
     if (Keyboard::isKeyPressed(Keyboard::Right)) {
-        this->Isaac.Shoot(1);
+        this->Isaac.Shoot(1,0);
     }
     //Shoot down
     if (Keyboard::isKeyPressed(Keyboard::Down)) {
-        this->Isaac.Shoot(2);
+        this->Isaac.Shoot(0,1);
     }
     //Shoot left
     if (Keyboard::isKeyPressed(Keyboard::Left)) {
-        this->Isaac.Shoot(3);
+        this->Isaac.Shoot(-1,0);
     }
 
 }

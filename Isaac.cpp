@@ -8,6 +8,18 @@ Isaac::Isaac() {
 
 }
 
+//Bullet
+void Isaac::InitBullet() {
+
+    this->IsaacTexture.loadFromFile("../Texture/Tear.png");
+
+    this->Tear = 20;
+    this->ShootSpeed = 4;
+    this->ShootRange = 200;
+    this->ShootDamage = 1;
+
+}
+
 //Init Isaac
 void Isaac::InitIsaac() {
 
@@ -19,7 +31,7 @@ void Isaac::InitIsaac() {
     this->isaac.Life = 4;
     this->isaac.CanFly = false;
     this->isaac.Speed = 4;
-
+    this->InitBullet();
 }
 
 //Init Isaac Figure
@@ -54,9 +66,12 @@ void Isaac::Move(float dirX, float dirY) {
         this->IsaacFigure.move(this->isaac.Speed * dirX, this->isaac.Speed * dirY);
 }
 
-void Isaac::Shoot(unsigned short Direction) {
-    //TODO shoot
+void Isaac::Shoot(float dirX, float dirY) {
+
+    this->bullets.push_back( new Bullet(this->BulletTexture,this->xPosIsaac,this->yPosIsaac,dirX,dirY,this->ShootSpeed));
+
 }
+
 
 
 

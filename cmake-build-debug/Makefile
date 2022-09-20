@@ -128,6 +128,30 @@ HelloSFML/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/build
 .PHONY : HelloSFML/fast
 
+Bullet.obj: Bullet.cpp.obj
+.PHONY : Bullet.obj
+
+# target to build an object file
+Bullet.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/Bullet.cpp.obj
+.PHONY : Bullet.cpp.obj
+
+Bullet.i: Bullet.cpp.i
+.PHONY : Bullet.i
+
+# target to preprocess a source file
+Bullet.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/Bullet.cpp.i
+.PHONY : Bullet.cpp.i
+
+Bullet.s: Bullet.cpp.s
+.PHONY : Bullet.s
+
+# target to generate assembly for a file
+Bullet.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelloSFML.dir\build.make CMakeFiles/HelloSFML.dir/Bullet.cpp.s
+.PHONY : Bullet.cpp.s
+
 Character.obj: Character.cpp.obj
 .PHONY : Character.obj
 
@@ -329,6 +353,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... HelloSFML
+	@echo ... Bullet.obj
+	@echo ... Bullet.i
+	@echo ... Bullet.s
 	@echo ... Character.obj
 	@echo ... Character.i
 	@echo ... Character.s

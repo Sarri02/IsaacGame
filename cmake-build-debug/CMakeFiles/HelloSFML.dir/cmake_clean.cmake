@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/HelloSFML.dir/Bullet.cpp.obj"
   "CMakeFiles/HelloSFML.dir/Character.cpp.obj"
   "CMakeFiles/HelloSFML.dir/Door.cpp.obj"
   "CMakeFiles/HelloSFML.dir/Floor.cpp.obj"
