@@ -13,6 +13,7 @@ private:
     //Variables
     Vector2<float> direction;
     float speed;
+    float range;
 
     bool MoveIsPossible(float dirX, float dirY);
 
@@ -20,7 +21,7 @@ public:
 
     //Constructor and Destructor
     Bullet();
-    Bullet(Texture *texture, float xPos, float yPos, float xDir, float yDir, float speed);
+    Bullet(Texture *texture, float xPos, float yPos, float xDir, float yDir, float speed, float range);
     virtual ~Bullet();
 
     //Public Functions

@@ -1,23 +1,26 @@
 #include "Bullet.h"
 #include <iostream>
 
-Bullet::Bullet(Texture *texture, float xPos, float yPos, float xDir, float yDir, float speed) {
+Bullet::Bullet(Texture *texture, float xPos, float yPos, float xDir, float yDir, float speed, float range) {
     //Texture
     this->bulletFigure.setTexture(*texture);
+    this->bulletFigure.scale(1.5,1.5);
     //Position
     this->bulletFigure.setPosition(xPos, yPos);
     this->direction.x = xDir;
     this->direction.y = yDir;
 
     this->speed = speed;
+    this->range = range;
 }
 
 
 
 //Update
 bool Bullet::updateBullet() {
-    if(MoveIsPossible(this->direction.x, this->direction.y)){
+    if(MoveIsPossible(this->direction.x, this->direction.y) && this->range>0){
         this->bulletFigure.move(this->speed * this->direction);
+        this->range -= this->speed;
         return true;
     }
     else

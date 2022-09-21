@@ -25,7 +25,7 @@ private:
     Isaac Isaac;
 
     //Texture Stats
-    Texture texture1;
+    Texture textureStats;
 
     //Function private
     //Init
