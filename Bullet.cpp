@@ -39,7 +39,7 @@ bool Bullet::MoveIsPossible(float dirX, float dirY) {
     float y = pos.y;
     x+=(dirX*this->speed);
     y+=(dirY*this->speed);
-    return (x<880 && x>40 && y<615 && y>215);
+    return (x<905 && x>40 && y<650 && y>215);
 }
 
 Bullet::~Bullet() {

@@ -12,8 +12,9 @@ void Game::InitVariable() {
 //Window
 void Game::InitWindow() {
 
-    this->window = new RenderWindow(VideoMode(WIDHT, HEIGHT), "Main Menu", Style::Default);
-    this->window->setFramerateLimit(60);
+    this->window = static_cast<unique_ptr<RenderWindow>>(new RenderWindow(VideoMode(WIDHT, HEIGHT), "Main Menu",
+                                                                          Style::Default));
+    this->window->setFramerateLimit(65);
 
 }
 
@@ -42,11 +43,7 @@ Game::Game() {
     this->InitTexture();
 
 }
-Game::~Game() {
-
-    delete this->window;
-
-}
+Game::~Game() = default;
 
 //Accessors
 const bool Game::running() const {
@@ -147,7 +144,7 @@ void Game::renderStats() {
         bomb.setSize(Vector2f(42, 42));
         bomb.setPosition(xPosBomb,yPosBomb);
         bomb.setTexture(&this->textureStats);
-        window->draw(bomb);
+        this->window->draw(bomb);
         xPosBomb += 46;
     }
     //Keys
@@ -158,7 +155,7 @@ void Game::renderStats() {
         key.setSize(Vector2f(42, 42));
         key.setPosition(xPosKeys,yPosKeys);
         key.setTexture(&this->textureStats);
-        window->draw(key);
+        this->window->draw(key);
         xPosKeys += 46;
     }
 }

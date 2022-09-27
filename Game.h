@@ -37,7 +37,7 @@ private:
 public:
 
     //Window
-    RenderWindow* window;
+    unique_ptr<RenderWindow> window;
 
     //Constructor and Destructor
     Game();
