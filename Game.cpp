@@ -22,7 +22,7 @@ void Game::InitWindow() {
 void Game::InitBackground() {
 
     this->background.setSize(Vector2f(WIDHT,HEIGHT));
-    this->texture.loadFromFile("../Texture/BackgroundGame.png");
+    this->texture.loadFromFile("./Texture/BackgroundGame.png");
     this->background.setTexture(&(this->texture));
 }
 
@@ -121,7 +121,7 @@ void Game::renderBackground() {
 //Stats
 void Game::renderStats() {
     //Life
-    this->textureStats.loadFromFile("../Texture/Life.png");
+    this->textureStats.loadFromFile("./Texture/Life.png");
     int xPosLife = 64, yPosLife = 60;
     for (int k = 0; k < this->Isaac.isaac.Life; k++) {
         RectangleShape life;
@@ -137,7 +137,7 @@ void Game::renderStats() {
             xPosLife += 52;
     }
     //Bomb
-    this->textureStats.loadFromFile("../Texture/Bomb.png");
+    this->textureStats.loadFromFile("./Texture/Bomb.png");
     int xPosBomb = 420, yPosBomb = 43;
     for (int k = 0; k < this->Isaac.Bombs; k++) {
         RectangleShape bomb;
@@ -148,7 +148,7 @@ void Game::renderStats() {
         xPosBomb += 46;
     }
     //Keys
-    this->textureStats.loadFromFile("../Texture/Key.png");
+    this->textureStats.loadFromFile("./Texture/Key.png");
     int xPosKeys = 420, yPosKeys = 123;
     for (int k = 0; k < this->Isaac.Keys; k++) {
         RectangleShape key;
@@ -211,8 +211,6 @@ void Game::render() {
 
     this->window->display();
 }
-
-
 
 
 

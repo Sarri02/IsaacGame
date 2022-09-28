@@ -8,7 +8,7 @@
 void Menu::InitBackground() {
 
     this->MainBackGround.setSize(Vector2f(WIDHT,HEIGHT));
-    this->MainTexture.loadFromFile("../Texture/BackGroundMenu.png");
+    this->MainTexture.loadFromFile("./Texture/BackGroundMenu.png");
     this->MainBackGround.setTexture(&(this->MainTexture));
 }
 
@@ -26,7 +26,7 @@ void Menu::DrawMenu(RenderWindow & window) {
 void Menu::InitTextMenu() {
 
     //Font
-    this->MainFont.loadFromFile("../Fonts/DePixelHalbfett.ttf");
+    this->MainFont.loadFromFile("./Fonts/DePixelHalbfett.ttf");
 
     //Start
     this->MenuSelections[0].setFont(this->MainFont);

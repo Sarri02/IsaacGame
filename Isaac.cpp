@@ -13,7 +13,7 @@ Isaac::Isaac() {
 //Bullet
 void Isaac::InitBullet() {
 
-    this->BulletTexture.loadFromFile("../Texture/Tear.png");
+    this->BulletTexture.loadFromFile("./Texture/Tear.png");
 
     this->Tear = 40;
     this->ShootSpeed = 4.5;
@@ -42,7 +42,7 @@ void Isaac::InitIsaacFigure() {
     this->xPosIsaac=445;
     this->yPosIsaac=380;
 
-    this->IsaacTexture.loadFromFile("../Texture/Isaac.png");
+    this->IsaacTexture.loadFromFile("./Texture/Isaac.png");
     this->IsaacFigure.setTexture(this->IsaacTexture);
     this->IsaacFigure.setPosition(this->xPosIsaac,this->yPosIsaac);
 

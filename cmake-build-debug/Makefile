@@ -64,6 +64,39 @@ CMAKE_BINARY_DIR = C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	"C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	"C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	"C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	"C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -83,6 +116,18 @@ rebuild_cache:
 # Special rule for the target rebuild_cache
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	"C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	"C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -116,6 +161,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named IsaacExe
+
+# Build rule for target.
+IsaacExe: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 IsaacExe
+.PHONY : IsaacExe
+
+# fast build rule for target.
+IsaacExe/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\IsaacExe.dir\build.make CMakeFiles/IsaacExe.dir/build
+.PHONY : IsaacExe/fast
+
+#=============================================================================
 # Target rules for targets named Isaac
 
 # Build rule for target.
@@ -128,12 +186,65 @@ Isaac/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/build
 .PHONY : Isaac/fast
 
+#=============================================================================
+# Target rules for targets named core
+
+# Build rule for target.
+core: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 core
+.PHONY : core
+
+# fast build rule for target.
+core/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/build
+.PHONY : core/fast
+
+#=============================================================================
+# Target rules for targets named runAllTests
+
+# Build rule for target.
+runAllTests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 runAllTests
+.PHONY : runAllTests
+
+# fast build rule for target.
+runAllTests/fast:
+	$(MAKE) $(MAKESILENT) -f Test\CMakeFiles\runAllTests.dir\build.make Test/CMakeFiles/runAllTests.dir/build
+.PHONY : runAllTests/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f Test\Lib\googletest\CMakeFiles\gtest.dir\build.make Test/Lib/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f Test\Lib\googletest\CMakeFiles\gtest_main.dir\build.make Test/Lib/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
 Bullet.obj: Bullet.cpp.obj
 .PHONY : Bullet.obj
 
 # target to build an object file
 Bullet.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Bullet.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Bullet.cpp.obj
 .PHONY : Bullet.cpp.obj
 
 Bullet.i: Bullet.cpp.i
@@ -142,6 +253,7 @@ Bullet.i: Bullet.cpp.i
 # target to preprocess a source file
 Bullet.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Bullet.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Bullet.cpp.i
 .PHONY : Bullet.cpp.i
 
 Bullet.s: Bullet.cpp.s
@@ -150,6 +262,7 @@ Bullet.s: Bullet.cpp.s
 # target to generate assembly for a file
 Bullet.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Bullet.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Bullet.cpp.s
 .PHONY : Bullet.cpp.s
 
 Character.obj: Character.cpp.obj
@@ -158,6 +271,7 @@ Character.obj: Character.cpp.obj
 # target to build an object file
 Character.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Character.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Character.cpp.obj
 .PHONY : Character.cpp.obj
 
 Character.i: Character.cpp.i
@@ -166,6 +280,7 @@ Character.i: Character.cpp.i
 # target to preprocess a source file
 Character.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Character.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Character.cpp.i
 .PHONY : Character.cpp.i
 
 Character.s: Character.cpp.s
@@ -174,6 +289,7 @@ Character.s: Character.cpp.s
 # target to generate assembly for a file
 Character.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Character.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Character.cpp.s
 .PHONY : Character.cpp.s
 
 Door.obj: Door.cpp.obj
@@ -182,6 +298,7 @@ Door.obj: Door.cpp.obj
 # target to build an object file
 Door.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Door.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Door.cpp.obj
 .PHONY : Door.cpp.obj
 
 Door.i: Door.cpp.i
@@ -190,6 +307,7 @@ Door.i: Door.cpp.i
 # target to preprocess a source file
 Door.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Door.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Door.cpp.i
 .PHONY : Door.cpp.i
 
 Door.s: Door.cpp.s
@@ -198,6 +316,7 @@ Door.s: Door.cpp.s
 # target to generate assembly for a file
 Door.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Door.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Door.cpp.s
 .PHONY : Door.cpp.s
 
 Floor.obj: Floor.cpp.obj
@@ -206,6 +325,7 @@ Floor.obj: Floor.cpp.obj
 # target to build an object file
 Floor.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Floor.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Floor.cpp.obj
 .PHONY : Floor.cpp.obj
 
 Floor.i: Floor.cpp.i
@@ -214,6 +334,7 @@ Floor.i: Floor.cpp.i
 # target to preprocess a source file
 Floor.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Floor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Floor.cpp.i
 .PHONY : Floor.cpp.i
 
 Floor.s: Floor.cpp.s
@@ -222,6 +343,7 @@ Floor.s: Floor.cpp.s
 # target to generate assembly for a file
 Floor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Floor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Floor.cpp.s
 .PHONY : Floor.cpp.s
 
 Game.obj: Game.cpp.obj
@@ -230,6 +352,7 @@ Game.obj: Game.cpp.obj
 # target to build an object file
 Game.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Game.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Game.cpp.obj
 .PHONY : Game.cpp.obj
 
 Game.i: Game.cpp.i
@@ -238,6 +361,7 @@ Game.i: Game.cpp.i
 # target to preprocess a source file
 Game.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Game.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Game.cpp.i
 .PHONY : Game.cpp.i
 
 Game.s: Game.cpp.s
@@ -246,6 +370,7 @@ Game.s: Game.cpp.s
 # target to generate assembly for a file
 Game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Game.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Game.cpp.s
 .PHONY : Game.cpp.s
 
 Isaac.obj: Isaac.cpp.obj
@@ -254,6 +379,7 @@ Isaac.obj: Isaac.cpp.obj
 # target to build an object file
 Isaac.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Isaac.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Isaac.cpp.obj
 .PHONY : Isaac.cpp.obj
 
 Isaac.i: Isaac.cpp.i
@@ -262,6 +388,7 @@ Isaac.i: Isaac.cpp.i
 # target to preprocess a source file
 Isaac.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Isaac.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Isaac.cpp.i
 .PHONY : Isaac.cpp.i
 
 Isaac.s: Isaac.cpp.s
@@ -270,6 +397,7 @@ Isaac.s: Isaac.cpp.s
 # target to generate assembly for a file
 Isaac.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Isaac.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Isaac.cpp.s
 .PHONY : Isaac.cpp.s
 
 Menu.obj: Menu.cpp.obj
@@ -278,6 +406,7 @@ Menu.obj: Menu.cpp.obj
 # target to build an object file
 Menu.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Menu.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Menu.cpp.obj
 .PHONY : Menu.cpp.obj
 
 Menu.i: Menu.cpp.i
@@ -286,6 +415,7 @@ Menu.i: Menu.cpp.i
 # target to preprocess a source file
 Menu.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Menu.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Menu.cpp.i
 .PHONY : Menu.cpp.i
 
 Menu.s: Menu.cpp.s
@@ -294,6 +424,7 @@ Menu.s: Menu.cpp.s
 # target to generate assembly for a file
 Menu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Menu.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Menu.cpp.s
 .PHONY : Menu.cpp.s
 
 Room.obj: Room.cpp.obj
@@ -302,6 +433,7 @@ Room.obj: Room.cpp.obj
 # target to build an object file
 Room.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Room.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Room.cpp.obj
 .PHONY : Room.cpp.obj
 
 Room.i: Room.cpp.i
@@ -310,6 +442,7 @@ Room.i: Room.cpp.i
 # target to preprocess a source file
 Room.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Room.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Room.cpp.i
 .PHONY : Room.cpp.i
 
 Room.s: Room.cpp.s
@@ -318,6 +451,7 @@ Room.s: Room.cpp.s
 # target to generate assembly for a file
 Room.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Room.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Room.cpp.s
 .PHONY : Room.cpp.s
 
 main.obj: main.cpp.obj
@@ -325,6 +459,7 @@ main.obj: main.cpp.obj
 
 # target to build an object file
 main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\IsaacExe.dir\build.make CMakeFiles/IsaacExe.dir/main.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
@@ -333,6 +468,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\IsaacExe.dir\build.make CMakeFiles/IsaacExe.dir/main.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/main.cpp.i
 .PHONY : main.cpp.i
 
@@ -341,6 +477,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\IsaacExe.dir\build.make CMakeFiles/IsaacExe.dir/main.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/main.cpp.s
 .PHONY : main.cpp.s
 
@@ -351,8 +488,17 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... edit_cache
+	@echo ... install
+	@echo ... install/local
+	@echo ... install/strip
+	@echo ... list_install_components
 	@echo ... rebuild_cache
 	@echo ... Isaac
+	@echo ... IsaacExe
+	@echo ... core
+	@echo ... gtest
+	@echo ... gtest_main
+	@echo ... runAllTests
 	@echo ... Bullet.obj
 	@echo ... Bullet.i
 	@echo ... Bullet.s
