@@ -62,7 +62,6 @@ CMAKE_BINARY_DIR = C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/IsaacExe.dir/all
 all: CMakeFiles/Isaac.dir/all
 all: CMakeFiles/core.dir/all
 all: Test/all
@@ -73,7 +72,6 @@ preinstall: Test/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/IsaacExe.dir/clean
 clean: CMakeFiles/Isaac.dir/clean
 clean: CMakeFiles/core.dir/clean
 clean: Test/clean
@@ -114,32 +112,6 @@ Test/Lib/googletest/clean: Test/Lib/googletest/CMakeFiles/gtest_main.dir/clean
 .PHONY : Test/Lib/googletest/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/IsaacExe.dir
-
-# All Build rule for target.
-CMakeFiles/IsaacExe.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\IsaacExe.dir\build.make CMakeFiles/IsaacExe.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\IsaacExe.dir\build.make CMakeFiles/IsaacExe.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles --progress-num=11,12 "Built target IsaacExe"
-.PHONY : CMakeFiles/IsaacExe.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/IsaacExe.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/IsaacExe.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles 0
-.PHONY : CMakeFiles/IsaacExe.dir/rule
-
-# Convenience name for target.
-IsaacExe: CMakeFiles/IsaacExe.dir/rule
-.PHONY : IsaacExe
-
-# clean rule for target.
-CMakeFiles/IsaacExe.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\IsaacExe.dir\build.make CMakeFiles/IsaacExe.dir/clean
-.PHONY : CMakeFiles/IsaacExe.dir/clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/Isaac.dir
 
 # All Build rule for target.
@@ -172,7 +144,7 @@ CMakeFiles/Isaac.dir/clean:
 CMakeFiles/core.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles --progress-num=13,14,15,16,17,18,19,20,21 "Built target core"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles --progress-num=11,12,13,14,15,16,17,18,19 "Built target core"
 .PHONY : CMakeFiles/core.dir/all
 
 # Build rule for subdir invocation for target.
@@ -200,7 +172,7 @@ Test/CMakeFiles/runAllTests.dir/all: Test/Lib/googletest/CMakeFiles/gtest.dir/al
 Test/CMakeFiles/runAllTests.dir/all: Test/Lib/googletest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) $(MAKESILENT) -f Test\CMakeFiles\runAllTests.dir\build.make Test/CMakeFiles/runAllTests.dir/depend
 	$(MAKE) $(MAKESILENT) -f Test\CMakeFiles\runAllTests.dir\build.make Test/CMakeFiles/runAllTests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles --progress-num=26,27 "Built target runAllTests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles --progress-num=24,25 "Built target runAllTests"
 .PHONY : Test/CMakeFiles/runAllTests.dir/all
 
 # Build rule for subdir invocation for target.
@@ -226,7 +198,7 @@ Test/CMakeFiles/runAllTests.dir/clean:
 Test/Lib/googletest/CMakeFiles/gtest.dir/all:
 	$(MAKE) $(MAKESILENT) -f Test\Lib\googletest\CMakeFiles\gtest.dir\build.make Test/Lib/googletest/CMakeFiles/gtest.dir/depend
 	$(MAKE) $(MAKESILENT) -f Test\Lib\googletest\CMakeFiles\gtest.dir\build.make Test/Lib/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles --progress-num=22,23 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles --progress-num=20,21 "Built target gtest"
 .PHONY : Test/Lib/googletest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -252,7 +224,7 @@ Test/Lib/googletest/CMakeFiles/gtest.dir/clean:
 Test/Lib/googletest/CMakeFiles/gtest_main.dir/all: Test/Lib/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f Test\Lib\googletest\CMakeFiles\gtest_main.dir\build.make Test/Lib/googletest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f Test\Lib\googletest\CMakeFiles\gtest_main.dir\build.make Test/Lib/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles --progress-num=24,25 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles --progress-num=22,23 "Built target gtest_main"
 .PHONY : Test/Lib/googletest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.

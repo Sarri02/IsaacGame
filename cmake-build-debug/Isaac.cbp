@@ -17,50 +17,6 @@
 					<DistClean command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="IsaacExe">
-				<Option output="C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/IsaacExe.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="C:/SFML/include"/>
-					<Add directory="C:/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++"/>
-					<Add directory="C:/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32"/>
-					<Add directory="C:/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward"/>
-					<Add directory="C:/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include"/>
-					<Add directory="C:/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed"/>
-					<Add directory="C:/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 IsaacExe"/>
-					<CompileFile command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="IsaacExe/fast">
-				<Option output="C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/IsaacExe.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="C:/SFML/include"/>
-					<Add directory="C:/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++"/>
-					<Add directory="C:/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32"/>
-					<Add directory="C:/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward"/>
-					<Add directory="C:/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include"/>
-					<Add directory="C:/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed"/>
-					<Add directory="C:/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 IsaacExe/fast"/>
-					<CompileFile command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 			<Target title="Isaac">
 				<Option output="C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Isaac.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug"/>
@@ -161,21 +117,21 @@
 					<DistClean command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="install">
-				<Option working_dir="C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
-					<CompileFile command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 			<Target title="install/local">
 				<Option working_dir="C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
 					<Build command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
 					<CompileFile command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -417,7 +373,6 @@
 			<Option target="core"/>
 		</Unit>
 		<Unit filename="C:/Users/marks/Desktop/Isaac/IsaacGame/main.cpp">
-			<Option target="IsaacExe"/>
 			<Option target="Isaac"/>
 		</Unit>
 		<Unit filename="C:/Users/marks/Desktop/Isaac/IsaacGame/test/lib/googletest/src/gtest-all.cc">

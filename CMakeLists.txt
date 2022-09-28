@@ -11,7 +11,6 @@ add_executable(${EXECUTABLE_NAME} main.cpp Game.cpp Menu.cpp Floor.cpp Room.cpp 
 add_subdirectory(test)
 
 set(SOURCE_FILES Game.cpp Menu.cpp Floor.cpp Room.cpp Door.cpp Character.cpp Isaac.cpp Bullet.cpp)
-add_executable(IsaacExe main.cpp)
 add_library(core ${SOURCE_FILES})
 target_link_libraries(Isaac core)
 

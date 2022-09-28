@@ -73,18 +73,6 @@ list_install_components:
 list_install_components/fast: list_install_components
 .PHONY : list_install_components/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	"C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	"C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -P cmake_install.cmake
-.PHONY : install/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -96,6 +84,18 @@ install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
 	"C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	"C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	"C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -P cmake_install.cmake
+.PHONY : install/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -159,19 +159,6 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
-
-#=============================================================================
-# Target rules for targets named IsaacExe
-
-# Build rule for target.
-IsaacExe: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 IsaacExe
-.PHONY : IsaacExe
-
-# fast build rule for target.
-IsaacExe/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\IsaacExe.dir\build.make CMakeFiles/IsaacExe.dir/build
-.PHONY : IsaacExe/fast
 
 #=============================================================================
 # Target rules for targets named Isaac
@@ -459,7 +446,6 @@ main.obj: main.cpp.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\IsaacExe.dir\build.make CMakeFiles/IsaacExe.dir/main.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
@@ -468,7 +454,6 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\IsaacExe.dir\build.make CMakeFiles/IsaacExe.dir/main.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/main.cpp.i
 .PHONY : main.cpp.i
 
@@ -477,7 +462,6 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\IsaacExe.dir\build.make CMakeFiles/IsaacExe.dir/main.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/main.cpp.s
 .PHONY : main.cpp.s
 
@@ -494,7 +478,6 @@ help:
 	@echo ... list_install_components
 	@echo ... rebuild_cache
 	@echo ... Isaac
-	@echo ... IsaacExe
 	@echo ... core
 	@echo ... gtest
 	@echo ... gtest_main
