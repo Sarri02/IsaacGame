@@ -2,13 +2,16 @@
 #include <iostream>
 
 
+
 //Constructor
-Isaac::Isaac() {
+Isaac::Isaac(Vector2f position) {
 
     this->InitIsaac();
-    this->InitIsaacFigure();
+    this->InitIsaacFigure(position);
 
 }
+
+Isaac::~Isaac() = default;
 
 //Bullet
 void Isaac::InitBullet() {
@@ -37,10 +40,10 @@ void Isaac::InitIsaac() {
 }
 
 //Init Isaac Figure
-void Isaac::InitIsaacFigure() {
+void Isaac::InitIsaacFigure(Vector2f position) {
 
-    this->xPosIsaac=445;
-    this->yPosIsaac=380;
+    this->xPosIsaac=position.x;
+    this->yPosIsaac=position.y;
 
     this->IsaacTexture.loadFromFile("./Texture/Isaac.png");
     this->IsaacFigure.setTexture(this->IsaacTexture);
@@ -75,6 +78,7 @@ void Isaac::Shoot(float dirX, float dirY) {
     this->yPosIsaac = pos.y;
     this->bullets.push_back( new Bullet(&this->BulletTexture,this->xPosIsaac+20,this->yPosIsaac+10,dirX,dirY,this->ShootSpeed, this->ShootRange));
 }
+
 
 
 

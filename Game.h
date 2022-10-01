@@ -22,7 +22,7 @@ private:
     int ActualFloor;
 
     //Isaac
-    Isaac Isaac;
+    unique_ptr<Isaac> isaac;
 
     //Texture Stats
     Texture textureStats;

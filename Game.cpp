@@ -3,9 +3,9 @@
 
 void Game::InitVariable() {
 
-    this->window = nullptr;
+    this->isaac = static_cast<unique_ptr<Isaac>>(new Isaac(Vector2f(444,360)));
     this->ActualFloor = 0;
-    this->KeyTime=this->Isaac.Tear;
+    this->KeyTime=this->isaac->Tear;
 
 }
 
@@ -65,44 +65,44 @@ void Game::updatePollEvents() {
 void Game::updateInput() {
     //Move up
     if (Keyboard::isKeyPressed(Keyboard::W)) {
-        this->Isaac.Move(0,-1);
+        this->isaac->Move(0,-1);
     }
     //Move right
     if (Keyboard::isKeyPressed(Keyboard::D)) {
-        this->Isaac.Move(1,0);
+        this->isaac->Move(1,0);
     }
     //Move down
     if (Keyboard::isKeyPressed(Keyboard::S)) {
-        this->Isaac.Move(0,1);
+        this->isaac->Move(0,1);
     }
     //Move left
     if (Keyboard::isKeyPressed(Keyboard::A)) {
-        this->Isaac.Move(-1,0);
+        this->isaac->Move(-1,0);
     }
 
 
     //KeyTime
-    if (this->KeyTime < this->Isaac.Tear)
+    if (this->KeyTime < this->isaac->Tear)
         this->KeyTime++;
 
     //Shoot up
-    if (Keyboard::isKeyPressed(Keyboard::Up) && KeyTime >=this->Isaac.Tear) {
-        this->Isaac.Shoot(0,-1);
+    if (Keyboard::isKeyPressed(Keyboard::Up) && KeyTime >=this->isaac->Tear) {
+        this->isaac->Shoot(0,-1);
         KeyTime = 0;
     }
     //Shoot right
-    if (Keyboard::isKeyPressed(Keyboard::Right) && KeyTime >=this->Isaac.Tear) {
-        this->Isaac.Shoot(1,0);
+    if (Keyboard::isKeyPressed(Keyboard::Right) && KeyTime >=this->isaac->Tear) {
+        this->isaac->Shoot(1,0);
         KeyTime = 0;
     }
     //Shoot down
-    if (Keyboard::isKeyPressed(Keyboard::Down) && KeyTime >=this->Isaac.Tear) {
-        this->Isaac.Shoot(0,1);
+    if (Keyboard::isKeyPressed(Keyboard::Down) && KeyTime >=this->isaac->Tear) {
+        this->isaac->Shoot(0,1);
         KeyTime = 0;
     }
     //Shoot left
-    if (Keyboard::isKeyPressed(Keyboard::Left) && KeyTime >=this->Isaac.Tear) {
-        this->Isaac.Shoot(-1,0);
+    if (Keyboard::isKeyPressed(Keyboard::Left) && KeyTime >=this->isaac->Tear) {
+        this->isaac->Shoot(-1,0);
         KeyTime = 0;
     }
 
@@ -123,7 +123,7 @@ void Game::renderStats() {
     //Life
     this->textureStats.loadFromFile("./Texture/Life.png");
     int xPosLife = 64, yPosLife = 60;
-    for (int k = 0; k < this->Isaac.isaac.Life; k++) {
+    for (int k = 0; k < this->isaac->isaac.Life; k++) {
         RectangleShape life;
         life.setSize(Vector2f(42, 42));
         life.setPosition(xPosLife,yPosLife);
@@ -139,7 +139,7 @@ void Game::renderStats() {
     //Bomb
     this->textureStats.loadFromFile("./Texture/Bomb.png");
     int xPosBomb = 420, yPosBomb = 43;
-    for (int k = 0; k < this->Isaac.Bombs; k++) {
+    for (int k = 0; k < this->isaac->Bombs; k++) {
         RectangleShape bomb;
         bomb.setSize(Vector2f(42, 42));
         bomb.setPosition(xPosBomb,yPosBomb);
@@ -150,7 +150,7 @@ void Game::renderStats() {
     //Keys
     this->textureStats.loadFromFile("./Texture/Key.png");
     int xPosKeys = 420, yPosKeys = 123;
-    for (int k = 0; k < this->Isaac.Keys; k++) {
+    for (int k = 0; k < this->isaac->Keys; k++) {
         RectangleShape key;
         key.setSize(Vector2f(42, 42));
         key.setPosition(xPosKeys,yPosKeys);
@@ -162,7 +162,7 @@ void Game::renderStats() {
 
 //Isaac
 void Game::renderIsaac() {
-    this->Isaac.DrawIsaac(*this->window);
+    this->isaac->DrawIsaac(*this->window);
 }
 void Game::updateIsaac() {
     this->updateInput();
@@ -170,19 +170,19 @@ void Game::updateIsaac() {
 
 //Bullet
 void Game::updateBullet() {
-    for (int i = this->Isaac.bullets.size() - 1; i >= 0; i--)
+    for (int i = this->isaac->bullets.size() - 1; i >= 0; i--)
     {
-        if(!(this->Isaac.bullets[i]->updateBullet()))
+        if(!(this->isaac->bullets[i]->updateBullet()))
         {
-            delete this->Isaac.bullets[i];
-            this->Isaac.bullets.erase(this->Isaac.bullets.begin() + i);
+            delete this->isaac->bullets[i];
+            this->isaac->bullets.erase(this->isaac->bullets.begin() + i);
         }
     }
 }
 
 void Game::renderBullet() {
 
-    for (auto *bullet : this->Isaac.bullets) {
+    for (auto *bullet : this->isaac->bullets) {
         bullet->drawBullet(*(this->window));
     }
 }

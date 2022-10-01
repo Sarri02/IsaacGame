@@ -2,9 +2,7 @@
 #include "Character.h"
 #include "Bullet.h"
 
-
 #define MaxLife 10;
-
 
 using namespace sf;
 using namespace std;
@@ -12,10 +10,6 @@ using namespace std;
 
 class Isaac {
 private:
-    //Isaac figure
-    Sprite IsaacFigure;
-    Texture IsaacTexture;
-    Texture BulletTexture;
 
     //Variables
     float xPosIsaac;
@@ -24,13 +18,17 @@ private:
 
     //Private Functions
     void InitIsaac();
-    void InitIsaacFigure();
+    void InitIsaacFigure(Vector2f position);
     void InitBullet();
     bool MoveIsPossible(float dirX, float dirY);
 
 public:
     //Isaac
     Character isaac;
+    //Isaac figure
+    Sprite IsaacFigure;
+    Texture IsaacTexture;
+    Texture BulletTexture;
     //Bullet
     float Tear;
     float ShootSpeed;
@@ -44,7 +42,8 @@ public:
     int Bombs;
 
     //Constructor
-    Isaac();
+    Isaac(Vector2f position);
+    virtual ~Isaac();
 
     //Public Functions
     void Shoot(float dirX, float dirY);

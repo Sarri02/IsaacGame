@@ -322,6 +322,24 @@ FLAC_LIB:FILEPATH=C:/SFML/lib/libFLAC.a
 //Path to a library.
 FreeType_LIB:FILEPATH=C:/SFML/lib/libfreetype.a
 
+//Path to a file.
+GTEST_INCLUDE_DIR:PATH=GTEST_INCLUDE_DIR-NOTFOUND
+
+//Path to a library.
+GTEST_LIBRARY:FILEPATH=GTEST_LIBRARY-NOTFOUND
+
+//Path to a library.
+GTEST_LIBRARY_DEBUG:FILEPATH=GTEST_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+GTEST_MAIN_LIBRARY:FILEPATH=GTEST_MAIN_LIBRARY-NOTFOUND
+
+//Path to a library.
+GTEST_MAIN_LIBRARY_DEBUG:FILEPATH=GTEST_MAIN_LIBRARY_DEBUG-NOTFOUND
+
+//The directory containing a CMake configuration file for GTest.
+GTest_DIR:PATH=GTest_DIR-NOTFOUND
+
 //Enable installation of googletest. (Projects embedding googletest
 // may want to turn this OFF.)
 INSTALL_GTEST:BOOL=ON
@@ -357,13 +375,13 @@ VorbisFile_LIB:FILEPATH=C:/SFML/lib/libvorbisfile.a
 Vorbis_LIB:FILEPATH=C:/SFML/lib/libvorbis.a
 
 //Value Computed by CMake
-gmock_BINARY_DIR:STATIC=C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Test/Lib/googlemock
+gmock_BINARY_DIR:STATIC=C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Test/Lib/googletest/googlemock
 
 //Dependencies for the target
 gmock_LIB_DEPENDS:STATIC=general;gtest;
 
 //Value Computed by CMake
-gmock_SOURCE_DIR:STATIC=C:/Users/marks/Desktop/Isaac/IsaacGame/Test/Lib/googlemock
+gmock_SOURCE_DIR:STATIC=C:/Users/marks/Desktop/Isaac/IsaacGame/test/lib/googletest/googlemock
 
 //Build all of Google Mock's own tests.
 gmock_build_tests:BOOL=OFF
@@ -375,7 +393,7 @@ gmock_main_LIB_DEPENDS:STATIC=general;gmock;
 googletest-distribution_BINARY_DIR:STATIC=C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Test/Lib
 
 //Value Computed by CMake
-googletest-distribution_SOURCE_DIR:STATIC=C:/Users/marks/Desktop/Isaac/IsaacGame/Test/Lib
+googletest-distribution_SOURCE_DIR:STATIC=C:/Users/marks/Desktop/Isaac/IsaacGame/test/lib
 
 //Value Computed by CMake
 gtest_BINARY_DIR:STATIC=C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Test/Lib/googletest
@@ -401,6 +419,18 @@ gtest_hide_internal_symbols:BOOL=OFF
 
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;gtest;
+
+//Value Computed by CMake
+test_BINARY_DIR:STATIC=C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Test
+
+//Value Computed by CMake
+test_SOURCE_DIR:STATIC=C:/Users/marks/Desktop/Isaac/IsaacGame/test
+
+//Value Computed by CMake
+tests_BINARY_DIR:STATIC=C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Test
+
+//Value Computed by CMake
+tests_SOURCE_DIR:STATIC=C:/Users/marks/Desktop/Isaac/IsaacGame/test
 
 
 ########################
@@ -605,6 +635,16 @@ CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 FLAC_LIB-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: FreeType_LIB
 FreeType_LIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GTEST_INCLUDE_DIR
+GTEST_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GTEST_LIBRARY
+GTEST_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GTEST_LIBRARY_DEBUG
+GTEST_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GTEST_MAIN_LIBRARY
+GTEST_MAIN_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GTEST_MAIN_LIBRARY_DEBUG
+GTEST_MAIN_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Ogg_LIB
 Ogg_LIB-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OpenAL_LIB
@@ -622,7 +662,7 @@ _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Program Files (x86)/Isaac
 //Path to a program.
 _Python_EXECUTABLE:INTERNAL=_Python_EXECUTABLE-NOTFOUND
 cmake_package_name:INTERNAL=GTest
-generated_dir:INTERNAL=C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Test/Lib/googletest/generated
+generated_dir:INTERNAL=C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Test/Lib/googletest/googletest/generated
 //ADVANCED property for variable: gmock_build_tests
 gmock_build_tests-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: gtest_build_samples

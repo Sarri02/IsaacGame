@@ -216,17 +216,11 @@ Isaac.exe: CMakeFiles/Isaac.dir/Character.cpp.obj
 Isaac.exe: CMakeFiles/Isaac.dir/Isaac.cpp.obj
 Isaac.exe: CMakeFiles/Isaac.dir/Bullet.cpp.obj
 Isaac.exe: CMakeFiles/Isaac.dir/build.make
-Isaac.exe: C:/SFML/lib/libsfml-system-s-d.a
-Isaac.exe: C:/SFML/lib/libsfml-window-s-d.a
-Isaac.exe: C:/SFML/lib/libsfml-graphics-s-d.a
-Isaac.exe: C:/SFML/lib/libsfml-audio-s-d.a
 Isaac.exe: libcore.a
 Isaac.exe: C:/SFML/lib/libsfml-system-s-d.a
 Isaac.exe: C:/SFML/lib/libsfml-window-s-d.a
 Isaac.exe: C:/SFML/lib/libsfml-graphics-s-d.a
 Isaac.exe: C:/SFML/lib/libsfml-audio-s-d.a
-Isaac.exe: C:/SFML/lib/libsfml-window-s-d.a
-Isaac.exe: C:/SFML/lib/libsfml-system-s-d.a
 Isaac.exe: C:/SFML/lib/libsfml-window-s-d.a
 Isaac.exe: C:/SFML/lib/libfreetype.a
 Isaac.exe: C:/SFML/lib/libsfml-system-s-d.a

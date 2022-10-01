@@ -1,5 +1,4 @@
 #include "Bullet.h"
-#include <iostream>
 
 Bullet::Bullet(Texture *texture, float xPos, float yPos, float xDir, float yDir, float speed, float range) {
     //Texture
