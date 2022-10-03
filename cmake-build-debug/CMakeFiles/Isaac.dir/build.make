@@ -135,24 +135,10 @@ CMakeFiles/Isaac.dir/Room.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Isaac.dir/Room.cpp.s"
 	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\marks\Desktop\Isaac\IsaacGame\Room.cpp -o CMakeFiles\Isaac.dir\Room.cpp.s
 
-CMakeFiles/Isaac.dir/Door.cpp.obj: CMakeFiles/Isaac.dir/flags.make
-CMakeFiles/Isaac.dir/Door.cpp.obj: CMakeFiles/Isaac.dir/includes_CXX.rsp
-CMakeFiles/Isaac.dir/Door.cpp.obj: ../Door.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Isaac.dir/Door.cpp.obj"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Isaac.dir\Door.cpp.obj -c C:\Users\marks\Desktop\Isaac\IsaacGame\Door.cpp
-
-CMakeFiles/Isaac.dir/Door.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Isaac.dir/Door.cpp.i"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\marks\Desktop\Isaac\IsaacGame\Door.cpp > CMakeFiles\Isaac.dir\Door.cpp.i
-
-CMakeFiles/Isaac.dir/Door.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Isaac.dir/Door.cpp.s"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\marks\Desktop\Isaac\IsaacGame\Door.cpp -o CMakeFiles\Isaac.dir\Door.cpp.s
-
 CMakeFiles/Isaac.dir/Character.cpp.obj: CMakeFiles/Isaac.dir/flags.make
 CMakeFiles/Isaac.dir/Character.cpp.obj: CMakeFiles/Isaac.dir/includes_CXX.rsp
 CMakeFiles/Isaac.dir/Character.cpp.obj: ../Character.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Isaac.dir/Character.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Isaac.dir/Character.cpp.obj"
 	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Isaac.dir\Character.cpp.obj -c C:\Users\marks\Desktop\Isaac\IsaacGame\Character.cpp
 
 CMakeFiles/Isaac.dir/Character.cpp.i: cmake_force
@@ -166,7 +152,7 @@ CMakeFiles/Isaac.dir/Character.cpp.s: cmake_force
 CMakeFiles/Isaac.dir/Isaac.cpp.obj: CMakeFiles/Isaac.dir/flags.make
 CMakeFiles/Isaac.dir/Isaac.cpp.obj: CMakeFiles/Isaac.dir/includes_CXX.rsp
 CMakeFiles/Isaac.dir/Isaac.cpp.obj: ../Isaac.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Isaac.dir/Isaac.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Isaac.dir/Isaac.cpp.obj"
 	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Isaac.dir\Isaac.cpp.obj -c C:\Users\marks\Desktop\Isaac\IsaacGame\Isaac.cpp
 
 CMakeFiles/Isaac.dir/Isaac.cpp.i: cmake_force
@@ -180,7 +166,7 @@ CMakeFiles/Isaac.dir/Isaac.cpp.s: cmake_force
 CMakeFiles/Isaac.dir/Bullet.cpp.obj: CMakeFiles/Isaac.dir/flags.make
 CMakeFiles/Isaac.dir/Bullet.cpp.obj: CMakeFiles/Isaac.dir/includes_CXX.rsp
 CMakeFiles/Isaac.dir/Bullet.cpp.obj: ../Bullet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Isaac.dir/Bullet.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Isaac.dir/Bullet.cpp.obj"
 	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Isaac.dir\Bullet.cpp.obj -c C:\Users\marks\Desktop\Isaac\IsaacGame\Bullet.cpp
 
 CMakeFiles/Isaac.dir/Bullet.cpp.i: cmake_force
@@ -198,7 +184,6 @@ Isaac_OBJECTS = \
 "CMakeFiles/Isaac.dir/Menu.cpp.obj" \
 "CMakeFiles/Isaac.dir/Floor.cpp.obj" \
 "CMakeFiles/Isaac.dir/Room.cpp.obj" \
-"CMakeFiles/Isaac.dir/Door.cpp.obj" \
 "CMakeFiles/Isaac.dir/Character.cpp.obj" \
 "CMakeFiles/Isaac.dir/Isaac.cpp.obj" \
 "CMakeFiles/Isaac.dir/Bullet.cpp.obj"
@@ -211,7 +196,6 @@ Isaac.exe: CMakeFiles/Isaac.dir/Game.cpp.obj
 Isaac.exe: CMakeFiles/Isaac.dir/Menu.cpp.obj
 Isaac.exe: CMakeFiles/Isaac.dir/Floor.cpp.obj
 Isaac.exe: CMakeFiles/Isaac.dir/Room.cpp.obj
-Isaac.exe: CMakeFiles/Isaac.dir/Door.cpp.obj
 Isaac.exe: CMakeFiles/Isaac.dir/Character.cpp.obj
 Isaac.exe: CMakeFiles/Isaac.dir/Isaac.cpp.obj
 Isaac.exe: CMakeFiles/Isaac.dir/Bullet.cpp.obj
@@ -233,7 +217,7 @@ Isaac.exe: C:/SFML/lib/libFLAC.a
 Isaac.exe: CMakeFiles/Isaac.dir/linklibs.rsp
 Isaac.exe: CMakeFiles/Isaac.dir/objects1.rsp
 Isaac.exe: CMakeFiles/Isaac.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable Isaac.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\marks\Desktop\Isaac\IsaacGame\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable Isaac.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Isaac.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

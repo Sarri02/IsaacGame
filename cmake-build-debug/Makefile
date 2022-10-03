@@ -279,33 +279,6 @@ Character.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Character.cpp.s
 .PHONY : Character.cpp.s
 
-Door.obj: Door.cpp.obj
-.PHONY : Door.obj
-
-# target to build an object file
-Door.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Door.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Door.cpp.obj
-.PHONY : Door.cpp.obj
-
-Door.i: Door.cpp.i
-.PHONY : Door.i
-
-# target to preprocess a source file
-Door.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Door.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Door.cpp.i
-.PHONY : Door.cpp.i
-
-Door.s: Door.cpp.s
-.PHONY : Door.s
-
-# target to generate assembly for a file
-Door.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Door.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Door.cpp.s
-.PHONY : Door.cpp.s
-
 Floor.obj: Floor.cpp.obj
 .PHONY : Floor.obj
 
@@ -488,9 +461,6 @@ help:
 	@echo ... Character.obj
 	@echo ... Character.i
 	@echo ... Character.s
-	@echo ... Door.obj
-	@echo ... Door.i
-	@echo ... Door.s
 	@echo ... Floor.obj
 	@echo ... Floor.i
 	@echo ... Floor.s

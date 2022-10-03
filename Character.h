@@ -17,7 +17,5 @@ public:
 
     //Public Functions
     //TODO void TakeDamage();
-    //TODO void Collision();
-    //TODO void Spawn();
 
 };

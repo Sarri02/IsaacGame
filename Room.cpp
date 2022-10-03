@@ -12,7 +12,12 @@ Room::Room() {
 
 }
 
+Room::~Room() = default;
+
+
 void Room::GenerateRoom() {
-    //Door
-    //TODO genera le stanze
+
+    //TODO genera stanza
+
 }
+

@@ -1,4 +1,6 @@
 #include "Floor.h"
+#include <iostream>
+
 //Select a random room
 void Floor::RandomValidRoomCoordinate(int &x, int &y) {
 
@@ -20,8 +22,8 @@ void Floor::DrawMap(RenderWindow &window) {
                 ROOM.setSize(Vector2f(25,12));
                 ROOM.setPosition(xPos,yPos);
                 ROOM.setFillColor(Color::White);
-                //Starting room
-                if(this->room[i][j].TypeRoom == 2){
+                //Actual room
+                if(i==ActualRoom.x && j==ActualRoom.y){
                     ROOM.setFillColor(Color::Green);
                 }
                 //Treasure room
@@ -33,6 +35,7 @@ void Floor::DrawMap(RenderWindow &window) {
                     ROOM.setFillColor(Color::Red);
                 }
                 window.draw(ROOM);
+                delete &ROOM;
             }
             xPos += 35;
         }
@@ -47,6 +50,10 @@ Floor::Floor() {
     srand(time(NULL));
 
     this->GenerateFloor();
+
+    //this->SetDoor();
+
+
 
 }
 
@@ -83,11 +90,16 @@ void Floor::GenerateFloor() {
     //Starting room
     this->RandomValidRoomCoordinate(x,y);
     this->room[x][y].TypeRoom = 2;
+    this->ActualRoom.x=x;
+    this->ActualRoom.y=y;
     //Treasure room
     this->RandomValidRoomCoordinate(x,y);
     this->room[x][y].TypeRoom = 3;
     //Boss room
     this->RandomValidRoomCoordinate(x,y);
     this->room[x][y].TypeRoom = 4;
+
 }
+
+Floor::~Floor() = default;
 

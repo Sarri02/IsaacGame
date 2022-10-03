@@ -662,7 +662,7 @@ _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Program Files (x86)/Isaac
 //Path to a program.
 _Python_EXECUTABLE:INTERNAL=_Python_EXECUTABLE-NOTFOUND
 cmake_package_name:INTERNAL=GTest
-generated_dir:INTERNAL=C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Test/Lib/googletest/googletest/generated
+generated_dir:INTERNAL=C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Test/Lib/googletest/generated
 //ADVANCED property for variable: gmock_build_tests
 gmock_build_tests-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: gtest_build_samples

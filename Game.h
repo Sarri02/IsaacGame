@@ -34,6 +34,19 @@ private:
     void InitBackground();
     void InitTexture();
 
+    //Update
+    void updatePollEvents();
+    void updateInput();
+    void updateIsaac();
+    void updateBullet();
+
+    //Render
+    void renderBackground();
+    void renderMap();
+    void renderStats();
+    void renderIsaac();
+    void renderBullet();
+
 public:
 
     //Window
@@ -47,17 +60,8 @@ public:
     const bool running() const;
 
     //Function public
-    //Update
-    void updatePollEvents();
-    void updateInput();
-    void updateIsaac();
-    void updateBullet();
+
     void update();
-    //Render
-    void renderBackground();
-    void renderMap();
-    void renderStats();
-    void renderIsaac();
-    void renderBullet();
+
     void render();
 };

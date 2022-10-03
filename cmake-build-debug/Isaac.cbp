@@ -326,14 +326,6 @@
 			<Option target="Isaac"/>
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="C:/Users/marks/Desktop/Isaac/IsaacGame/Door.cpp">
-			<Option target="Isaac"/>
-			<Option target="core"/>
-		</Unit>
-		<Unit filename="C:/Users/marks/Desktop/Isaac/IsaacGame/Door.h">
-			<Option target="Isaac"/>
-			<Option target="core"/>
-		</Unit>
 		<Unit filename="C:/Users/marks/Desktop/Isaac/IsaacGame/Floor.cpp">
 			<Option target="Isaac"/>
 			<Option target="core"/>

@@ -33,7 +33,7 @@ public:
     float Tear;
     float ShootSpeed;
     float ShootRange;
-    float ShootDamage;
+    //TODO float ShootDamage;
     vector <Bullet*> bullets;
 
 

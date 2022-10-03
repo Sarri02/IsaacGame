@@ -1,7 +1,8 @@
 #include <SFML/Graphics.hpp>
-#include "Door.h"
 
 using namespace sf;
+using namespace std;
+
 
 class Room {
 private:
@@ -10,18 +11,20 @@ private:
     void InitRoom();
 
 
-
 public:
 
     //Variables
     //TODO bool Visited;
     int TypeRoom;
-    //TODO rendere privato
+
 
     //Constructor
     Room();
+    virtual ~Room();
+
 
     //Public function
     //TODO deve posizionare i vari oggetti nella room
     void GenerateRoom();
+
 };
