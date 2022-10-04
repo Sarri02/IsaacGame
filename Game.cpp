@@ -3,7 +3,7 @@
 
 void Game::InitVariable() {
 
-    this->isaac = static_cast<unique_ptr<Isaac>>(new Isaac(Vector2f(444,360)));
+    this->isaac = static_cast<unique_ptr<Isaac>>(new Isaac());
     this->ActualFloor = 0;
     this->KeyTime=this->isaac->Tear;
 
@@ -12,8 +12,7 @@ void Game::InitVariable() {
 //Window
 void Game::InitWindow() {
 
-    this->window = static_cast<unique_ptr<RenderWindow>>(new RenderWindow(VideoMode(WIDHT, HEIGHT), "Main Menu",
-                                                                          Style::Default));
+    this->window = make_unique<RenderWindow>(VideoMode(WIDHT, HEIGHT), "Main Menu", Style::Default);
     this->window->setFramerateLimit(65);
 
 }
@@ -30,6 +29,14 @@ void Game::InitTexture() {
 
 }
 
+void Game::InitIsaac() {
+
+    this->IsaacTexture.loadFromFile("./Texture/Isaac.png");
+    this->isaac->setTexture(this->IsaacTexture);
+    this->isaac->setPosition(444,360);
+
+}
+
 
 //Constructor and Destructor
 Game::Game() {
@@ -41,6 +48,8 @@ Game::Game() {
     this->InitBackground();
 
     this->InitTexture();
+
+    this->InitIsaac();
 
 }
 Game::~Game() = default;
@@ -123,7 +132,7 @@ void Game::renderStats() {
     //Life
     this->textureStats.loadFromFile("./Texture/Life.png");
     int xPosLife = 64, yPosLife = 60;
-    for (int k = 0; k < this->isaac->isaac.Life; k++) {
+    for (int k = 0; k < this->isaac->isaac.getLife(); k++) {
         RectangleShape life;
         life.setSize(Vector2f(42, 42));
         life.setPosition(xPosLife,yPosLife);
@@ -135,6 +144,7 @@ void Game::renderStats() {
         }
         else
             xPosLife += 52;
+        delete &life;
     }
     //Bomb
     this->textureStats.loadFromFile("./Texture/Bomb.png");
@@ -146,6 +156,7 @@ void Game::renderStats() {
         bomb.setTexture(&this->textureStats);
         this->window->draw(bomb);
         xPosBomb += 46;
+        delete &bomb;
     }
     //Keys
     this->textureStats.loadFromFile("./Texture/Key.png");
@@ -157,12 +168,13 @@ void Game::renderStats() {
         key.setTexture(&this->textureStats);
         this->window->draw(key);
         xPosKeys += 46;
+        delete &key;
     }
 }
 
 //Isaac
 void Game::renderIsaac() {
-    this->isaac->DrawIsaac(*this->window);
+    this->window->draw(*this->isaac);
 }
 void Game::updateIsaac() {
     this->updateInput();
@@ -213,11 +225,3 @@ void Game::render() {
 
     this->window->display();
 }
-
-
-
-
-
-
-
-

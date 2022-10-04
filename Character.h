@@ -6,16 +6,23 @@ using namespace sf;
 class Character {
 
 private:
-    //Private Functions
 
-public:
     //Variables
     float Life;
     float Speed;
-    bool CanFly;
-    //TODO da mettere nei nemici    int MoveSet;
+
+    //Private Functions
+
+public:
+
+    //TODO bool CanFly;
+    //TODO int MoveSet;
 
     //Public Functions
+    void setLife(float Life);
+    void setSpeed(float Speed);
+    float getLife();
+    float getSpeed();
     //TODO void TakeDamage();
 
 };

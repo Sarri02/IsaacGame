@@ -8,7 +8,7 @@ using namespace sf;
 using namespace std;
 
 
-class Isaac {
+class Isaac: public Sprite{
 private:
 
     //Variables
@@ -18,21 +18,20 @@ private:
 
     //Private Functions
     void InitIsaac();
-    void InitIsaacFigure(Vector2f position);
     void InitBullet();
     bool MoveIsPossible(float dirX, float dirY);
 
 public:
     //Isaac
     Character isaac;
-    //Isaac figure
-    Sprite IsaacFigure;
-    Texture IsaacTexture;
+
     Texture BulletTexture;
+
     //Bullet
     float Tear;
     float ShootSpeed;
     float ShootRange;
+
     //TODO float ShootDamage;
     vector <Bullet*> bullets;
 
@@ -42,13 +41,13 @@ public:
     int Bombs;
 
     //Constructor
-    Isaac(Vector2f position);
+    Isaac();
     virtual ~Isaac();
 
     //Public Functions
     void Shoot(float dirX, float dirY);
-    //TODO void GetItem();
     void Move(float dirX, float dirY);
-    void DrawIsaac(RenderWindow &window);
+    //TODO void GetItem();
+
 
 };

@@ -23,6 +23,7 @@ private:
 
     //Isaac
     unique_ptr<Isaac> isaac;
+    Texture IsaacTexture;
 
     //Texture Stats
     Texture textureStats;
@@ -33,6 +34,7 @@ private:
     void InitVariable();
     void InitBackground();
     void InitTexture();
+    void InitIsaac();
 
     //Update
     void updatePollEvents();
