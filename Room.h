@@ -1,7 +1,6 @@
 #include <SFML/Graphics.hpp>
 
 using namespace sf;
-using namespace std;
 
 
 class Room {
@@ -9,7 +8,6 @@ private:
 
     //Private function
     void InitRoom();
-
 
 public:
 
@@ -24,7 +22,6 @@ public:
 
 
     //Public function
-    //TODO deve posizionare i vari oggetti nella room
-    void GenerateRoom();
+    //TODO void GenerateRoom();
 
 };

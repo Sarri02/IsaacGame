@@ -8,16 +8,7 @@ void Room::InitRoom() {
 Room::Room() {
 
     this->InitRoom();
-    this->GenerateRoom();
 
 }
 
 Room::~Room() = default;
-
-
-void Room::GenerateRoom() {
-
-    //TODO genera stanza
-
-}
-

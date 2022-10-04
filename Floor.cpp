@@ -51,14 +51,9 @@ Floor::Floor() {
 
     this->GenerateFloor();
 
-    //this->SetDoor();
-
-
-
 }
 
 void Floor::GenerateFloor() {
-
 
     //First room
     int x=FloorDimension/2 ,y=FloorDimension/2;
@@ -66,7 +61,6 @@ void Floor::GenerateFloor() {
 
     //Other room generetor
     for (int i = 0; i < MaxRooms-1; i++) {
-
 
         this->RandomValidRoomCoordinate(x,y);
 
@@ -92,6 +86,7 @@ void Floor::GenerateFloor() {
     this->room[x][y].TypeRoom = 2;
     this->ActualRoom.x=x;
     this->ActualRoom.y=y;
+
     //Treasure room
     this->RandomValidRoomCoordinate(x,y);
     this->room[x][y].TypeRoom = 3;

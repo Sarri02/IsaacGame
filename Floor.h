@@ -14,7 +14,9 @@ private:
     //Private Functions
     void GenerateFloor();
     void RandomValidRoomCoordinate(int &x, int &y);
+
 public:
+
     //Map
     Room room[FloorDimension][FloorDimension];
     Vector2i ActualRoom;
@@ -23,8 +25,5 @@ public:
     Floor();
     virtual ~Floor();
 
-
-
     void DrawMap(RenderWindow &window);
-
 };
