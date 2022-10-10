@@ -46,10 +46,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.20.2/CMakeRCCompiler.cmake"
   "CMakeFiles/3.20.2/CMakeSystem.cmake"
   "../test/CMakeLists.txt"
-  "../test/lib/googletest/CMakeLists.txt"
-  "../test/lib/googletest/cmake/gtest.pc.in"
-  "../test/lib/googletest/cmake/gtest_main.pc.in"
-  "../test/lib/googletest/cmake/internal_utils.cmake"
+  "../test/Lib/googletest/CMakeLists.txt"
+  "../test/Lib/googletest/cmake/gtest.pc.in"
+  "../test/Lib/googletest/cmake/gtest_main.pc.in"
+  "../test/Lib/googletest/cmake/internal_utils.cmake"
   )
 
 # The corresponding makefile is:

@@ -4,9 +4,11 @@
 
 
 //Constructor
-Isaac::Isaac() {
+Isaac::Isaac(Vector2f position) {
 
     this->InitIsaac();
+    this->InitIsaacFigure(position);
+
 
 }
 
@@ -37,9 +39,28 @@ void Isaac::InitIsaac() {
     this->InitBullet();
 }
 
+//Init Isaac Figure
+void Isaac::InitIsaacFigure(Vector2f position) {
+
+    this->xPosIsaac=position.x;
+    this->yPosIsaac=position.y;
+
+    this->IsaacTexture.loadFromFile("./Texture/Isaac.png");
+    this->IsaacFigure.setTexture(this->IsaacTexture);
+    this->IsaacFigure.setPosition(this->xPosIsaac,this->yPosIsaac);
+
+}
+
+void Isaac::DrawIsaac(RenderWindow &window) {
+
+    window.draw(this->IsaacFigure);
+
+}
+
+
 //Movement
 bool Isaac::MoveIsPossible(float dirX, float dirY) {
-    Vector2f pos = getPosition();
+    Vector2f pos=this->IsaacFigure.getPosition();
     float x = pos.x;
     float y = pos.y;
     x+=(dirX*this->isaac.getSpeed());
@@ -48,12 +69,12 @@ bool Isaac::MoveIsPossible(float dirX, float dirY) {
 }
 void Isaac::Move(float dirX, float dirY) {
     if(this->MoveIsPossible(dirX,dirY))
-        move(this->isaac.getSpeed() * dirX, this->isaac.getSpeed() * dirY);
+        this->IsaacFigure.move(this->isaac.getSpeed() * dirX, this->isaac.getSpeed() * dirY);
 }
 
 //Shoot
 void Isaac::Shoot(float dirX, float dirY) {
-    Vector2f pos = getPosition();
+    Vector2f pos=this->IsaacFigure.getPosition();
     this->xPosIsaac = pos.x;
     this->yPosIsaac = pos.y;
     this->bullets.push_back( new Bullet(&this->BulletTexture,this->xPosIsaac+20,this->yPosIsaac+10,dirX,dirY,this->ShootSpeed, this->ShootRange));

@@ -3,7 +3,7 @@
 
 using namespace sf;
 
-class Character {
+class Character{
 
 private:
 

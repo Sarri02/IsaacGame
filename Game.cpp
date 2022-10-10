@@ -3,7 +3,7 @@
 
 void Game::InitVariable() {
 
-    this->isaac = static_cast<unique_ptr<Isaac>>(new Isaac());
+    this->isaac = static_cast<unique_ptr<Isaac>>(new Isaac(Vector2f(444,360)));
     this->ActualFloor = 0;
     this->KeyTime=this->isaac->Tear;
 
@@ -32,8 +32,8 @@ void Game::InitTexture() {
 void Game::InitIsaac() {
 
     this->IsaacTexture.loadFromFile("./Texture/Isaac.png");
-    this->isaac->setTexture(this->IsaacTexture);
-    this->isaac->setPosition(444,360);
+    this->isaac->IsaacFigure.setTexture(this->IsaacTexture);
+    this->isaac->IsaacFigure.setPosition(444,360);
 
 }
 
@@ -174,7 +174,7 @@ void Game::renderStats() {
 
 //Isaac
 void Game::renderIsaac() {
-    this->window->draw(*this->isaac);
+    this->isaac->DrawIsaac(*this->window);
 }
 void Game::updateIsaac() {
     this->updateInput();

@@ -399,7 +399,7 @@ googletest-distribution_SOURCE_DIR:STATIC=C:/Users/marks/Desktop/Isaac/IsaacGame
 gtest_BINARY_DIR:STATIC=C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Test/Lib/googletest
 
 //Value Computed by CMake
-gtest_SOURCE_DIR:STATIC=C:/Users/marks/Desktop/Isaac/IsaacGame/test/lib/googletest
+gtest_SOURCE_DIR:STATIC=C:/Users/marks/Desktop/Isaac/IsaacGame/test/Lib/googletest
 
 //Build gtest's sample programs.
 gtest_build_samples:BOOL=OFF
