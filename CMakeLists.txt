@@ -4,7 +4,7 @@ project(Isaac)
 set(CMAKE_CXX_STANDARD 20)
 
 set(EXECUTABLE_NAME Isaac)
-add_executable(${EXECUTABLE_NAME} main.cpp Game.cpp Menu.cpp Floor.cpp Room.cpp Character.cpp Isaac.cpp Bullet.cpp)
+add_executable(${EXECUTABLE_NAME} main.cpp Game.cpp Menu.cpp Floor.cpp Room.cpp Character.cpp Isaac.cpp Bullet.cpp Door.cpp)
 
 #UNIT TEST
 add_subdirectory(test)

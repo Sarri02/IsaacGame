@@ -1,6 +1,9 @@
 #include <SFML/Graphics.hpp>
+#include "Door.h"
 
 using namespace sf;
+using namespace std;
+
 
 
 class Room {
@@ -15,6 +18,9 @@ public:
     //TODO bool Visited;
     int TypeRoom;
 
+    //Doors
+    unique_ptr<Door> DoorUp, DoorRight, DoorDown, DoorLeft;
+
 
     //Constructor
     Room();
@@ -22,6 +28,5 @@ public:
 
 
     //Public function
-    //TODO void GenerateRoom();
 
 };

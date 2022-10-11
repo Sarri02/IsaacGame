@@ -27,7 +27,7 @@ public:
     Character isaac;
 
     //Isaac figure
-    Sprite IsaacFigure;
+    RectangleShape IsaacFigure;
     Texture IsaacTexture;
     Texture BulletTexture;
 

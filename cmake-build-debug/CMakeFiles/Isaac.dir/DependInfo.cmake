@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/marks/Desktop/Isaac/IsaacGame/Bullet.cpp" "C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/CMakeFiles/Isaac.dir/Bullet.cpp.obj"
   "C:/Users/marks/Desktop/Isaac/IsaacGame/Character.cpp" "C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/CMakeFiles/Isaac.dir/Character.cpp.obj"
+  "C:/Users/marks/Desktop/Isaac/IsaacGame/Door.cpp" "C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/CMakeFiles/Isaac.dir/Door.cpp.obj"
   "C:/Users/marks/Desktop/Isaac/IsaacGame/Floor.cpp" "C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/CMakeFiles/Isaac.dir/Floor.cpp.obj"
   "C:/Users/marks/Desktop/Isaac/IsaacGame/Game.cpp" "C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/CMakeFiles/Isaac.dir/Game.cpp.obj"
   "C:/Users/marks/Desktop/Isaac/IsaacGame/Isaac.cpp" "C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/CMakeFiles/Isaac.dir/Isaac.cpp.obj"

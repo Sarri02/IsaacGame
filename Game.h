@@ -34,13 +34,13 @@ private:
     void InitVariable();
     void InitBackground();
     void InitTexture();
-    void InitIsaac();
 
     //Update
     void updatePollEvents();
     void updateInput();
     void updateIsaac();
     void updateBullet();
+    void updateRoom();
 
     //Render
     void renderBackground();
@@ -48,6 +48,7 @@ private:
     void renderStats();
     void renderIsaac();
     void renderBullet();
+    void renderActualRoom();
 
 public:
 

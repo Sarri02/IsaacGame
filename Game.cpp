@@ -3,7 +3,7 @@
 
 void Game::InitVariable() {
 
-    this->isaac = static_cast<unique_ptr<Isaac>>(new Isaac(Vector2f(444,360)));
+    this->isaac = make_unique<Isaac>(Vector2f(444,360));
     this->ActualFloor = 0;
     this->KeyTime=this->isaac->Tear;
 
@@ -29,13 +29,6 @@ void Game::InitTexture() {
 
 }
 
-void Game::InitIsaac() {
-
-    this->IsaacTexture.loadFromFile("./Texture/Isaac.png");
-    this->isaac->IsaacFigure.setTexture(this->IsaacTexture);
-    this->isaac->IsaacFigure.setPosition(444,360);
-
-}
 
 
 //Constructor and Destructor
@@ -48,8 +41,6 @@ Game::Game() {
     this->InitBackground();
 
     this->InitTexture();
-
-    this->InitIsaac();
 
 }
 Game::~Game() = default;
@@ -199,8 +190,39 @@ void Game::renderBullet() {
     }
 }
 
+//Actual Room
+void Game::updateRoom() {
+    if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorUp!= nullptr)
+        if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorUp->CheckCollision(this->isaac->IsaacFigure)){
+            this->isaac->IsaacFigure.move(Vector2f(0,380));
+            this->floor->ActualRoom.x--;
 
+        }
+    if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorRight!= nullptr)
+        if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorRight->CheckCollision(this->isaac->IsaacFigure)){
+            this->isaac->IsaacFigure.move(Vector2f(-820,0));
+            this->floor->ActualRoom.y++;
 
+        }
+    if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorDown!= nullptr)
+        if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorDown->CheckCollision(this->isaac->IsaacFigure)){
+            this->isaac->IsaacFigure.move(Vector2f(0,-380));
+            this->floor->ActualRoom.x++;
+
+        }
+    if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorLeft!= nullptr)
+        if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorLeft->CheckCollision(this->isaac->IsaacFigure)){
+            this->isaac->IsaacFigure.move(Vector2f(820,0));
+            this->floor->ActualRoom.y--;
+
+        }
+}
+
+void Game::renderActualRoom() {
+
+    this->floor->DrawActualRoom(*this->window);
+
+}
 
 //Update
 void Game::update() {
@@ -208,6 +230,7 @@ void Game::update() {
     this->updatePollEvents();
     this->updateIsaac();
     this->updateBullet();
+    this->updateRoom();
 }
 
 //Render
@@ -219,9 +242,12 @@ void Game::render() {
     this->renderBackground();
     this->renderMap();
     this->renderStats();
+    this->renderActualRoom();
     this->renderIsaac();
     this->renderBullet();
 
 
+
     this->window->display();
 }
+

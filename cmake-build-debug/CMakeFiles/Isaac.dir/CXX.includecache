@@ -680,11 +680,11 @@ C:/Users/marks/Desktop/Isaac/IsaacGame/Bullet.h
 SFML/Graphics.hpp
 -
 
-C:/Users/marks/Desktop/Isaac/IsaacGame/Character.cpp
-Character.h
 C:/Users/marks/Desktop/Isaac/IsaacGame/Character.h
+SFML/Graphics.hpp
+-
 
-C:/Users/marks/Desktop/Isaac/IsaacGame/Character.h
+C:/Users/marks/Desktop/Isaac/IsaacGame/Door.h
 SFML/Graphics.hpp
 -
 
@@ -710,12 +710,6 @@ C:/Users/marks/Desktop/Isaac/IsaacGame/Floor.h
 Isaac.h
 C:/Users/marks/Desktop/Isaac/IsaacGame/Isaac.h
 
-C:/Users/marks/Desktop/Isaac/IsaacGame/Isaac.cpp
-Isaac.h
-C:/Users/marks/Desktop/Isaac/IsaacGame/Isaac.h
-iostream
--
-
 C:/Users/marks/Desktop/Isaac/IsaacGame/Isaac.h
 SFML/Graphics.hpp
 -
@@ -731,8 +725,6 @@ SFML/Graphics.hpp
 C:/Users/marks/Desktop/Isaac/IsaacGame/Room.h
 SFML/Graphics.hpp
 -
-
-C:/Users/marks/Desktop/Isaac/IsaacGame/main.cpp
-Game.h
-C:/Users/marks/Desktop/Isaac/IsaacGame/Game.h
+Door.h
+C:/Users/marks/Desktop/Isaac/IsaacGame/Door.h
 
