@@ -23,7 +23,6 @@ private:
 
     //Isaac
     unique_ptr<Isaac> isaac;
-    Texture IsaacTexture;
 
     //Texture Stats
     Texture textureStats;

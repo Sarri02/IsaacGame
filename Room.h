@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include "Door.h"
+#include "Rock.h"
 
 using namespace sf;
 using namespace std;
@@ -8,6 +9,8 @@ using namespace std;
 
 class Room {
 private:
+
+    int RoomCode;
 
     //Private function
     void InitRoom();
@@ -21,6 +24,8 @@ public:
     //Doors
     unique_ptr<Door> DoorUp, DoorRight, DoorDown, DoorLeft;
 
+    //Obstacles
+    vector <Rock*> Roocks;
 
     //Constructor
     Room();

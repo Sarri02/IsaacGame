@@ -190,7 +190,7 @@ void Game::renderBullet() {
     }
 }
 
-//Actual Room
+//Doors Room
 void Game::updateRoom() {
 
     //Porta su
@@ -223,6 +223,8 @@ void Game::updateRoom() {
         }
 }
 
+
+//Actual Room
 void Game::renderActualRoom() {
 
     this->floor->DrawActualRoom(*this->window);

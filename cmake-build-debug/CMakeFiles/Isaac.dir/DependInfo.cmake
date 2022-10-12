@@ -15,6 +15,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/marks/Desktop/Isaac/IsaacGame/Game.cpp" "C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/CMakeFiles/Isaac.dir/Game.cpp.obj"
   "C:/Users/marks/Desktop/Isaac/IsaacGame/Isaac.cpp" "C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/CMakeFiles/Isaac.dir/Isaac.cpp.obj"
   "C:/Users/marks/Desktop/Isaac/IsaacGame/Menu.cpp" "C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/CMakeFiles/Isaac.dir/Menu.cpp.obj"
+  "C:/Users/marks/Desktop/Isaac/IsaacGame/Rock.cpp" "C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/CMakeFiles/Isaac.dir/Rock.cpp.obj"
   "C:/Users/marks/Desktop/Isaac/IsaacGame/Room.cpp" "C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/CMakeFiles/Isaac.dir/Room.cpp.obj"
   "C:/Users/marks/Desktop/Isaac/IsaacGame/main.cpp" "C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/CMakeFiles/Isaac.dir/main.cpp.obj"
   )

@@ -1,4 +1,3 @@
-#include <SFML/Graphics.hpp>
 #include "Room.h"
 
 
@@ -10,8 +9,6 @@ using namespace sf;
 class Floor {
 
 private:
-
-    Texture DoorTexture;
 
     //Private Functions
     void GenerateFloor();
@@ -30,5 +27,4 @@ public:
     void GenerateRoom(int x, int y);
     void DrawActualRoom(RenderWindow &window);
     void DrawMap(RenderWindow &window);
-    void ChangeRoom();
 };

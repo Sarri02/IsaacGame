@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Isaac.dir/Game.cpp.obj"
   "CMakeFiles/Isaac.dir/Isaac.cpp.obj"
   "CMakeFiles/Isaac.dir/Menu.cpp.obj"
+  "CMakeFiles/Isaac.dir/Rock.cpp.obj"
   "CMakeFiles/Isaac.dir/Room.cpp.obj"
   "CMakeFiles/Isaac.dir/main.cpp.obj"
   "Isaac.exe"

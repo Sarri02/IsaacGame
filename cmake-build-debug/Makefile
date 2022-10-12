@@ -240,6 +240,7 @@ Door.obj: Door.cpp.obj
 # target to build an object file
 Door.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Door.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Door.cpp.obj
 .PHONY : Door.cpp.obj
 
 Door.i: Door.cpp.i
@@ -248,6 +249,7 @@ Door.i: Door.cpp.i
 # target to preprocess a source file
 Door.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Door.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Door.cpp.i
 .PHONY : Door.cpp.i
 
 Door.s: Door.cpp.s
@@ -256,6 +258,7 @@ Door.s: Door.cpp.s
 # target to generate assembly for a file
 Door.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Door.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Door.cpp.s
 .PHONY : Door.cpp.s
 
 Floor.obj: Floor.cpp.obj
@@ -366,6 +369,33 @@ Menu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Menu.cpp.s
 .PHONY : Menu.cpp.s
 
+Rock.obj: Rock.cpp.obj
+.PHONY : Rock.obj
+
+# target to build an object file
+Rock.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Rock.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Rock.cpp.obj
+.PHONY : Rock.cpp.obj
+
+Rock.i: Rock.cpp.i
+.PHONY : Rock.i
+
+# target to preprocess a source file
+Rock.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Rock.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Rock.cpp.i
+.PHONY : Rock.cpp.i
+
+Rock.s: Rock.cpp.s
+.PHONY : Rock.s
+
+# target to generate assembly for a file
+Rock.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Rock.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Rock.cpp.s
+.PHONY : Rock.cpp.s
+
 Room.obj: Room.cpp.obj
 .PHONY : Room.obj
 
@@ -451,6 +481,9 @@ help:
 	@echo ... Menu.obj
 	@echo ... Menu.i
 	@echo ... Menu.s
+	@echo ... Rock.obj
+	@echo ... Rock.i
+	@echo ... Rock.s
 	@echo ... Room.obj
 	@echo ... Room.i
 	@echo ... Room.s
