@@ -24,6 +24,7 @@ public:
     Floor();
     virtual ~Floor();
 
+    void GenerateDoors(int x, int y);
     void GenerateRoom(int x, int y);
     void DrawActualRoom(RenderWindow &window);
     void DrawMap(RenderWindow &window);

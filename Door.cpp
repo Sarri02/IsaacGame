@@ -28,17 +28,6 @@ Door::Door(unsigned short direction) {
         default:
             break;
     }
-
-}
-
-bool Door::CheckCollision(RectangleShape isaac) {
-
-    bool collisionX = isaac.getPosition().x + isaac.getSize().x >= getPosition().x &&
-                      getPosition().x + getSize().x >= isaac.getPosition().x;
-    bool collisionY = isaac.getPosition().y + isaac.getSize().y >= getPosition().y &&
-                      getPosition().y + getSize().y >= isaac.getPosition().y;
-    return collisionX && collisionY;
-
 }
 
 

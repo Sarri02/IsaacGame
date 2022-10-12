@@ -60,16 +60,8 @@ void Isaac::DrawIsaac(RenderWindow &window) {
 
 
 //Movement
-bool Isaac::MoveIsPossible(float dirX, float dirY) {
-    Vector2f pos=this->IsaacFigure.getPosition();
-    float x = pos.x;
-    float y = pos.y;
-    x+=(dirX*this->isaac.getSpeed());
-    y+=(dirY*this->isaac.getSpeed());
-    return (x<880 && x>40 && y<615 && y>215);
-}
+
 void Isaac::Move(float dirX, float dirY) {
-    if(this->MoveIsPossible(dirX,dirY))
         this->IsaacFigure.move(this->isaac.getSpeed() * dirX, this->isaac.getSpeed() * dirY);
 }
 

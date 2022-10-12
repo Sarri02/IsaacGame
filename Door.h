@@ -12,7 +12,5 @@ public:
     Door(unsigned short int direction);
     virtual ~Door();
 
-    bool CheckCollision(RectangleShape isaac);
-
 };
 

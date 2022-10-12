@@ -53,6 +53,8 @@ Floor::Floor() {
     for (int i = 0; i < FloorDimension; ++i) {
         for (int j = 0; j < FloorDimension; ++j) {
             if(this->room[i][j].TypeRoom!=0)
+                this->GenerateDoors(i,j);
+            if(this->room[i][j].TypeRoom==1)
                 this->GenerateRoom(i,j);
         }
     }
@@ -103,7 +105,7 @@ void Floor::GenerateFloor() {
 
 }
 
-void Floor::GenerateRoom(int x, int y) {
+void Floor::GenerateDoors(int x, int y) {
     //Doors
     if (this->room[x-1][y].TypeRoom != 0 and x-1>=0)
         this->room[x][y].DoorUp = make_unique<Door>(0);
@@ -114,12 +116,75 @@ void Floor::GenerateRoom(int x, int y) {
     if (this->room[x][y-1].TypeRoom != 0 and y-1>=0)
         this->room[x][y].DoorLeft = make_unique<Door>(3);
 
+}
+void Floor::GenerateRoom(int x, int y) {
+    //Obstacles
+    float X,Y;
+    switch (0) {//12 tipi di stanze
+
+        case 0:
+            X=300;
+            Y=360;
+            for (int i = 0; i < 5; ++i) {
+                this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                X+=75;
+            }
+
+            break;
+
+        case 1:
+            this->room[x][y].Roocks.push_back( new Rock(Vector2f(10,10)));
+            break;
+
+        case 2:
+            this->room[x][y].Roocks.push_back( new Rock(Vector2f(10,10)));
+
+            break;
+        case 3:
+            this->room[x][y].Roocks.push_back( new Rock(Vector2f(10,10)));
+
+            break;
+        case 4:
+            this->room[x][y].Roocks.push_back( new Rock(Vector2f(10,10)));
+
+            break;
+        case 5:
+            this->room[x][y].Roocks.push_back( new Rock(Vector2f(10,10)));
+
+            break;
+        case 6:
+            this->room[x][y].Roocks.push_back( new Rock(Vector2f(10,10)));
+
+            break;
+        case 7:
+            this->room[x][y].Roocks.push_back( new Rock(Vector2f(10,10)));
+
+            break;
+        case 8:
+            this->room[x][y].Roocks.push_back( new Rock(Vector2f(10,10)));
+
+            break;
+        case 9:
+            this->room[x][y].Roocks.push_back( new Rock(Vector2f(10,10)));
+
+            break;
+        case 10:
+            this->room[x][y].Roocks.push_back( new Rock(Vector2f(10,10)));
+
+            break;
+        case 11:
+            this->room[x][y].Roocks.push_back( new Rock(Vector2f(10,10)));
+
+            break;
+        default:
+            break;
+    }
 
 }
 
 void Floor::DrawActualRoom(RenderWindow &window) {
 
-
+    //Doors
     if(this->room[ActualRoom.x][ActualRoom.y].DoorUp != nullptr)
         window.draw(*this->room[ActualRoom.x][ActualRoom.y].DoorUp);
     if(this->room[ActualRoom.x][ActualRoom.y].DoorRight != nullptr)
@@ -129,7 +194,13 @@ void Floor::DrawActualRoom(RenderWindow &window) {
     if(this->room[ActualRoom.x][ActualRoom.y].DoorLeft != nullptr)
         window.draw(*this->room[ActualRoom.x][ActualRoom.y].DoorLeft);
 
+    //Obstacles
+    for (auto *obstacles : this->room[ActualRoom.x][ActualRoom.y].Roocks) {
+        obstacles->DrawRock(window);
+    }
+
 }
+
 
 Floor::~Floor() = default;
 

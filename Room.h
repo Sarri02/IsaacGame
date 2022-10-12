@@ -10,8 +10,6 @@ using namespace std;
 class Room {
 private:
 
-    int RoomCode;
-
     //Private function
     void InitRoom();
 

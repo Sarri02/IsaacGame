@@ -65,19 +65,23 @@ void Game::updatePollEvents() {
 void Game::updateInput() {
     //Move up
     if (Keyboard::isKeyPressed(Keyboard::W)) {
-        this->isaac->Move(0,-1);
+        if(this->IsaacMoveIsPossible(0,-1))
+            this->isaac->Move(0,-1);
     }
     //Move right
     if (Keyboard::isKeyPressed(Keyboard::D)) {
-        this->isaac->Move(1,0);
+        if(this->IsaacMoveIsPossible(1,0))
+            this->isaac->Move(1,0);
     }
     //Move down
     if (Keyboard::isKeyPressed(Keyboard::S)) {
-        this->isaac->Move(0,1);
+        if(this->IsaacMoveIsPossible(0,1))
+            this->isaac->Move(0,1);
     }
     //Move left
     if (Keyboard::isKeyPressed(Keyboard::A)) {
-        this->isaac->Move(-1,0);
+        if(this->IsaacMoveIsPossible(-1,0))
+            this->isaac->Move(-1,0);
     }
 
 
@@ -190,37 +194,46 @@ void Game::renderBullet() {
     }
 }
 
-//Doors Room
+//Room
 void Game::updateRoom() {
 
+    //Doors
     //Porta su
     if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorUp!= nullptr)
-        if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorUp->CheckCollision(this->isaac->IsaacFigure)){
+        if(this->CheckCollision(this->isaac->IsaacFigure,*this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorUp)){
             this->isaac->IsaacFigure.move(Vector2f(0,380));
             this->floor->ActualRoom.x--;
 
         }
     //Porta destra
     if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorRight!= nullptr)
-        if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorRight->CheckCollision(this->isaac->IsaacFigure)){
+        if(this->CheckCollision(this->isaac->IsaacFigure,*this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorRight)){
             this->isaac->IsaacFigure.move(Vector2f(-820,0));
             this->floor->ActualRoom.y++;
 
         }
     //Porta giu
     if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorDown!= nullptr)
-        if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorDown->CheckCollision(this->isaac->IsaacFigure)){
+        if(this->CheckCollision(this->isaac->IsaacFigure,*this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorDown)){
             this->isaac->IsaacFigure.move(Vector2f(0,-380));
             this->floor->ActualRoom.x++;
 
         }
     //Porta sinistra
     if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorLeft!= nullptr)
-        if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorLeft->CheckCollision(this->isaac->IsaacFigure)){
+        if(this->CheckCollision(this->isaac->IsaacFigure,*this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorLeft)){
             this->isaac->IsaacFigure.move(Vector2f(820,0));
             this->floor->ActualRoom.y--;
 
         }
+    //Obstacles
+    for (int i = this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks.size() - 1; i >= 0; i--)
+    {
+        if(!this->CheckCollision(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks[i]->rock,this->isaac->IsaacFigure))
+        {
+
+        }
+    }
 }
 
 
@@ -256,5 +269,34 @@ void Game::render() {
 
 
     this->window->display();
+}
+
+bool Game::CheckCollision(RectangleShape one, RectangleShape two) {
+
+    bool collisionX = one.getPosition().x + one.getSize().x >= two.getPosition().x &&
+            two.getPosition().x + two.getSize().x >= one.getPosition().x;
+    bool collisionY = one.getPosition().y + one.getSize().y >= two.getPosition().y &&
+            two.getPosition().y + two.getSize().y >= one.getPosition().y;
+    return collisionX && collisionY;
+
+}
+
+bool Game::IsaacMoveIsPossible(float dirX, float dirY) {
+    Vector2f pos=this->isaac->IsaacFigure.getPosition();
+    float x = pos.x;
+    float y = pos.y;
+    x+=(dirX*this->isaac->isaac.getSpeed());
+    y+=(dirY*this->isaac->isaac.getSpeed());
+    bool collisionRock = false;
+    Isaac clone = *this->isaac;
+    clone.IsaacFigure.move(Vector2f(dirX*this->isaac->isaac.getSpeed(),dirY*this->isaac->isaac.getSpeed()));
+    for (int i = this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks.size() - 1; i >= 0; i--)
+    {
+        if(this->CheckCollision(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks[i]->rock,clone.IsaacFigure))
+        {
+            collisionRock= true;
+        }
+    }
+    return (x<880 && x>40 && y<615 && y>215 && !collisionRock);
 }
 

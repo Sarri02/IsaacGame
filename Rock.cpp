@@ -3,7 +3,7 @@
 
 Rock::Rock(Vector2f position) {
 
-    if(rand()%20==1){
+    if(rand()%50==0){
         this->isSigned= true;
         this->texture.loadFromFile("./Texture/SignedRock.png");
     }
@@ -11,9 +11,15 @@ Rock::Rock(Vector2f position) {
         this->isSigned= false;
         this->texture.loadFromFile("./Texture/Rock.png");
     }
-    setSize(Vector2f(50,50));
-    setTexture(&this->texture);
-    setPosition(position);
+    this->rock.setSize(Vector2f(75,75));
+    this->rock.setTexture(&this->texture);
+    this->rock.setPosition(position);
+}
+
+void Rock::DrawRock(RenderWindow & window) {
+
+    window.draw(this->rock);
+
 }
 
 Rock::~Rock() = default;

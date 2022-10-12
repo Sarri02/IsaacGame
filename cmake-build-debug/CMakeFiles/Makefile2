@@ -167,8 +167,8 @@ CMakeFiles/core.dir/clean:
 # Target rules for target Test/CMakeFiles/runAllTests.dir
 
 # All Build rule for target.
-Test/CMakeFiles/runAllTests.dir/all: CMakeFiles/core.dir/all
 Test/CMakeFiles/runAllTests.dir/all: Test/Lib/googletest/CMakeFiles/gtest.dir/all
+Test/CMakeFiles/runAllTests.dir/all: CMakeFiles/core.dir/all
 Test/CMakeFiles/runAllTests.dir/all: Test/Lib/googletest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) $(MAKESILENT) -f Test\CMakeFiles\runAllTests.dir\build.make Test/CMakeFiles/runAllTests.dir/depend
 	$(MAKE) $(MAKESILENT) -f Test\CMakeFiles\runAllTests.dir\build.make Test/CMakeFiles/runAllTests.dir/build

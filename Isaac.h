@@ -20,7 +20,6 @@ private:
     void InitIsaac();
     void InitIsaacFigure(Vector2f position);
     void InitBullet();
-    bool MoveIsPossible(float dirX, float dirY);
 
 public:
     //Isaac

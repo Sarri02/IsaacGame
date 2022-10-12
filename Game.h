@@ -28,6 +28,9 @@ private:
     Texture textureStats;
 
     //Function private
+    bool IsaacMoveIsPossible(float dirX, float dirY);
+    bool CheckCollision(RectangleShape one, RectangleShape two);
+
     //Init
     void InitWindow();
     void InitVariable();
