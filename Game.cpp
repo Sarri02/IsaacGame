@@ -192,24 +192,29 @@ void Game::renderBullet() {
 
 //Actual Room
 void Game::updateRoom() {
+
+    //Porta su
     if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorUp!= nullptr)
         if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorUp->CheckCollision(this->isaac->IsaacFigure)){
             this->isaac->IsaacFigure.move(Vector2f(0,380));
             this->floor->ActualRoom.x--;
 
         }
+    //Porta destra
     if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorRight!= nullptr)
         if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorRight->CheckCollision(this->isaac->IsaacFigure)){
             this->isaac->IsaacFigure.move(Vector2f(-820,0));
             this->floor->ActualRoom.y++;
 
         }
+    //Porta giu
     if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorDown!= nullptr)
         if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorDown->CheckCollision(this->isaac->IsaacFigure)){
             this->isaac->IsaacFigure.move(Vector2f(0,-380));
             this->floor->ActualRoom.x++;
 
         }
+    //Porta sinistra
     if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorLeft!= nullptr)
         if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorLeft->CheckCollision(this->isaac->IsaacFigure)){
             this->isaac->IsaacFigure.move(Vector2f(820,0));
