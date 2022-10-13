@@ -3,7 +3,7 @@
 
 void Game::InitVariable() {
 
-    this->isaac = make_unique<Isaac>(Vector2f(444,360));
+    this->isaac = make_unique<Isaac>(Vector2f(444,400));
     this->ActualFloor = 0;
     this->KeyTime=this->isaac->Tear;
 
@@ -201,39 +201,35 @@ void Game::updateRoom() {
     //Porta su
     if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorUp!= nullptr)
         if(this->CheckCollision(this->isaac->IsaacFigure,*this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorUp)){
-            this->isaac->IsaacFigure.move(Vector2f(0,380));
+            this->isaac->IsaacFigure.setPosition(Vector2f(444,this->isaac->IsaacFigure.getPosition().y+380));
+            this->isaac->bullets.clear();
             this->floor->ActualRoom.x--;
 
         }
     //Porta destra
     if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorRight!= nullptr)
         if(this->CheckCollision(this->isaac->IsaacFigure,*this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorRight)){
-            this->isaac->IsaacFigure.move(Vector2f(-820,0));
+            this->isaac->IsaacFigure.setPosition(Vector2f(this->isaac->IsaacFigure.getPosition().x-820,400));
+            this->isaac->bullets.clear();
             this->floor->ActualRoom.y++;
 
         }
     //Porta giu
     if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorDown!= nullptr)
         if(this->CheckCollision(this->isaac->IsaacFigure,*this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorDown)){
-            this->isaac->IsaacFigure.move(Vector2f(0,-380));
+            this->isaac->IsaacFigure.setPosition(Vector2f(444,this->isaac->IsaacFigure.getPosition().y-380));
+            this->isaac->bullets.clear();
             this->floor->ActualRoom.x++;
 
         }
     //Porta sinistra
     if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorLeft!= nullptr)
         if(this->CheckCollision(this->isaac->IsaacFigure,*this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorLeft)){
-            this->isaac->IsaacFigure.move(Vector2f(820,0));
+            this->isaac->IsaacFigure.setPosition(Vector2f(this->isaac->IsaacFigure.getPosition().x+820,400));
+            this->isaac->bullets.clear();
             this->floor->ActualRoom.y--;
 
         }
-    //Obstacles
-    for (int i = this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks.size() - 1; i >= 0; i--)
-    {
-        if(!this->CheckCollision(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks[i]->rock,this->isaac->IsaacFigure))
-        {
-
-        }
-    }
 }
 
 
@@ -282,21 +278,18 @@ bool Game::CheckCollision(RectangleShape one, RectangleShape two) {
 }
 
 bool Game::IsaacMoveIsPossible(float dirX, float dirY) {
-    Vector2f pos=this->isaac->IsaacFigure.getPosition();
-    float x = pos.x;
-    float y = pos.y;
-    x+=(dirX*this->isaac->isaac.getSpeed());
-    y+=(dirY*this->isaac->isaac.getSpeed());
     bool collisionRock = false;
-    Isaac clone = *this->isaac;
-    clone.IsaacFigure.move(Vector2f(dirX*this->isaac->isaac.getSpeed(),dirY*this->isaac->isaac.getSpeed()));
+    RectangleShape clone = this->isaac->IsaacFigure;
+    clone.move(Vector2f(dirX*this->isaac->isaac.getSpeed(),dirY*this->isaac->isaac.getSpeed()));
+    //Rock collision
     for (int i = this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks.size() - 1; i >= 0; i--)
     {
-        if(this->CheckCollision(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks[i]->rock,clone.IsaacFigure))
+        if(this->CheckCollision(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks[i]->rock,clone))
         {
             collisionRock= true;
         }
     }
-    return (x<880 && x>40 && y<615 && y>215 && !collisionRock);
+    return (clone.getPosition().x<880 && clone.getPosition().x>40 && clone.getPosition().y<615 && clone.getPosition().y>215 && !collisionRock);
+    delete &clone;
 }
 
