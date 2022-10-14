@@ -1,3 +1,6 @@
+#ifndef ISAAC_ROCK_H
+#define ISAAC_ROCK_H
+
 #include <SFML/Graphics.hpp>
 
 using namespace sf;
@@ -17,3 +20,5 @@ public:
     //TODO drop item if is signed
 
 };
+
+#endif

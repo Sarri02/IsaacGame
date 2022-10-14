@@ -1,4 +1,8 @@
 #pragma once
+
+#ifndef ISAAC_GAME_H
+#define ISAAC_GAME_H
+
 #include <SFML/Graphics.hpp>
 #include "Menu.h"
 #include "Floor.h"
@@ -70,3 +74,5 @@ public:
 
     void render();
 };
+
+#endif

@@ -1,3 +1,6 @@
+#ifndef ISAAC_MENU_H
+#define ISAAC_MENU_H
+
 #include <SFML/Graphics.hpp>
 
 #define MaxMainMenu 3
@@ -42,4 +45,4 @@ public:
 
 };
 
-
+#endif

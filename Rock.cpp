@@ -3,7 +3,7 @@
 
 Rock::Rock(Vector2f position) {
 
-    if(rand()%50==0){
+    if(rand()%80==0){
         this->isSigned= true;
         this->texture.loadFromFile("./Texture/SignedRock.png");
     }

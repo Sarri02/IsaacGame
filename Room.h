@@ -1,3 +1,6 @@
+#ifndef ISAAC_ROOM_H
+#define ISAAC_ROOM_H
+
 #include <SFML/Graphics.hpp>
 #include "Door.h"
 #include "Rock.h"
@@ -33,3 +36,5 @@ public:
     //Public function
 
 };
+
+#endif

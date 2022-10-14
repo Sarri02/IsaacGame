@@ -1,3 +1,6 @@
+#ifndef ISAAC_ISAAC_H
+#define ISAAC_ISAAC_H
+
 #include <SFML/Graphics.hpp>
 #include "Character.h"
 #include "Bullet.h"
@@ -53,5 +56,6 @@ public:
     //TODO void GetItem();
     void DrawIsaac(RenderWindow &window);
 
-
 };
+
+#endif

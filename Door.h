@@ -1,3 +1,6 @@
+#ifndef ISAAC_DOOR_H
+#define ISAAC_DOOR_H
+
 #include <SFML/Graphics.hpp>
 
 using namespace sf;
@@ -14,3 +17,4 @@ public:
 
 };
 
+#endif

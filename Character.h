@@ -1,3 +1,6 @@
+#ifndef ISAAC_CHARACTER_H
+#define ISAAC_CHARACTER_H
+
 #include <SFML/Graphics.hpp>
 
 
@@ -26,3 +29,5 @@ public:
     //TODO void TakeDamage();
 
 };
+
+#endif

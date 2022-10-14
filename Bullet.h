@@ -1,3 +1,6 @@
+#ifndef ISAAC_BULLET_H
+#define ISAAC_BULLET_H
+
 #include <SFML/Graphics.hpp>
 
 
@@ -29,3 +32,5 @@ public:
     void drawBullet (RenderWindow & window);
 
 };
+
+#endif

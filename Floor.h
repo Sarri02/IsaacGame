@@ -1,5 +1,7 @@
-#include "Room.h"
+#ifndef ISAAC_FLOOR_H
+#define ISAAC_FLOOR_H
 
+#include "Room.h"
 
 #define MaxRooms 12
 #define FloorDimension 7
@@ -29,3 +31,5 @@ public:
     void DrawActualRoom(RenderWindow &window);
     void DrawMap(RenderWindow &window);
 };
+
+#endif
