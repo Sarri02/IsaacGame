@@ -270,6 +270,14 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/marks/Desktop/Isaac/IsaacGame/Bomb.cpp">
+			<Option target="Isaac"/>
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="C:/Users/marks/Desktop/Isaac/IsaacGame/Bomb.h">
+			<Option target="Isaac"/>
+			<Option target="core"/>
+		</Unit>
 		<Unit filename="C:/Users/marks/Desktop/Isaac/IsaacGame/Bullet.cpp">
 			<Option target="Isaac"/>
 			<Option target="core"/>

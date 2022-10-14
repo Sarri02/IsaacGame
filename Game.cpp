@@ -60,6 +60,11 @@ void Game::updatePollEvents() {
         if (event.Event::key.code == sf::Keyboard::Escape)
             this->window->close();
     }
+    //Bombs
+    if (event.Event::type == Event::KeyReleased && event.Event::key.code == sf::Keyboard::E){
+        //this->isaac->Bombs--;
+        this->isaac->dropBomb();
+    }
 }
 
 void Game::updateInput() {
@@ -194,6 +199,36 @@ void Game::renderBullet() {
     }
 }
 
+//Bombs
+void Game::updateBomb() {
+    for (int i = this->isaac->bombs.size() - 1; i >= 0; i--)
+    {
+        if(!(this->isaac->bombs[i]->updateBomb()))
+        {
+            //explosion
+
+            for (int j = this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks.size() - 1; j >= 0; j--){
+
+                this->isaac->bombs[i]->bomb.setSize(Vector2f(100,100));
+                if(this->CheckCollision(this->isaac->bombs[i]->bomb,this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks[j]->rock)){
+                    delete this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks[j];
+                    this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks.erase(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks.begin() + j);
+                }
+            }
+
+            delete this->isaac->bombs[i];
+            this->isaac->bombs.erase(this->isaac->bombs.begin() + i);
+        }
+    }
+}
+
+void Game::renderBomb() {
+
+    for (auto *bombs : this->isaac->bombs) {
+        bombs->DrawBomb(*(this->window));
+    }
+}
+
 //Room
 void Game::updateRoom() {
 
@@ -203,14 +238,16 @@ void Game::updateRoom() {
         if(this->CheckCollision(this->isaac->IsaacFigure,*this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorUp)){
             this->isaac->IsaacFigure.setPosition(Vector2f(444,this->isaac->IsaacFigure.getPosition().y+380));
             this->isaac->bullets.clear();
+            this->isaac->bombs.clear();
             this->floor->ActualRoom.x--;
 
         }
     //Porta destra
     if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorRight!= nullptr)
         if(this->CheckCollision(this->isaac->IsaacFigure,*this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorRight)){
-            this->isaac->IsaacFigure.setPosition(Vector2f(this->isaac->IsaacFigure.getPosition().x-820,400));
+            this->isaac->IsaacFigure.setPosition(Vector2f(this->isaac->IsaacFigure.getPosition().x-800,400));
             this->isaac->bullets.clear();
+            this->isaac->bombs.clear();
             this->floor->ActualRoom.y++;
 
         }
@@ -219,14 +256,16 @@ void Game::updateRoom() {
         if(this->CheckCollision(this->isaac->IsaacFigure,*this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorDown)){
             this->isaac->IsaacFigure.setPosition(Vector2f(444,this->isaac->IsaacFigure.getPosition().y-380));
             this->isaac->bullets.clear();
+            this->isaac->bombs.clear();
             this->floor->ActualRoom.x++;
 
         }
     //Porta sinistra
     if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorLeft!= nullptr)
         if(this->CheckCollision(this->isaac->IsaacFigure,*this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorLeft)){
-            this->isaac->IsaacFigure.setPosition(Vector2f(this->isaac->IsaacFigure.getPosition().x+820,400));
+            this->isaac->IsaacFigure.setPosition(Vector2f(this->isaac->IsaacFigure.getPosition().x+800,400));
             this->isaac->bullets.clear();
+            this->isaac->bombs.clear();
             this->floor->ActualRoom.y--;
 
         }
@@ -246,6 +285,7 @@ void Game::update() {
     this->updatePollEvents();
     this->updateIsaac();
     this->updateBullet();
+    this->updateBomb();
     this->updateRoom();
 }
 
@@ -260,6 +300,7 @@ void Game::render() {
     this->renderStats();
     this->renderActualRoom();
     this->renderIsaac();
+    this->renderBomb();
     this->renderBullet();
 
 

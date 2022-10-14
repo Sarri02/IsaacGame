@@ -23,7 +23,6 @@ private:
 public:
 
     //Constructor and Destructor
-    Bullet();
     Bullet(Texture *texture, float xPos, float yPos, float xDir, float yDir, float speed, float range);
     virtual ~Bullet();
 

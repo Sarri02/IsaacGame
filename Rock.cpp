@@ -1,4 +1,4 @@
-
+#include <iostream>
 #include "Rock.h"
 
 Rock::Rock(Vector2f position) {
@@ -22,4 +22,10 @@ void Rock::DrawRock(RenderWindow & window) {
 
 }
 
-Rock::~Rock() = default;
+Rock::~Rock() {
+    if(this->isSigned)
+        //TODO droppa l'oggetto
+        std::cout<<"OGGETTO";
+
+}
+

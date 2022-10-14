@@ -33,7 +33,7 @@ private:
 
     //Function private
     bool IsaacMoveIsPossible(float dirX, float dirY);
-    bool CheckCollision(RectangleShape one, RectangleShape two);
+    static bool CheckCollision(RectangleShape one, RectangleShape two);
 
     //Init
     void InitWindow();
@@ -46,6 +46,7 @@ private:
     void updateInput();
     void updateIsaac();
     void updateBullet();
+    void updateBomb();
     void updateRoom();
 
     //Render
@@ -54,6 +55,7 @@ private:
     void renderStats();
     void renderIsaac();
     void renderBullet();
+    void renderBomb();
     void renderActualRoom();
 
 public:

@@ -73,6 +73,12 @@ void Isaac::Shoot(float dirX, float dirY) {
     this->bullets.push_back( new Bullet(&this->BulletTexture,this->xPosIsaac+20,this->yPosIsaac+10,dirX,dirY,this->ShootSpeed, this->ShootRange));
 }
 
+void Isaac::dropBomb() {
+
+    this->bombs.push_back(new Bomb(Vector2f (this->IsaacFigure.getPosition().x+10,this->IsaacFigure.getPosition().y+60)));
+
+}
+
 
 
 

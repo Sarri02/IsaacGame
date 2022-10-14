@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/Users/marks/Desktop/Isaac/IsaacGame/Bomb.cpp" "C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/CMakeFiles/Isaac.dir/Bomb.cpp.obj"
   "C:/Users/marks/Desktop/Isaac/IsaacGame/Bullet.cpp" "C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/CMakeFiles/Isaac.dir/Bullet.cpp.obj"
   "C:/Users/marks/Desktop/Isaac/IsaacGame/Character.cpp" "C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/CMakeFiles/Isaac.dir/Character.cpp.obj"
   "C:/Users/marks/Desktop/Isaac/IsaacGame/Door.cpp" "C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/CMakeFiles/Isaac.dir/Door.cpp.obj"

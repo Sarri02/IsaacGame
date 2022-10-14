@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Isaac.dir/Bomb.cpp.obj"
   "CMakeFiles/Isaac.dir/Bullet.cpp.obj"
   "CMakeFiles/Isaac.dir/Character.cpp.obj"
   "CMakeFiles/Isaac.dir/Door.cpp.obj"

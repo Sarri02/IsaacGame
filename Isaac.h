@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include "Character.h"
 #include "Bullet.h"
+#include "Bomb.h"
 
 #define MaxLife 10;
 
@@ -40,6 +41,7 @@ public:
 
     //TODO float ShootDamage;
     vector <Bullet*> bullets;
+    vector <Bomb*> bombs;
 
 
     //Consumables
@@ -52,6 +54,7 @@ public:
 
     //Public Functions
     void Shoot(float dirX, float dirY);
+    void dropBomb();
     void Move(float dirX, float dirY);
     //TODO void GetItem();
     void DrawIsaac(RenderWindow &window);

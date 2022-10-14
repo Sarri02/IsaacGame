@@ -180,6 +180,33 @@ gtest_main/fast:
 	$(MAKE) $(MAKESILENT) -f Test\Lib\googletest\CMakeFiles\gtest_main.dir\build.make Test/Lib/googletest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
+Bomb.obj: Bomb.cpp.obj
+.PHONY : Bomb.obj
+
+# target to build an object file
+Bomb.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Bomb.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Bomb.cpp.obj
+.PHONY : Bomb.cpp.obj
+
+Bomb.i: Bomb.cpp.i
+.PHONY : Bomb.i
+
+# target to preprocess a source file
+Bomb.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Bomb.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Bomb.cpp.i
+.PHONY : Bomb.cpp.i
+
+Bomb.s: Bomb.cpp.s
+.PHONY : Bomb.s
+
+# target to generate assembly for a file
+Bomb.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Bomb.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Bomb.cpp.s
+.PHONY : Bomb.cpp.s
+
 Bullet.obj: Bullet.cpp.obj
 .PHONY : Bullet.obj
 
@@ -460,6 +487,9 @@ help:
 	@echo ... gtest
 	@echo ... gtest_main
 	@echo ... runAllTests
+	@echo ... Bomb.obj
+	@echo ... Bomb.i
+	@echo ... Bomb.s
 	@echo ... Bullet.obj
 	@echo ... Bullet.i
 	@echo ... Bullet.s
