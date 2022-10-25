@@ -28,6 +28,8 @@ public:
     float getSpeed();
     //TODO void TakeDamage();
 
+    virtual void Draw(RenderWindow &window) = 0;
+
 };
 
 #endif

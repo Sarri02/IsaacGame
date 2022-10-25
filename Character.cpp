@@ -15,3 +15,4 @@ float Character::getLife() {
 float Character::getSpeed() {
     return this->Speed;
 }
+

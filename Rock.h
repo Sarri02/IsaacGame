@@ -18,7 +18,7 @@ public:
     RectangleShape rock;
 
     void DrawRock(RenderWindow & window);
-
+    void BeingDestroyed();
     //TODO drop item if is signed
 
 };

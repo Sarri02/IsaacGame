@@ -125,6 +125,7 @@ void Floor::GenerateRoom(int x, int y) {
     switch (rand()%12) {
 
         case 0:
+            //ROCCE
             X=300;
             Y=375;
             for (int i = 0; i < 5; ++i) {
@@ -135,6 +136,7 @@ void Floor::GenerateRoom(int x, int y) {
             break;
 
         case 1:
+            //ROCCE
             X=50;
             Y=510;
             this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
@@ -156,6 +158,7 @@ void Floor::GenerateRoom(int x, int y) {
             break;
 
         case 2:
+            //ROCCE
             X=300;
             Y=225;
             for (int i = 0; i < 6; ++i) {
@@ -167,12 +170,13 @@ void Floor::GenerateRoom(int x, int y) {
 
             break;
         case 3:
+            //ROCCE
             X=230;
-            Y=290;
+            Y=320;
             this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
             X+=450;
             this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            Y+=225;
+            Y+=180;
             this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
             X-=450;
             this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
@@ -180,6 +184,7 @@ void Floor::GenerateRoom(int x, int y) {
 
             break;
         case 4:
+            //ROCCE
             X=410;
             Y=350;
             this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
@@ -191,6 +196,7 @@ void Floor::GenerateRoom(int x, int y) {
             this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
             break;
         case 5:
+            //ROCCE
             X=250;
             Y=375;
             this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
@@ -201,8 +207,8 @@ void Floor::GenerateRoom(int x, int y) {
             X+=80;
             this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
             break;
-            break;
         case 6:
+            //ROCCE
             X=50;
             Y=510;
             this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
@@ -232,6 +238,7 @@ void Floor::GenerateRoom(int x, int y) {
 
             break;
         case 7:
+            //ROCCE
             X=230;
             Y=290;
             this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
@@ -245,6 +252,7 @@ void Floor::GenerateRoom(int x, int y) {
 
             break;
         case 8:
+            //ROCCE
             X=280;
             Y=520;
             this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
@@ -283,6 +291,7 @@ void Floor::GenerateRoom(int x, int y) {
 
             break;
         case 9:
+            //ROCCE
             X=300;
             Y=395;
             for (int i = 0; i < 5; ++i) {
@@ -297,6 +306,7 @@ void Floor::GenerateRoom(int x, int y) {
 
             break;
         case 10:
+            //ROCCE
             X=300;
             Y=320;
             for (int i = 0; i < 5; ++i) {
@@ -312,6 +322,7 @@ void Floor::GenerateRoom(int x, int y) {
 
             break;
         case 11:
+            //ROCCE
             X=250;
             Y=320;
             for (int i = 0; i < 3; ++i) {

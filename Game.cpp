@@ -132,7 +132,7 @@ void Game::renderStats() {
     //Life
     this->textureStats.loadFromFile("./Texture/Life.png");
     int xPosLife = 64, yPosLife = 60;
-    for (int k = 0; k < this->isaac->isaac.getLife(); k++) {
+    for (int k = 0; k < this->isaac->getLife(); k++) {
         RectangleShape life;
         life.setSize(Vector2f(42, 42));
         life.setPosition(xPosLife,yPosLife);
@@ -174,7 +174,7 @@ void Game::renderStats() {
 
 //Isaac
 void Game::renderIsaac() {
-    this->isaac->DrawIsaac(*this->window);
+    this->isaac->Draw(*this->window);
 }
 void Game::updateIsaac() {
     this->updateInput();
@@ -203,14 +203,14 @@ void Game::renderBullet() {
 void Game::updateBomb() {
     for (int i = this->isaac->bombs.size() - 1; i >= 0; i--)
     {
+        //explosion
+
         if(!(this->isaac->bombs[i]->updateBomb()))
         {
-            //explosion
-
+            //Explosion
             for (int j = this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks.size() - 1; j >= 0; j--){
-
-                this->isaac->bombs[i]->bomb.setSize(Vector2f(100,100));
-                if(this->CheckCollision(this->isaac->bombs[i]->bomb,this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks[j]->rock)){
+                if(this->CheckCollision(this->isaac->bombs[i]->explosion,this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks[j]->rock)){
+                    this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks[j]->BeingDestroyed();
                     delete this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks[j];
                     this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks.erase(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks.begin() + j);
                 }
@@ -321,7 +321,7 @@ bool Game::CheckCollision(RectangleShape one, RectangleShape two) {
 bool Game::IsaacMoveIsPossible(float dirX, float dirY) {
     bool collisionRock = false;
     RectangleShape clone = this->isaac->IsaacFigure;
-    clone.move(Vector2f(dirX*this->isaac->isaac.getSpeed(),dirY*this->isaac->isaac.getSpeed()));
+    clone.move(Vector2f(dirX*this->isaac->getSpeed(),dirY*this->isaac->getSpeed()));
     //Rock collision
     for (int i = this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks.size() - 1; i >= 0; i--)
     {

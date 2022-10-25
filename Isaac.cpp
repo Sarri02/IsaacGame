@@ -19,8 +19,8 @@ void Isaac::InitBullet() {
 
     this->BulletTexture.loadFromFile("./Texture/Tear.png");
 
-    this->Tear = 40;
-    this->ShootSpeed = 4.5;
+    this->Tear = 30;
+    this->ShootSpeed = 5;
     this->ShootRange = 400;
     //TODO this->ShootDamage = 1;
 
@@ -34,8 +34,8 @@ void Isaac::InitIsaac() {
     this->Keys = 1;
 
     //Stats
-    this->isaac.setLife(4);
-    this->isaac.setSpeed(3.2);
+    this->setLife(4);
+    this->setSpeed(4);
     this->InitBullet();
 }
 
@@ -52,7 +52,7 @@ void Isaac::InitIsaacFigure(Vector2f position) {
 
 }
 
-void Isaac::DrawIsaac(RenderWindow &window) {
+void Isaac::Draw(RenderWindow &window) {
 
     window.draw(this->IsaacFigure);
 
@@ -62,7 +62,7 @@ void Isaac::DrawIsaac(RenderWindow &window) {
 //Movement
 
 void Isaac::Move(float dirX, float dirY) {
-        this->IsaacFigure.move(this->isaac.getSpeed() * dirX, this->isaac.getSpeed() * dirY);
+        this->IsaacFigure.move(this->getSpeed() * dirX, this->getSpeed() * dirY);
 }
 
 //Shoot
@@ -75,7 +75,7 @@ void Isaac::Shoot(float dirX, float dirY) {
 
 void Isaac::dropBomb() {
 
-    this->bombs.push_back(new Bomb(Vector2f (this->IsaacFigure.getPosition().x+10,this->IsaacFigure.getPosition().y+60)));
+    this->bombs.push_back(new Bomb(Vector2f (this->IsaacFigure.getPosition().x+10,this->IsaacFigure.getPosition().y+40)));
 
 }
 

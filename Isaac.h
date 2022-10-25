@@ -27,7 +27,6 @@ private:
 
 public:
     //Isaac
-    Character isaac;
 
     //Isaac figure
     RectangleShape IsaacFigure;
@@ -55,9 +54,9 @@ public:
     //Public Functions
     void Shoot(float dirX, float dirY);
     void dropBomb();
-    void Move(float dirX, float dirY);
     //TODO void GetItem();
-    void DrawIsaac(RenderWindow &window);
+    void Move(float dirX, float dirY);
+    void Draw(RenderWindow &window);
 
 };
 

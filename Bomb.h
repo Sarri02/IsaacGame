@@ -16,6 +16,7 @@ public:
     virtual ~Bomb();
 
     RectangleShape bomb;
+    RectangleShape explosion;
 
     bool updateBomb();
     void DrawBomb(RenderWindow & window);
