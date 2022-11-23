@@ -37,8 +37,7 @@ public:
     float Tear;
     float ShootSpeed;
     float ShootRange;
-
-    //TODO float ShootDamage;
+    float ShootDamage;
     vector <Bullet*> bullets;
     vector <Bomb*> bombs;
 
@@ -52,6 +51,7 @@ public:
     virtual ~Isaac();
 
     //Public Functions
+    Vector2f GetPosition();
     void Shoot(float dirX, float dirY);
     void dropBomb();
     //TODO void GetItem();

@@ -4,12 +4,12 @@ project(Isaac)
 set(CMAKE_CXX_STANDARD 20)
 
 set(EXECUTABLE_NAME Isaac)
-add_executable(${EXECUTABLE_NAME} main.cpp Game.cpp Menu.cpp Floor.cpp Room.cpp Character.cpp Isaac.cpp Bullet.cpp Door.cpp Rock.cpp Bomb.cpp)
+add_executable(${EXECUTABLE_NAME} main.cpp Game.cpp Menu.cpp Floor.cpp Room.cpp Character.cpp Isaac.cpp Bullet.cpp Door.cpp Rock.cpp Bomb.cpp Enemy.cpp EnemyBasic.cpp)
 
 #UNIT TEST
 add_subdirectory(test)
 
-set(SOURCE_FILES Game.cpp Menu.cpp Floor.cpp Room.cpp Character.cpp Isaac.cpp Bullet.cpp Door.cpp Rock.cpp Bomb.cpp)
+set(SOURCE_FILES Game.cpp Menu.cpp Floor.cpp Room.cpp Character.cpp Isaac.cpp Bullet.cpp Door.cpp Rock.cpp Bomb.cpp Enemy.cpp EnemyBasic.cpp)
 add_library(core ${SOURCE_FILES})
 
 #SFML

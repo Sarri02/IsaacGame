@@ -48,6 +48,7 @@ private:
     void updateBullet();
     void updateBomb();
     void updateRoom();
+    void updateEnemies();
 
     //Render
     void renderBackground();

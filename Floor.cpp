@@ -1,4 +1,5 @@
 #include "Floor.h"
+#include "EnemyBasic.h"
 #include <iostream>
 
 //Select a random room
@@ -122,225 +123,228 @@ void Floor::GenerateDoors(int x, int y) {
 void Floor::GenerateRoom(int x, int y) {
     //Obstacles
     float X,Y;
-    switch (rand()%12) {
+    switch (0) {
+    //switch (rand()%12) {
 
-        case 0:
-            //ROCCE
-            X=300;
-            Y=375;
-            for (int i = 0; i < 5; ++i) {
-                this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-                X+=75;
-            }
+            case 0:
+                //ROCCE
+                X=300;
+                Y=375;
+                for (int i = 0; i < 5; ++i) {
+                    this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                    X+=75;
+                }
+                //NEMICI
+                   this->room[x][y].Enemies.push_back( new EnemyBasic(Vector2f(450,375)));
 
-            break;
+                break;
 
-        case 1:
-            //ROCCE
-            X=50;
-            Y=510;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X+=190;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X+=75;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            Y+=75;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X=850;
-            Y=300;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X-=190;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X-=75;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            Y-=75;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            break;
+                case 1:
+                    //ROCCE
+                    X=50;
+                    Y=510;
+                    this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                    X+=190;
+                    this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                    X+=75;
+                    this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                    Y+=75;
+                    this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                    X=850;
+                    Y=300;
+                    this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                    X-=190;
+                    this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                    X-=75;
+                    this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                    Y-=75;
+                    this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                    break;
 
-        case 2:
-            //ROCCE
-            X=300;
-            Y=225;
-            for (int i = 0; i < 6; ++i) {
-                this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-                if(i==2)
-                    X=575;
-                Y+=75;
-            }
+                    case 2:
+                        //ROCCE
+                        X=300;
+                        Y=225;
+                        for (int i = 0; i < 6; ++i) {
+                            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                            if(i==2)
+                                X=575;
+                            Y+=75;
+                        }
 
-            break;
-        case 3:
-            //ROCCE
-            X=230;
-            Y=320;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X+=450;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            Y+=180;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X-=450;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-
-
-            break;
-        case 4:
-            //ROCCE
-            X=410;
-            Y=350;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X+=80;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            Y+=80;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X-=80;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            break;
-        case 5:
-            //ROCCE
-            X=250;
-            Y=375;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X+=80;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X+=220;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X+=80;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            break;
-        case 6:
-            //ROCCE
-            X=50;
-            Y=510;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X+=80;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X+=80;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X+=480;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X+=80;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X+=80;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X=50;
-            Y=300;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X+=80;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X+=80;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X+=480;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X+=80;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X+=80;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-
-            break;
-        case 7:
-            //ROCCE
-            X=230;
-            Y=290;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            Y+=80;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X+=450;
-            Y+=80;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            Y+=80;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-
-            break;
-        case 8:
-            //ROCCE
-            X=280;
-            Y=520;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X-=70;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X-=70;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            Y-=70;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            Y-=70;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            Y-=70;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X+=70;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X+=70;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X=600;
-            Y=520;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X+=70;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X+=70;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            Y-=70;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            Y-=70;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            Y-=70;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X-=70;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            X-=70;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                        break;
+                        case 3:
+                            //ROCCE
+                            X=230;
+                            Y=320;
+                            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                            X+=450;
+                            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                            Y+=180;
+                            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                            X-=450;
+                            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
 
 
-            break;
-        case 9:
-            //ROCCE
-            X=300;
-            Y=395;
-            for (int i = 0; i < 5; ++i) {
-                this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-                X+=75;
-            }
-            X=450;
-            Y=320;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-            Y+=150;
-            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                            break;
+                            case 4:
+                                //ROCCE
+                                X=410;
+                                Y=350;
+                                this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                X+=80;
+                                this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                Y+=80;
+                                this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                X-=80;
+                                this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                break;
+                                case 5:
+                                    //ROCCE
+                                    X=250;
+                                    Y=375;
+                                    this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                    X+=80;
+                                    this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                    X+=220;
+                                    this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                    X+=80;
+                                    this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                    break;
+                                    case 6:
+                                        //ROCCE
+                                        X=50;
+                                        Y=510;
+                                        this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                        X+=80;
+                                        this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                        X+=80;
+                                        this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                        X+=480;
+                                        this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                        X+=80;
+                                        this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                        X+=80;
+                                        this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                        X=50;
+                                        Y=300;
+                                        this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                        X+=80;
+                                        this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                        X+=80;
+                                        this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                        X+=480;
+                                        this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                        X+=80;
+                                        this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                        X+=80;
+                                        this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
 
-            break;
-        case 10:
-            //ROCCE
-            X=300;
-            Y=320;
-            for (int i = 0; i < 5; ++i) {
-                this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-                X+=75;
-            }
-            X=300;
-            Y=490;
-            for (int i = 0; i < 5; ++i) {
-                this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-                X+=75;
-            }
+                                        break;
+                                        case 7:
+                                            //ROCCE
+                                            X=230;
+                                            Y=290;
+                                            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                            Y+=80;
+                                            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                            X+=450;
+                                            Y+=80;
+                                            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                            Y+=80;
+                                            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
 
-            break;
-        case 11:
-            //ROCCE
-            X=250;
-            Y=320;
-            for (int i = 0; i < 3; ++i) {
-                this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-                Y+=75;
-            }
-            X=615;
-            Y=320;
-            for (int i = 0; i < 3; ++i) {
-                this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-                Y+=75;
-            }
-            break;
-        default:
-            break;
+                                            break;
+                                            case 8:
+                                                //ROCCE
+                                                X=280;
+                                                Y=520;
+                                                this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                                X-=70;
+                                                this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                                X-=70;
+                                                this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                                Y-=70;
+                                                this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                                Y-=70;
+                                                this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                                Y-=70;
+                                                this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                                X+=70;
+                                                this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                                X+=70;
+                                                this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                                X=600;
+                                                Y=520;
+                                                this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                                X+=70;
+                                                this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                                X+=70;
+                                                this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                                Y-=70;
+                                                this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                                Y-=70;
+                                                this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                                Y-=70;
+                                                this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                                X-=70;
+                                                this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                                X-=70;
+                                                this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+
+
+                                                break;
+                                                case 9:
+                                                    //ROCCE
+                                                    X=300;
+                                                    Y=395;
+                                                    for (int i = 0; i < 5; ++i) {
+                                                        this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                                        X+=75;
+                                                    }
+                                                    X=450;
+                                                    Y=320;
+                                                    this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                                    Y+=150;
+                                                    this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+
+                                                    break;
+                                                    case 10:
+                                                        //ROCCE
+                                                        X=300;
+                                                        Y=320;
+                                                        for (int i = 0; i < 5; ++i) {
+                                                            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                                            X+=75;
+                                                        }
+                                                        X=300;
+                                                        Y=490;
+                                                        for (int i = 0; i < 5; ++i) {
+                                                            this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                                            X+=75;
+                                                        }
+
+                                                        break;
+                                                        case 11:
+                                                            //ROCCE
+                                                            X=250;
+                                                            Y=320;
+                                                            for (int i = 0; i < 3; ++i) {
+                                                                this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                                                Y+=75;
+                                                            }
+                                                            X=615;
+                                                            Y=320;
+                                                            for (int i = 0; i < 3; ++i) {
+                                                                this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                                                Y+=75;
+                                                            }
+                                                            break;
+                                                            default:
+                                                                break;
+        }
     }
 
-}
 
 void Floor::DrawActualRoom(RenderWindow &window) {
 
@@ -357,6 +361,11 @@ void Floor::DrawActualRoom(RenderWindow &window) {
     //Obstacles
     for (auto *obstacles : this->room[ActualRoom.x][ActualRoom.y].Roocks) {
         obstacles->DrawRock(window);
+    }
+
+    //Enemies
+    for (auto *enemies : this->room[ActualRoom.x][ActualRoom.y].Enemies) {
+        enemies->Draw(window);
     }
 
 }

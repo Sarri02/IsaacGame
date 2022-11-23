@@ -2,8 +2,8 @@
 
 Bullet::Bullet(Texture *texture, float xPos, float yPos, float xDir, float yDir, float speed, float range) {
     //Texture
-    this->bulletFigure.setTexture(*texture);
-    this->bulletFigure.scale(1.5,1.5);
+    this->bulletFigure.setTexture(texture);
+    this->bulletFigure.setSize(Vector2f(30,30));
     //Position
     this->bulletFigure.setPosition(xPos, yPos);
     this->direction.x = xDir;

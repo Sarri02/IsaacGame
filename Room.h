@@ -4,6 +4,8 @@
 #include <SFML/Graphics.hpp>
 #include "Door.h"
 #include "Rock.h"
+#include "Enemy.h"
+
 
 using namespace sf;
 using namespace std;
@@ -27,6 +29,8 @@ public:
 
     //Obstacles
     vector <Rock*> Roocks;
+    vector <Enemy*> Enemies;
+
 
     //Constructor
     Room();

@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Isaac.dir/Bullet.cpp.obj"
   "CMakeFiles/Isaac.dir/Character.cpp.obj"
   "CMakeFiles/Isaac.dir/Door.cpp.obj"
+  "CMakeFiles/Isaac.dir/Enemy.cpp.obj"
+  "CMakeFiles/Isaac.dir/EnemyBasic.cpp.obj"
   "CMakeFiles/Isaac.dir/Floor.cpp.obj"
   "CMakeFiles/Isaac.dir/Game.cpp.obj"
   "CMakeFiles/Isaac.dir/Isaac.cpp.obj"

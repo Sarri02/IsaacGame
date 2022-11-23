@@ -288,6 +288,60 @@ Door.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Door.cpp.s
 .PHONY : Door.cpp.s
 
+Enemy.obj: Enemy.cpp.obj
+.PHONY : Enemy.obj
+
+# target to build an object file
+Enemy.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Enemy.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Enemy.cpp.obj
+.PHONY : Enemy.cpp.obj
+
+Enemy.i: Enemy.cpp.i
+.PHONY : Enemy.i
+
+# target to preprocess a source file
+Enemy.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Enemy.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Enemy.cpp.i
+.PHONY : Enemy.cpp.i
+
+Enemy.s: Enemy.cpp.s
+.PHONY : Enemy.s
+
+# target to generate assembly for a file
+Enemy.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Enemy.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Enemy.cpp.s
+.PHONY : Enemy.cpp.s
+
+EnemyBasic.obj: EnemyBasic.cpp.obj
+.PHONY : EnemyBasic.obj
+
+# target to build an object file
+EnemyBasic.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/EnemyBasic.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/EnemyBasic.cpp.obj
+.PHONY : EnemyBasic.cpp.obj
+
+EnemyBasic.i: EnemyBasic.cpp.i
+.PHONY : EnemyBasic.i
+
+# target to preprocess a source file
+EnemyBasic.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/EnemyBasic.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/EnemyBasic.cpp.i
+.PHONY : EnemyBasic.cpp.i
+
+EnemyBasic.s: EnemyBasic.cpp.s
+.PHONY : EnemyBasic.s
+
+# target to generate assembly for a file
+EnemyBasic.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/EnemyBasic.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/EnemyBasic.cpp.s
+.PHONY : EnemyBasic.cpp.s
+
 Floor.obj: Floor.cpp.obj
 .PHONY : Floor.obj
 
@@ -499,6 +553,12 @@ help:
 	@echo ... Door.obj
 	@echo ... Door.i
 	@echo ... Door.s
+	@echo ... Enemy.obj
+	@echo ... Enemy.i
+	@echo ... Enemy.s
+	@echo ... EnemyBasic.obj
+	@echo ... EnemyBasic.i
+	@echo ... EnemyBasic.s
 	@echo ... Floor.obj
 	@echo ... Floor.i
 	@echo ... Floor.s

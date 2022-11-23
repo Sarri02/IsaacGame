@@ -8,7 +8,7 @@ using namespace sf;
 
 class Character{
 
-private:
+protected:
 
     //Variables
     float Life;
@@ -18,6 +18,8 @@ private:
 
 public:
 
+
+    virtual ~Character();
     //TODO bool CanFly;
     //TODO int MoveSet;
 
@@ -26,7 +28,7 @@ public:
     void setSpeed(float Speed);
     float getLife();
     float getSpeed();
-    //TODO void TakeDamage();
+    void TakeDamage(float damage);
 
     virtual void Draw(RenderWindow &window) = 0;
 

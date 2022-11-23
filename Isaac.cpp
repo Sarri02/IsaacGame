@@ -22,7 +22,7 @@ void Isaac::InitBullet() {
     this->Tear = 30;
     this->ShootSpeed = 5;
     this->ShootRange = 400;
-    //TODO this->ShootDamage = 1;
+    this->ShootDamage = 0.5;
 
 }
 
@@ -77,6 +77,10 @@ void Isaac::dropBomb() {
 
     this->bombs.push_back(new Bomb(Vector2f (this->IsaacFigure.getPosition().x+10,this->IsaacFigure.getPosition().y+40)));
 
+}
+
+Vector2f Isaac::GetPosition() {
+    return Vector2f (xPosIsaac,yPosIsaac);
 }
 
 

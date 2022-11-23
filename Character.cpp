@@ -16,3 +16,11 @@ float Character::getSpeed() {
     return this->Speed;
 }
 
+void Character::TakeDamage(float damage) {
+
+    this->Life-=damage;
+
+}
+
+Character::~Character() = default;
+

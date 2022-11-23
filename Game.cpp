@@ -275,8 +275,19 @@ void Game::updateRoom() {
 //Actual Room
 void Game::renderActualRoom() {
 
-    this->floor->DrawActualRoom(*this->window);
+    this->floor->DrawActualRoom(*(this->window));
 
+}
+//Enemies
+void Game::updateEnemies() {
+    for (int i = this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Enemies.size() - 1; i >= 0; i--)
+    {
+        this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Enemies[i]->UpdateEnemy(*(this->isaac));
+        if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Enemies[i]->getLife()<=0) {
+            delete this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Enemies[i];
+            this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Enemies.erase(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Enemies.begin() + i);
+        }
+    }
 }
 
 //Update
@@ -286,6 +297,7 @@ void Game::update() {
     this->updateIsaac();
     this->updateBullet();
     this->updateBomb();
+    this->updateEnemies();
     this->updateRoom();
 }
 
@@ -298,8 +310,8 @@ void Game::render() {
     this->renderBackground();
     this->renderMap();
     this->renderStats();
-    this->renderActualRoom();
     this->renderIsaac();
+    this->renderActualRoom();
     this->renderBomb();
     this->renderBullet();
 
@@ -333,4 +345,5 @@ bool Game::IsaacMoveIsPossible(float dirX, float dirY) {
     return (clone.getPosition().x<880 && clone.getPosition().x>40 && clone.getPosition().y<615 && clone.getPosition().y>215 && !collisionRock);
     delete &clone;
 }
+
 
