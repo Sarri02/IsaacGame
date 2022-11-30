@@ -221,7 +221,6 @@ void Game::updateBomb() {
             //Isaac
             if(this->CheckCollision(this->isaac->bombs[i]->explosion,this->isaac->IsaacFigure))
                 this->isaac->TakeDamage(1);
-
             delete this->isaac->bombs[i];
             this->isaac->bombs.erase(this->isaac->bombs.begin() + i);
         }

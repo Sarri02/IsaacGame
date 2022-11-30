@@ -9,7 +9,6 @@ Bomb::Bomb(Vector2f position) {
     this->bomb.setPosition(position);
     this->explosion = this->bomb;
     this->bomb.setTexture(&this->texture);
-    this->explosion.setFillColor(Color::Transparent);
     explosion.setSize(Vector2f(160,160));
     explosion.setPosition(this->bomb.getPosition().x-50,this->bomb.getPosition().y-50);
 
@@ -17,7 +16,11 @@ Bomb::Bomb(Vector2f position) {
 
 void Bomb::DrawBomb(RenderWindow &window) {
 
-    window.draw(this->explosion);
+    if(this->time<=6){
+        this->texture.loadFromFile("./Texture/Explosion.png");
+        this->explosion.setTexture(&this->texture);
+        window.draw(this->explosion);
+    }
     window.draw(this->bomb);
 
 }
