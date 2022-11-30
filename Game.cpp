@@ -132,8 +132,8 @@ void Game::renderStats() {
     //Life
     this->textureStats.loadFromFile("./Texture/Life.png");
     int xPosLife = 64, yPosLife = 60;
+    RectangleShape life;
     for (int k = 0; k < this->isaac->getLife(); k++) {
-        RectangleShape life;
         life.setSize(Vector2f(42, 42));
         life.setPosition(xPosLife,yPosLife);
         life.setTexture(&this->textureStats);
@@ -144,31 +144,28 @@ void Game::renderStats() {
         }
         else
             xPosLife += 52;
-        delete &life;
     }
     //Bomb
     this->textureStats.loadFromFile("./Texture/Bomb.png");
     int xPosBomb = 420, yPosBomb = 43;
+    RectangleShape bomb;
     for (int k = 0; k < this->isaac->Bombs; k++) {
-        RectangleShape bomb;
         bomb.setSize(Vector2f(42, 42));
         bomb.setPosition(xPosBomb,yPosBomb);
         bomb.setTexture(&this->textureStats);
         this->window->draw(bomb);
         xPosBomb += 46;
-        delete &bomb;
     }
     //Keys
     this->textureStats.loadFromFile("./Texture/Key.png");
     int xPosKeys = 420, yPosKeys = 123;
+    RectangleShape key;
     for (int k = 0; k < this->isaac->Keys; k++) {
-        RectangleShape key;
         key.setSize(Vector2f(42, 42));
         key.setPosition(xPosKeys,yPosKeys);
         key.setTexture(&this->textureStats);
         this->window->draw(key);
         xPosKeys += 46;
-        delete &key;
     }
 }
 
@@ -208,6 +205,7 @@ void Game::updateBomb() {
         if(!(this->isaac->bombs[i]->updateBomb()))
         {
             //Explosion
+            //Rock
             for (int j = this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks.size() - 1; j >= 0; j--){
                 if(this->CheckCollision(this->isaac->bombs[i]->explosion,this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks[j]->rock)){
                     this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks[j]->BeingDestroyed();
@@ -215,6 +213,14 @@ void Game::updateBomb() {
                     this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks.erase(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks.begin() + j);
                 }
             }
+            //Enemies
+            for (int j = this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Enemies.size()-1;j>=0;j--){
+                if(this->CheckCollision(this->isaac->bombs[i]->explosion,this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Enemies[j]->EnemyFigure))
+                    this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Enemies[j]->TakeDamage(1);
+                }
+            //Isaac
+            if(this->CheckCollision(this->isaac->bombs[i]->explosion,this->isaac->IsaacFigure))
+                this->isaac->TakeDamage(1);
 
             delete this->isaac->bombs[i];
             this->isaac->bombs.erase(this->isaac->bombs.begin() + i);

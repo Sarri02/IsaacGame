@@ -1,5 +1,4 @@
-C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/CMakeFiles/Isaac.dir
-C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/CMakeFiles/core.dir
+C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/CMakeFiles/IsaacGame.dir
 C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 C:/Users/marks/Desktop/Isaac/IsaacGame/cmake-build-debug/Test/CMakeFiles/runAllTests.dir

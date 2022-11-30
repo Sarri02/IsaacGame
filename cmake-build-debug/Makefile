@@ -129,30 +129,30 @@ Isaac/fast:
 .PHONY : Isaac/fast
 
 #=============================================================================
-# Target rules for targets named core
+# Target rules for targets named GameLibrary
 
 # Build rule for target.
-core: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 core
-.PHONY : core
+GameLibrary: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 GameLibrary
+.PHONY : GameLibrary
 
 # fast build rule for target.
-core/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/build
-.PHONY : core/fast
+GameLibrary/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/build
+.PHONY : GameLibrary/fast
 
 #=============================================================================
-# Target rules for targets named runAllTests
+# Target rules for targets named IsaacTest
 
 # Build rule for target.
-runAllTests: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 runAllTests
-.PHONY : runAllTests
+IsaacTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 IsaacTest
+.PHONY : IsaacTest
 
 # fast build rule for target.
-runAllTests/fast:
-	$(MAKE) $(MAKESILENT) -f Test\CMakeFiles\runAllTests.dir\build.make Test/CMakeFiles/runAllTests.dir/build
-.PHONY : runAllTests/fast
+IsaacTest/fast:
+	$(MAKE) $(MAKESILENT) -f Test\CMakeFiles\IsaacTest.dir\build.make Test/CMakeFiles/IsaacTest.dir/build
+.PHONY : IsaacTest/fast
 
 #=============================================================================
 # Target rules for targets named gtest
@@ -185,8 +185,7 @@ Bomb.obj: Bomb.cpp.obj
 
 # target to build an object file
 Bomb.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Bomb.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Bomb.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Bomb.cpp.obj
 .PHONY : Bomb.cpp.obj
 
 Bomb.i: Bomb.cpp.i
@@ -194,8 +193,7 @@ Bomb.i: Bomb.cpp.i
 
 # target to preprocess a source file
 Bomb.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Bomb.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Bomb.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Bomb.cpp.i
 .PHONY : Bomb.cpp.i
 
 Bomb.s: Bomb.cpp.s
@@ -203,8 +201,7 @@ Bomb.s: Bomb.cpp.s
 
 # target to generate assembly for a file
 Bomb.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Bomb.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Bomb.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Bomb.cpp.s
 .PHONY : Bomb.cpp.s
 
 Bullet.obj: Bullet.cpp.obj
@@ -212,8 +209,7 @@ Bullet.obj: Bullet.cpp.obj
 
 # target to build an object file
 Bullet.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Bullet.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Bullet.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Bullet.cpp.obj
 .PHONY : Bullet.cpp.obj
 
 Bullet.i: Bullet.cpp.i
@@ -221,8 +217,7 @@ Bullet.i: Bullet.cpp.i
 
 # target to preprocess a source file
 Bullet.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Bullet.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Bullet.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Bullet.cpp.i
 .PHONY : Bullet.cpp.i
 
 Bullet.s: Bullet.cpp.s
@@ -230,8 +225,7 @@ Bullet.s: Bullet.cpp.s
 
 # target to generate assembly for a file
 Bullet.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Bullet.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Bullet.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Bullet.cpp.s
 .PHONY : Bullet.cpp.s
 
 Character.obj: Character.cpp.obj
@@ -239,8 +233,7 @@ Character.obj: Character.cpp.obj
 
 # target to build an object file
 Character.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Character.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Character.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Character.cpp.obj
 .PHONY : Character.cpp.obj
 
 Character.i: Character.cpp.i
@@ -248,8 +241,7 @@ Character.i: Character.cpp.i
 
 # target to preprocess a source file
 Character.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Character.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Character.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Character.cpp.i
 .PHONY : Character.cpp.i
 
 Character.s: Character.cpp.s
@@ -257,8 +249,7 @@ Character.s: Character.cpp.s
 
 # target to generate assembly for a file
 Character.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Character.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Character.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Character.cpp.s
 .PHONY : Character.cpp.s
 
 Door.obj: Door.cpp.obj
@@ -266,8 +257,7 @@ Door.obj: Door.cpp.obj
 
 # target to build an object file
 Door.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Door.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Door.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Door.cpp.obj
 .PHONY : Door.cpp.obj
 
 Door.i: Door.cpp.i
@@ -275,8 +265,7 @@ Door.i: Door.cpp.i
 
 # target to preprocess a source file
 Door.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Door.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Door.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Door.cpp.i
 .PHONY : Door.cpp.i
 
 Door.s: Door.cpp.s
@@ -284,8 +273,7 @@ Door.s: Door.cpp.s
 
 # target to generate assembly for a file
 Door.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Door.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Door.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Door.cpp.s
 .PHONY : Door.cpp.s
 
 Enemy.obj: Enemy.cpp.obj
@@ -293,8 +281,7 @@ Enemy.obj: Enemy.cpp.obj
 
 # target to build an object file
 Enemy.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Enemy.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Enemy.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Enemy.cpp.obj
 .PHONY : Enemy.cpp.obj
 
 Enemy.i: Enemy.cpp.i
@@ -302,8 +289,7 @@ Enemy.i: Enemy.cpp.i
 
 # target to preprocess a source file
 Enemy.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Enemy.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Enemy.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Enemy.cpp.i
 .PHONY : Enemy.cpp.i
 
 Enemy.s: Enemy.cpp.s
@@ -311,8 +297,7 @@ Enemy.s: Enemy.cpp.s
 
 # target to generate assembly for a file
 Enemy.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Enemy.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Enemy.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Enemy.cpp.s
 .PHONY : Enemy.cpp.s
 
 EnemyBasic.obj: EnemyBasic.cpp.obj
@@ -320,8 +305,7 @@ EnemyBasic.obj: EnemyBasic.cpp.obj
 
 # target to build an object file
 EnemyBasic.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/EnemyBasic.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/EnemyBasic.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/EnemyBasic.cpp.obj
 .PHONY : EnemyBasic.cpp.obj
 
 EnemyBasic.i: EnemyBasic.cpp.i
@@ -329,8 +313,7 @@ EnemyBasic.i: EnemyBasic.cpp.i
 
 # target to preprocess a source file
 EnemyBasic.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/EnemyBasic.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/EnemyBasic.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/EnemyBasic.cpp.i
 .PHONY : EnemyBasic.cpp.i
 
 EnemyBasic.s: EnemyBasic.cpp.s
@@ -338,8 +321,7 @@ EnemyBasic.s: EnemyBasic.cpp.s
 
 # target to generate assembly for a file
 EnemyBasic.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/EnemyBasic.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/EnemyBasic.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/EnemyBasic.cpp.s
 .PHONY : EnemyBasic.cpp.s
 
 Floor.obj: Floor.cpp.obj
@@ -347,8 +329,7 @@ Floor.obj: Floor.cpp.obj
 
 # target to build an object file
 Floor.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Floor.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Floor.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Floor.cpp.obj
 .PHONY : Floor.cpp.obj
 
 Floor.i: Floor.cpp.i
@@ -356,8 +337,7 @@ Floor.i: Floor.cpp.i
 
 # target to preprocess a source file
 Floor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Floor.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Floor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Floor.cpp.i
 .PHONY : Floor.cpp.i
 
 Floor.s: Floor.cpp.s
@@ -365,8 +345,7 @@ Floor.s: Floor.cpp.s
 
 # target to generate assembly for a file
 Floor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Floor.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Floor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Floor.cpp.s
 .PHONY : Floor.cpp.s
 
 Game.obj: Game.cpp.obj
@@ -374,8 +353,7 @@ Game.obj: Game.cpp.obj
 
 # target to build an object file
 Game.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Game.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Game.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Game.cpp.obj
 .PHONY : Game.cpp.obj
 
 Game.i: Game.cpp.i
@@ -383,8 +361,7 @@ Game.i: Game.cpp.i
 
 # target to preprocess a source file
 Game.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Game.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Game.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Game.cpp.i
 .PHONY : Game.cpp.i
 
 Game.s: Game.cpp.s
@@ -392,8 +369,7 @@ Game.s: Game.cpp.s
 
 # target to generate assembly for a file
 Game.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Game.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Game.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Game.cpp.s
 .PHONY : Game.cpp.s
 
 Isaac.obj: Isaac.cpp.obj
@@ -401,8 +377,7 @@ Isaac.obj: Isaac.cpp.obj
 
 # target to build an object file
 Isaac.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Isaac.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Isaac.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Isaac.cpp.obj
 .PHONY : Isaac.cpp.obj
 
 Isaac.i: Isaac.cpp.i
@@ -410,8 +385,7 @@ Isaac.i: Isaac.cpp.i
 
 # target to preprocess a source file
 Isaac.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Isaac.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Isaac.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Isaac.cpp.i
 .PHONY : Isaac.cpp.i
 
 Isaac.s: Isaac.cpp.s
@@ -419,8 +393,7 @@ Isaac.s: Isaac.cpp.s
 
 # target to generate assembly for a file
 Isaac.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Isaac.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Isaac.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Isaac.cpp.s
 .PHONY : Isaac.cpp.s
 
 Menu.obj: Menu.cpp.obj
@@ -428,8 +401,7 @@ Menu.obj: Menu.cpp.obj
 
 # target to build an object file
 Menu.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Menu.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Menu.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Menu.cpp.obj
 .PHONY : Menu.cpp.obj
 
 Menu.i: Menu.cpp.i
@@ -437,8 +409,7 @@ Menu.i: Menu.cpp.i
 
 # target to preprocess a source file
 Menu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Menu.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Menu.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Menu.cpp.i
 .PHONY : Menu.cpp.i
 
 Menu.s: Menu.cpp.s
@@ -446,8 +417,7 @@ Menu.s: Menu.cpp.s
 
 # target to generate assembly for a file
 Menu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Menu.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Menu.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Menu.cpp.s
 .PHONY : Menu.cpp.s
 
 Rock.obj: Rock.cpp.obj
@@ -455,8 +425,7 @@ Rock.obj: Rock.cpp.obj
 
 # target to build an object file
 Rock.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Rock.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Rock.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Rock.cpp.obj
 .PHONY : Rock.cpp.obj
 
 Rock.i: Rock.cpp.i
@@ -464,8 +433,7 @@ Rock.i: Rock.cpp.i
 
 # target to preprocess a source file
 Rock.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Rock.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Rock.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Rock.cpp.i
 .PHONY : Rock.cpp.i
 
 Rock.s: Rock.cpp.s
@@ -473,8 +441,7 @@ Rock.s: Rock.cpp.s
 
 # target to generate assembly for a file
 Rock.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Rock.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Rock.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Rock.cpp.s
 .PHONY : Rock.cpp.s
 
 Room.obj: Room.cpp.obj
@@ -482,8 +449,7 @@ Room.obj: Room.cpp.obj
 
 # target to build an object file
 Room.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Room.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Room.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Room.cpp.obj
 .PHONY : Room.cpp.obj
 
 Room.i: Room.cpp.i
@@ -491,8 +457,7 @@ Room.i: Room.cpp.i
 
 # target to preprocess a source file
 Room.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Room.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Room.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Room.cpp.i
 .PHONY : Room.cpp.i
 
 Room.s: Room.cpp.s
@@ -500,8 +465,7 @@ Room.s: Room.cpp.s
 
 # target to generate assembly for a file
 Room.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Isaac.dir\build.make CMakeFiles/Isaac.dir/Room.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Room.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GameLibrary.dir\build.make CMakeFiles/GameLibrary.dir/Room.cpp.s
 .PHONY : Room.cpp.s
 
 main.obj: main.cpp.obj
@@ -536,11 +500,11 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... GameLibrary
 	@echo ... Isaac
-	@echo ... core
+	@echo ... IsaacTest
 	@echo ... gtest
 	@echo ... gtest_main
-	@echo ... runAllTests
 	@echo ... Bomb.obj
 	@echo ... Bomb.i
 	@echo ... Bomb.s

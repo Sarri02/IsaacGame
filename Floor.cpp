@@ -13,29 +13,29 @@ void Floor::RandomValidRoomCoordinate(int &x, int &y) {
 
 //Draw floor map
 void Floor::DrawMap(RenderWindow &window) {
+
+    unique_ptr<RectangleShape> ROOM;
     int xPos=697, yPos=48;
     for (int i = 0; i < FloorDimension; i++) {
         for (int j = 0; j < FloorDimension; j++) {
             if(this->room[i][j].TypeRoom != 0){
-
-                RectangleShape ROOM;
-                ROOM.setSize(Vector2f(25,12));
-                ROOM.setPosition(xPos,yPos);
-                ROOM.setFillColor(Color::White);
+                ROOM = std::make_unique<RectangleShape>();
+                ROOM->setSize(Vector2f(25,12));
+                ROOM->setPosition(xPos,yPos);
+                ROOM->setFillColor(Color::White);
                 //Treasure room
                 if(this->room[i][j].TypeRoom == 3){
-                    ROOM.setFillColor(Color::Yellow);
+                    ROOM->setFillColor(Color::Yellow);
                 }
                 //Boss room
                 if(this->room[i][j].TypeRoom == 4){
-                    ROOM.setFillColor(Color::Red);
+                    ROOM->setFillColor(Color::Red);
                 }
                 //Actual room
                 if(i==ActualRoom.x && j==ActualRoom.y){
-                    ROOM.setFillColor(Color::Green);
+                    ROOM->setFillColor(Color::Green);
                 }
-                window.draw(ROOM);
-                delete &ROOM;
+                window.draw(*ROOM);
             }
             xPos += 35;
         }
@@ -123,8 +123,8 @@ void Floor::GenerateDoors(int x, int y) {
 void Floor::GenerateRoom(int x, int y) {
     //Obstacles
     float X,Y;
-    switch (0) {
-    //switch (rand()%12) {
+    //switch (9) {
+    switch (rand()%12) {
 
             case 0:
                 //ROCCE
@@ -135,7 +135,6 @@ void Floor::GenerateRoom(int x, int y) {
                     X+=75;
                 }
                 //NEMICI
-                   this->room[x][y].Enemies.push_back( new EnemyBasic(Vector2f(450,375)));
 
                 break;
 
@@ -144,7 +143,11 @@ void Floor::GenerateRoom(int x, int y) {
                     X=50;
                     Y=510;
                     this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-                    X+=190;
+                    X+=95;
+                    Y+=75;
+                    this->room[x][y].Enemies.push_back( new EnemyBasic(Vector2f(X,Y)));//Fly
+                    X+=95;
+                    Y-=75;
                     this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
                     X+=75;
                     this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
@@ -153,13 +156,19 @@ void Floor::GenerateRoom(int x, int y) {
                     X=850;
                     Y=300;
                     this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
-                    X-=190;
+                    X-=95;
+                    Y-=75;
+                    this->room[x][y].Enemies.push_back( new EnemyBasic(Vector2f(X,Y)));//Fly
+                    X-=95;
+                    Y+=75;
                     this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
                     X-=75;
                     this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
                     Y-=75;
                     this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+
                     break;
+
 
                     case 2:
                         //ROCCE
@@ -217,6 +226,9 @@ void Floor::GenerateRoom(int x, int y) {
                                         Y=510;
                                         this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
                                         X+=80;
+                                        Y+=75;
+                                        this->room[x][y].Enemies.push_back( new EnemyBasic(Vector2f(X,Y)));//Fly
+                                        Y-=75;
                                         this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
                                         X+=80;
                                         this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
@@ -224,12 +236,18 @@ void Floor::GenerateRoom(int x, int y) {
                                         this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
                                         X+=80;
                                         this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                        Y+=75;
+                                        this->room[x][y].Enemies.push_back( new EnemyBasic(Vector2f(X,Y)));//Fly
+                                        Y-=75;
                                         X+=80;
                                         this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
                                         X=50;
                                         Y=300;
                                         this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
                                         X+=80;
+                                        Y-=75;
+                                        this->room[x][y].Enemies.push_back( new EnemyBasic(Vector2f(X,Y)));//Fly
+                                        Y+=75;
                                         this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
                                         X+=80;
                                         this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
@@ -237,6 +255,9 @@ void Floor::GenerateRoom(int x, int y) {
                                         this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
                                         X+=80;
                                         this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                        Y-=75;
+                                        this->room[x][y].Enemies.push_back( new EnemyBasic(Vector2f(X,Y)));//Fly
+                                        Y+=75;
                                         X+=80;
                                         this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
 
@@ -305,8 +326,18 @@ void Floor::GenerateRoom(int x, int y) {
                                                     X=450;
                                                     Y=320;
                                                     this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                                    X-=75;
+                                                    this->room[x][y].Enemies.push_back( new EnemyBasic(Vector2f(X,Y)));//Fly
+                                                    X+=150;
+                                                    this->room[x][y].Enemies.push_back( new EnemyBasic(Vector2f(X,Y)));//Fly
+                                                    X-=75;
                                                     Y+=150;
                                                     this->room[x][y].Roocks.push_back( new Rock(Vector2f(X,Y)));
+                                                    X-=75;
+                                                    this->room[x][y].Enemies.push_back( new EnemyBasic(Vector2f(X,Y)));//Fly
+                                                    X+=150;
+                                                    this->room[x][y].Enemies.push_back( new EnemyBasic(Vector2f(X,Y)));//Fly
+                                                    X-=75;
 
                                                     break;
                                                     case 10:
