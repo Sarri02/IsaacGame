@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
-#include "../Isaac.h"
-#include "../Rock.h"
+#include "../Game.h"
+#include "../EnemyBasic.h"
 
 
 using namespace sf;
@@ -11,7 +11,7 @@ ASSERT_EQ(isaac.IsaacFigure.getPosition(), Vector2f(0,0));
 }
 
 TEST(Isaac, Shoot){
-    Isaac isaac(sf::Vector2f(0,0));
+    Isaac isaac(sf::Vector2f(300,300));
     int size = isaac.bullets.size();
     isaac.Shoot(1,0);
     ASSERT_EQ(size+1, isaac.bullets.size());
@@ -24,6 +24,22 @@ TEST(Isaac, Shoot){
     size = isaac.bullets.size();
     isaac.Shoot(0,-1);
     ASSERT_EQ(size+1, isaac.bullets.size());
+}
+
+TEST(Isaac, ShotEnemy){
+   Game game;
+   //create enemy
+   game.floor[game.ActualFloor].room[game.floor->ActualRoom.x][game.floor->ActualRoom.y].Enemies.push_back( new EnemyBasic(Vector2f(game.isaac->IsaacFigure.getPosition().x+40,game.isaac->IsaacFigure.getPosition().y)));
+   ASSERT_EQ(game.floor[game.ActualFloor].room[game.floor->ActualRoom.x][game.floor->ActualRoom.y].Enemies.size(),1);
+   //3 shot for kill him
+   game.isaac->Shoot(1,0);
+   game.isaac->Shoot(1,0);
+   game.isaac->Shoot(1,0);
+   while(game.isaac->bullets.size()>0) {
+       game.update();
+   }
+   ASSERT_EQ(game.floor[game.ActualFloor].room[game.floor->ActualRoom.x][game.floor->ActualRoom.y].Enemies.size(),0);
+
 }
 
 TEST(Isaac, Move){
