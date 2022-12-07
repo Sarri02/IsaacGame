@@ -21,18 +21,10 @@ private:
     RectangleShape background;
     Texture texture;
 
-    //Map floor
-    Floor floor[MaxFloor];
-    int ActualFloor;
-
-    //Isaac
-    unique_ptr<Isaac> isaac;
-
     //Texture Stats
     Texture textureStats;
 
     //Function private
-    bool IsaacMoveIsPossible(float dirX, float dirY);
     static bool CheckCollision(RectangleShape one, RectangleShape two);
 
     //Init
@@ -70,6 +62,15 @@ public:
 
     //Accessors
     const bool running() const;
+
+    //Isaac
+    unique_ptr<Isaac> isaac;
+    bool IsaacMoveIsPossible(float dirX, float dirY);
+
+
+    //Map floor
+    Floor floor[MaxFloor];
+    int ActualFloor;
 
     //Function public
 

@@ -3,26 +3,26 @@
 
 void Game::InitVariable() {
 
-    this->isaac = make_unique<Isaac>(Vector2f(444,400));
-    this->ActualFloor = 0;
-    this->KeyTime=this->isaac->Tear;
+    isaac = make_unique<Isaac>(Vector2f(444,400));
+    ActualFloor = 0;
+    KeyTime=isaac->Tear;
 
 }
 
 //Window
 void Game::InitWindow() {
 
-    this->window = make_unique<RenderWindow>(VideoMode(WIDHT, HEIGHT), "Main Menu", Style::Default);
-    this->window->setFramerateLimit(65);
+    window = make_unique<RenderWindow>(VideoMode(WIDHT, HEIGHT), "Main Menu", Style::Default);
+    window->setFramerateLimit(65);
 
 }
 
 //Background
 void Game::InitBackground() {
 
-    this->background.setSize(Vector2f(WIDHT,HEIGHT));
-    this->texture.loadFromFile("./Texture/BackgroundGame.png");
-    this->background.setTexture(&(this->texture));
+    background.setSize(Vector2f(WIDHT,HEIGHT));
+    texture.loadFromFile("./Texture/BackgroundGame.png");
+    background.setTexture(&(texture));
 }
 
 void Game::InitTexture() {
@@ -34,84 +34,86 @@ void Game::InitTexture() {
 //Constructor and Destructor
 Game::Game() {
 
-    this->InitVariable();
+    InitVariable();
 
-    this->InitWindow();
+    InitWindow();
 
-    this->InitBackground();
+    InitBackground();
 
-    this->InitTexture();
+    InitTexture();
 
 }
 Game::~Game() = default;
 
 //Accessors
 const bool Game::running() const {
-    return this->window->isOpen();
+    return window->isOpen();
 }
 
 void Game::updatePollEvents() {
 
     Event event;
-    while (this->window->pollEvent(event))
+    while (window->pollEvent(event))
     {
         if (event.Event::type == sf::Event::Closed)
-            this->window->close();
+            window->close();
         if (event.Event::key.code == sf::Keyboard::Escape)
-            this->window->close();
+            window->close();
     }
     //Bombs
     if (event.Event::type == Event::KeyReleased && event.Event::key.code == sf::Keyboard::E){
-        //this->isaac->Bombs--;
-        this->isaac->dropBomb();
+        if(isaac->Bombs>0)
+            isaac->dropBomb();
+        isaac->Bombs--;
+
     }
 }
 
 void Game::updateInput() {
     //Move up
     if (Keyboard::isKeyPressed(Keyboard::W)) {
-        if(this->IsaacMoveIsPossible(0,-1))
-            this->isaac->Move(0,-1);
+        if(IsaacMoveIsPossible(0,-1))
+            isaac->Move(0,-1);
     }
     //Move right
     if (Keyboard::isKeyPressed(Keyboard::D)) {
-        if(this->IsaacMoveIsPossible(1,0))
-            this->isaac->Move(1,0);
+        if(IsaacMoveIsPossible(1,0))
+            isaac->Move(1,0);
     }
     //Move down
     if (Keyboard::isKeyPressed(Keyboard::S)) {
-        if(this->IsaacMoveIsPossible(0,1))
-            this->isaac->Move(0,1);
+        if(IsaacMoveIsPossible(0,1))
+            isaac->Move(0,1);
     }
     //Move left
     if (Keyboard::isKeyPressed(Keyboard::A)) {
-        if(this->IsaacMoveIsPossible(-1,0))
-            this->isaac->Move(-1,0);
+        if(IsaacMoveIsPossible(-1,0))
+            isaac->Move(-1,0);
     }
 
 
     //KeyTime
-    if (this->KeyTime < this->isaac->Tear)
-        this->KeyTime++;
+    if (KeyTime < isaac->Tear)
+        KeyTime++;
 
     //Shoot up
-    if (Keyboard::isKeyPressed(Keyboard::Up) && KeyTime >=this->isaac->Tear) {
-        this->isaac->Shoot(0,-1);
+    if (Keyboard::isKeyPressed(Keyboard::Up) && KeyTime >=isaac->Tear) {
+        isaac->Shoot(0,-1);
         KeyTime = 0;
     }
     //Shoot right
-    if (Keyboard::isKeyPressed(Keyboard::Right) && KeyTime >=this->isaac->Tear) {
-        this->isaac->Shoot(1,0);
+    if (Keyboard::isKeyPressed(Keyboard::Right) && KeyTime >=isaac->Tear) {
+        isaac->Shoot(1,0);
         KeyTime = 0;
     }
     //Shoot down
-    if (Keyboard::isKeyPressed(Keyboard::Down) && KeyTime >=this->isaac->Tear) {
-        this->isaac->Shoot(0,1);
+    if (Keyboard::isKeyPressed(Keyboard::Down) && KeyTime >=isaac->Tear) {
+        isaac->Shoot(0,1);
         KeyTime = 0;
     }
     //Shoot left
-    if (Keyboard::isKeyPressed(Keyboard::Left) && KeyTime >=this->isaac->Tear) {
-        this->isaac->Shoot(-1,0);
+    if (Keyboard::isKeyPressed(Keyboard::Left) && KeyTime >=isaac->Tear) {
+        isaac->Shoot(-1,0);
         KeyTime = 0;
     }
 
@@ -119,24 +121,24 @@ void Game::updateInput() {
 
 //Map
 void Game::renderMap() {
-    this->floor[ActualFloor].DrawMap(*this->window);
+    floor[ActualFloor].DrawMap(*window);
 }
 
 //Background
 void Game::renderBackground() {
-    this->window->draw(this->background);
+    window->draw(background);
 }
 
 //Stats
 void Game::renderStats() {
     //Life
-    this->textureStats.loadFromFile("./Texture/Life.png");
+    textureStats.loadFromFile("./Texture/Life.png");
     int xPosLife = 64, yPosLife = 60;
     RectangleShape life;
-    for (int k = 0; k < this->isaac->getLife(); k++) {
+    for (int k = 0; k < isaac->getLife(); k++) {
         life.setSize(Vector2f(42, 42));
         life.setPosition(xPosLife,yPosLife);
-        life.setTexture(&this->textureStats);
+        life.setTexture(&textureStats);
         window->draw(life);
         if (k == 4) {
             xPosLife = 64;
@@ -146,91 +148,91 @@ void Game::renderStats() {
             xPosLife += 52;
     }
     //Bomb
-    this->textureStats.loadFromFile("./Texture/Bomb.png");
+    textureStats.loadFromFile("./Texture/Bomb.png");
     int xPosBomb = 420, yPosBomb = 43;
     RectangleShape bomb;
-    for (int k = 0; k < this->isaac->Bombs; k++) {
+    for (int k = 0; k < isaac->Bombs; k++) {
         bomb.setSize(Vector2f(42, 42));
         bomb.setPosition(xPosBomb,yPosBomb);
-        bomb.setTexture(&this->textureStats);
-        this->window->draw(bomb);
+        bomb.setTexture(&textureStats);
+        window->draw(bomb);
         xPosBomb += 46;
     }
     //Keys
-    this->textureStats.loadFromFile("./Texture/Key.png");
+    textureStats.loadFromFile("./Texture/Key.png");
     int xPosKeys = 420, yPosKeys = 123;
     RectangleShape key;
-    for (int k = 0; k < this->isaac->Keys; k++) {
+    for (int k = 0; k < isaac->Keys; k++) {
         key.setSize(Vector2f(42, 42));
         key.setPosition(xPosKeys,yPosKeys);
-        key.setTexture(&this->textureStats);
-        this->window->draw(key);
+        key.setTexture(&textureStats);
+        window->draw(key);
         xPosKeys += 46;
     }
 }
 
 //Isaac
 void Game::renderIsaac() {
-    this->isaac->Draw(*this->window);
+    isaac->Draw(*window);
 }
 void Game::updateIsaac() {
-    this->updateInput();
+    updateInput();
 }
 
 //Bullet
 void Game::updateBullet() {
-    for (int i = this->isaac->bullets.size() - 1; i >= 0; i--)
+    for (int i = isaac->bullets.size() - 1; i >= 0; i--)
     {
-        if(!(this->isaac->bullets[i]->updateBullet()))
+        if(!(isaac->bullets[i]->updateBullet()))
         {
-            delete this->isaac->bullets[i];
-            this->isaac->bullets.erase(this->isaac->bullets.begin() + i);
+            delete isaac->bullets[i];
+            isaac->bullets.erase(isaac->bullets.begin() + i);
         }
     }
 }
 
 void Game::renderBullet() {
 
-    for (auto *bullet : this->isaac->bullets) {
-        bullet->drawBullet(*(this->window));
+    for (auto *bullet : isaac->bullets) {
+        bullet->drawBullet(*(window));
     }
 }
 
 //Bombs
 void Game::updateBomb() {
-    for (int i = this->isaac->bombs.size() - 1; i >= 0; i--)
+    for (int i = isaac->bombs.size() - 1; i >= 0; i--)
     {
         //explosion
 
-        if(!(this->isaac->bombs[i]->updateBomb()))
+        if(!(isaac->bombs[i]->updateBomb()))
         {
             //Explosion
             //Rock
-            for (int j = this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks.size() - 1; j >= 0; j--){
-                if(this->CheckCollision(this->isaac->bombs[i]->explosion,this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks[j]->rock)){
-                    this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks[j]->BeingDestroyed();
-                    delete this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks[j];
-                    this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks.erase(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks.begin() + j);
+            for (int j = floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Roocks.size() - 1; j >= 0; j--){
+                if(CheckCollision(isaac->bombs[i]->explosion,floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Roocks[j]->rock)){
+                    floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Roocks[j]->BeingDestroyed();
+                    delete floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Roocks[j];
+                    floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Roocks.erase(floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Roocks.begin() + j);
                 }
             }
             //Enemies
-            for (int j = this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Enemies.size()-1;j>=0;j--){
-                if(this->CheckCollision(this->isaac->bombs[i]->explosion,this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Enemies[j]->EnemyFigure))
-                    this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Enemies[j]->TakeDamage(1);
+            for (int j = floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Enemies.size()-1;j>=0;j--){
+                if(CheckCollision(isaac->bombs[i]->explosion,floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Enemies[j]->EnemyFigure))
+                    floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Enemies[j]->TakeDamage(1);
                 }
             //Isaac
-            if(this->CheckCollision(this->isaac->bombs[i]->explosion,this->isaac->IsaacFigure))
-                this->isaac->TakeDamage(1);
-            delete this->isaac->bombs[i];
-            this->isaac->bombs.erase(this->isaac->bombs.begin() + i);
+            if(CheckCollision(isaac->bombs[i]->explosion,isaac->IsaacFigure))
+                isaac->TakeDamage(1);
+            delete isaac->bombs[i];
+            isaac->bombs.erase(isaac->bombs.begin() + i);
         }
     }
 }
 
 void Game::renderBomb() {
 
-    for (auto *bombs : this->isaac->bombs) {
-        bombs->DrawBomb(*(this->window));
+    for (auto *bombs : isaac->bombs) {
+        bombs->DrawBomb(*(window));
     }
 }
 
@@ -239,39 +241,39 @@ void Game::updateRoom() {
 
     //Doors
     //Porta su
-    if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorUp!= nullptr)
-        if(this->CheckCollision(this->isaac->IsaacFigure,*this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorUp)){
-            this->isaac->IsaacFigure.setPosition(Vector2f(444,this->isaac->IsaacFigure.getPosition().y+380));
-            this->isaac->bullets.clear();
-            this->isaac->bombs.clear();
-            this->floor->ActualRoom.x--;
+    if(floor->room[floor->ActualRoom.x][floor->ActualRoom.y].DoorUp!= nullptr)
+        if(CheckCollision(isaac->IsaacFigure,*floor->room[floor->ActualRoom.x][floor->ActualRoom.y].DoorUp)){
+            isaac->IsaacFigure.setPosition(Vector2f(444,isaac->IsaacFigure.getPosition().y+380));
+            isaac->bullets.clear();
+            isaac->bombs.clear();
+            floor->ActualRoom.x--;
 
         }
     //Porta destra
-    if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorRight!= nullptr)
-        if(this->CheckCollision(this->isaac->IsaacFigure,*this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorRight)){
-            this->isaac->IsaacFigure.setPosition(Vector2f(this->isaac->IsaacFigure.getPosition().x-800,400));
-            this->isaac->bullets.clear();
-            this->isaac->bombs.clear();
-            this->floor->ActualRoom.y++;
+    if(floor->room[floor->ActualRoom.x][floor->ActualRoom.y].DoorRight!= nullptr)
+        if(CheckCollision(isaac->IsaacFigure,*floor->room[floor->ActualRoom.x][floor->ActualRoom.y].DoorRight)){
+            isaac->IsaacFigure.setPosition(Vector2f(isaac->IsaacFigure.getPosition().x-800,400));
+            isaac->bullets.clear();
+            isaac->bombs.clear();
+            floor->ActualRoom.y++;
 
         }
     //Porta giu
-    if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorDown!= nullptr)
-        if(this->CheckCollision(this->isaac->IsaacFigure,*this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorDown)){
-            this->isaac->IsaacFigure.setPosition(Vector2f(444,this->isaac->IsaacFigure.getPosition().y-380));
-            this->isaac->bullets.clear();
-            this->isaac->bombs.clear();
-            this->floor->ActualRoom.x++;
+    if(floor->room[floor->ActualRoom.x][floor->ActualRoom.y].DoorDown!= nullptr)
+        if(CheckCollision(isaac->IsaacFigure,*floor->room[floor->ActualRoom.x][floor->ActualRoom.y].DoorDown)){
+            isaac->IsaacFigure.setPosition(Vector2f(444,isaac->IsaacFigure.getPosition().y-380));
+            isaac->bullets.clear();
+            isaac->bombs.clear();
+            floor->ActualRoom.x++;
 
         }
     //Porta sinistra
-    if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorLeft!= nullptr)
-        if(this->CheckCollision(this->isaac->IsaacFigure,*this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].DoorLeft)){
-            this->isaac->IsaacFigure.setPosition(Vector2f(this->isaac->IsaacFigure.getPosition().x+800,400));
-            this->isaac->bullets.clear();
-            this->isaac->bombs.clear();
-            this->floor->ActualRoom.y--;
+    if(floor->room[floor->ActualRoom.x][floor->ActualRoom.y].DoorLeft!= nullptr)
+        if(CheckCollision(isaac->IsaacFigure,*floor->room[floor->ActualRoom.x][floor->ActualRoom.y].DoorLeft)){
+            isaac->IsaacFigure.setPosition(Vector2f(isaac->IsaacFigure.getPosition().x+800,400));
+            isaac->bullets.clear();
+            isaac->bombs.clear();
+            floor->ActualRoom.y--;
 
         }
 }
@@ -280,17 +282,17 @@ void Game::updateRoom() {
 //Actual Room
 void Game::renderActualRoom() {
 
-    this->floor->DrawActualRoom(*(this->window));
+    floor->DrawActualRoom(*(window));
 
 }
 //Enemies
 void Game::updateEnemies() {
-    for (int i = this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Enemies.size() - 1; i >= 0; i--)
+    for (int i = floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Enemies.size() - 1; i >= 0; i--)
     {
-        this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Enemies[i]->UpdateEnemy(*(this->isaac));
-        if(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Enemies[i]->getLife()<=0) {
-            delete this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Enemies[i];
-            this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Enemies.erase(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Enemies.begin() + i);
+        floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Enemies[i]->UpdateEnemy(*(isaac));
+        if(floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Enemies[i]->getLife()<=0) {
+            delete floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Enemies[i];
+            floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Enemies.erase(floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Enemies.begin() + i);
         }
     }
 }
@@ -298,31 +300,31 @@ void Game::updateEnemies() {
 //Update
 void Game::update() {
 
-    this->updatePollEvents();
-    this->updateIsaac();
-    this->updateBullet();
-    this->updateBomb();
-    this->updateEnemies();
-    this->updateRoom();
+    updatePollEvents();
+    updateIsaac();
+    updateBullet();
+    updateBomb();
+    updateEnemies();
+    updateRoom();
 }
 
 //Render
 void Game::render() {
 
-    this->window->clear();
+    window->clear();
 
     //Draw game objects
-    this->renderBackground();
-    this->renderMap();
-    this->renderStats();
-    this->renderIsaac();
-    this->renderActualRoom();
-    this->renderBomb();
-    this->renderBullet();
+    renderBackground();
+    renderMap();
+    renderStats();
+    renderIsaac();
+    renderActualRoom();
+    renderBomb();
+    renderBullet();
 
 
 
-    this->window->display();
+    window->display();
 }
 
 bool Game::CheckCollision(RectangleShape one, RectangleShape two) {
@@ -337,12 +339,12 @@ bool Game::CheckCollision(RectangleShape one, RectangleShape two) {
 
 bool Game::IsaacMoveIsPossible(float dirX, float dirY) {
     bool collisionRock = false;
-    RectangleShape clone = this->isaac->IsaacFigure;
-    clone.move(Vector2f(dirX*this->isaac->getSpeed(),dirY*this->isaac->getSpeed()));
+    RectangleShape clone = isaac->IsaacFigure;
+    clone.move(Vector2f(dirX*isaac->getSpeed(),dirY*isaac->getSpeed()));
     //Rock collision
-    for (int i = this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks.size() - 1; i >= 0; i--)
+    for (int i = floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Roocks.size() - 1; i >= 0; i--)
     {
-        if(this->CheckCollision(this->floor->room[this->floor->ActualRoom.x][this->floor->ActualRoom.y].Roocks[i]->rock,clone))
+        if(CheckCollision(floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Roocks[i]->rock,clone))
         {
             collisionRock= true;
         }

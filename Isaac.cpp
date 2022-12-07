@@ -30,7 +30,7 @@ void Isaac::InitBullet() {
 void Isaac::InitIsaac() {
 
     //Consumables
-    this->Bombs = 1;
+    this->Bombs = 2;
     this->Keys = 1;
 
     //Stats
