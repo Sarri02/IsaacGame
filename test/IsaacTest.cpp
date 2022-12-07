@@ -39,7 +39,6 @@ TEST(Isaac, ShotEnemy){
        game.update();
    }
    ASSERT_EQ(game.floor[game.ActualFloor].room[game.floor->ActualRoom.x][game.floor->ActualRoom.y].Enemies.size(),0);
-
 }
 
 TEST(Isaac, Move){
@@ -53,6 +52,18 @@ TEST(Isaac, Move){
     isaac.Move(0,-1);
     ASSERT_EQ(isaac.IsaacFigure.getPosition(), Vector2f(300,300));
 }
+
+TEST(Isaac, MoveRock){
+    Game game;
+    //move without rock
+    ASSERT_TRUE(game.IsaacMoveIsPossible(1,0));
+    //create rock
+    game.floor[game.ActualFloor].room[game.floor->ActualRoom.x][game.floor->ActualRoom.y].Roocks.push_back( new Rock(Vector2f(game.isaac->IsaacFigure.getPosition().x+70,game.isaac->IsaacFigure.getPosition().y)));
+    ASSERT_EQ(game.floor[game.ActualFloor].room[game.floor->ActualRoom.x][game.floor->ActualRoom.y].Roocks.size(),1);
+    //NO move with rock
+    ASSERT_FALSE(game.IsaacMoveIsPossible(1,0));
+}
+
 
 TEST(Isaac, Bombs){
     Isaac isaac(sf::Vector2f(0,0));
