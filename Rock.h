@@ -10,7 +10,6 @@ private:
 
     Texture texture;
 
-    bool isSigned;
 public:
     Rock(Vector2f position);
     virtual ~Rock();
@@ -18,7 +17,8 @@ public:
     RectangleShape rock;
 
     void DrawRock(RenderWindow & window);
-    void BeingDestroyed();
+
+    bool isSigned;
 };
 
 #endif

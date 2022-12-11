@@ -57,6 +57,8 @@ Floor::Floor() {
                 this->GenerateDoors(i,j);
             if(this->room[i][j].TypeRoom==1)
                 this->GenerateRoom(i,j);
+            if(this->room[i][j].TypeRoom==3)
+                this->room[i][j].Items.push_back( new Item());
         }
     }
 
@@ -397,6 +399,11 @@ void Floor::DrawActualRoom(RenderWindow &window) {
     //Enemies
     for (auto *enemies : this->room[ActualRoom.x][ActualRoom.y].Enemies) {
         enemies->Draw(window);
+    }
+
+    //Items
+    for (auto *items : this->room[ActualRoom.x][ActualRoom.y].Items) {
+        items->DrawItem(window);
     }
 
 }

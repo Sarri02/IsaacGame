@@ -24,9 +24,4 @@ void Rock::DrawRock(RenderWindow & window) {
 
 Rock::~Rock() = default;
 
-void Rock::BeingDestroyed() {
-    if(this->isSigned)
-        //TODO droppa l'oggetto
-        std::cout<<"OGGETTO";
-}
 

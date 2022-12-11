@@ -5,6 +5,7 @@
 #include "Door.h"
 #include "Rock.h"
 #include "Enemy.h"
+#include "Item.h"
 
 
 using namespace sf;
@@ -21,7 +22,6 @@ private:
 public:
 
     //Variables
-    //TODO bool Visited;
     int TypeRoom;
 
     //Doors
@@ -30,6 +30,8 @@ public:
     //Obstacles
     vector <Rock*> Roocks;
     vector <Enemy*> Enemies;
+    vector <Item*> Items;
+
 
 
     //Constructor

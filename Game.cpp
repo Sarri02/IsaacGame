@@ -177,6 +177,8 @@ void Game::renderIsaac() {
 }
 void Game::updateIsaac() {
     updateInput();
+    if(isaac->getLife()<=0)
+        window->close();
 }
 
 //Bullet
@@ -210,7 +212,20 @@ void Game::updateBomb() {
             //Rock
             for (int j = floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Roocks.size() - 1; j >= 0; j--){
                 if(CheckCollision(isaac->bombs[i]->explosion,floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Roocks[j]->rock)){
-                    floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Roocks[j]->BeingDestroyed();
+                    //Signed Rock
+                    if(floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Roocks[j]->isSigned){
+                        switch (rand()%3) {
+                            case 0:
+                                isaac->setLife(isaac->getLife()+1);
+                                break;
+                            case 1:
+                                isaac->Bombs+=2;
+                                break;
+                            case 2:
+                                isaac->Keys+=2;
+                                break;
+                        }
+                    }
                     delete floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Roocks[j];
                     floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Roocks.erase(floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Roocks.begin() + j);
                 }
@@ -243,7 +258,7 @@ void Game::updateRoom() {
     //Porta su
     if(floor->room[floor->ActualRoom.x][floor->ActualRoom.y].DoorUp!= nullptr)
         if(CheckCollision(isaac->IsaacFigure,*floor->room[floor->ActualRoom.x][floor->ActualRoom.y].DoorUp)){
-            isaac->IsaacFigure.setPosition(Vector2f(444,isaac->IsaacFigure.getPosition().y+380));
+            isaac->IsaacFigure.setPosition(Vector2f(444,isaac->IsaacFigure.getPosition().y+370));
             isaac->bullets.clear();
             isaac->bombs.clear();
             floor->ActualRoom.x--;
@@ -252,7 +267,7 @@ void Game::updateRoom() {
     //Porta destra
     if(floor->room[floor->ActualRoom.x][floor->ActualRoom.y].DoorRight!= nullptr)
         if(CheckCollision(isaac->IsaacFigure,*floor->room[floor->ActualRoom.x][floor->ActualRoom.y].DoorRight)){
-            isaac->IsaacFigure.setPosition(Vector2f(isaac->IsaacFigure.getPosition().x-800,400));
+            isaac->IsaacFigure.setPosition(Vector2f(isaac->IsaacFigure.getPosition().x-794,400));
             isaac->bullets.clear();
             isaac->bombs.clear();
             floor->ActualRoom.y++;
@@ -261,7 +276,7 @@ void Game::updateRoom() {
     //Porta giu
     if(floor->room[floor->ActualRoom.x][floor->ActualRoom.y].DoorDown!= nullptr)
         if(CheckCollision(isaac->IsaacFigure,*floor->room[floor->ActualRoom.x][floor->ActualRoom.y].DoorDown)){
-            isaac->IsaacFigure.setPosition(Vector2f(444,isaac->IsaacFigure.getPosition().y-380));
+            isaac->IsaacFigure.setPosition(Vector2f(444,isaac->IsaacFigure.getPosition().y-370));
             isaac->bullets.clear();
             isaac->bombs.clear();
             floor->ActualRoom.x++;
@@ -270,13 +285,21 @@ void Game::updateRoom() {
     //Porta sinistra
     if(floor->room[floor->ActualRoom.x][floor->ActualRoom.y].DoorLeft!= nullptr)
         if(CheckCollision(isaac->IsaacFigure,*floor->room[floor->ActualRoom.x][floor->ActualRoom.y].DoorLeft)){
-            isaac->IsaacFigure.setPosition(Vector2f(isaac->IsaacFigure.getPosition().x+800,400));
+            isaac->IsaacFigure.setPosition(Vector2f(isaac->IsaacFigure.getPosition().x+794,400));
             isaac->bullets.clear();
             isaac->bombs.clear();
             floor->ActualRoom.y--;
 
         }
-}
+    for (int j = floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Items.size()-1;j>=0;j--) {
+        if (!floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Items[j]->UpdateItem(*isaac, CheckCollision(isaac->IsaacFigure, floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Items[j]->ItemFigure))){
+            delete floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Items[j];
+            floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Items.erase(floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Items.begin() + j);;
+        }
+    }
+
+
+    }
 
 
 //Actual Room
@@ -290,6 +313,11 @@ void Game::updateEnemies() {
     for (int i = floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Enemies.size() - 1; i >= 0; i--)
     {
         floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Enemies[i]->UpdateEnemy(*(isaac));
+        if(CheckCollision(floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Enemies[i]->EnemyFigure,isaac->IsaacFigure)){
+            isaac->TakeDamage(1);
+            floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Enemies[i]->TakeDamage(2);
+
+        }
         if(floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Enemies[i]->getLife()<=0) {
             delete floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Enemies[i];
             floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Enemies.erase(floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Enemies.begin() + i);
@@ -349,7 +377,7 @@ bool Game::IsaacMoveIsPossible(float dirX, float dirY) {
             collisionRock= true;
         }
     }
-    return (clone.getPosition().x<880 && clone.getPosition().x>40 && clone.getPosition().y<615 && clone.getPosition().y>215 && !collisionRock);
+    return (clone.getPosition().x<880 && clone.getPosition().x>35 && clone.getPosition().y<615 && clone.getPosition().y>210 && !collisionRock);
     delete &clone;
 }
 

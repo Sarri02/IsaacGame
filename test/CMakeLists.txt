@@ -4,7 +4,7 @@ add_subdirectory(./Lib/googletest)
 set(gtest_SOURCE_DIR, ./Lib/googletest/)
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
-set(TEST_SOURCE_FILES runAllTests.cpp IsaacTest.cpp  ../Game.cpp ../Menu.cpp ../Floor.cpp ../Room.cpp ../Character.cpp ../Isaac.cpp ../Bullet.cpp ../Door.cpp ../Rock.cpp ../Bomb.cpp ../Enemy.cpp ../EnemyBasic.cpp)
+set(TEST_SOURCE_FILES runAllTests.cpp IsaacTest.cpp  ../Game.cpp ../Menu.cpp ../Floor.cpp ../Room.cpp ../Character.cpp ../Isaac.cpp ../Bullet.cpp ../Door.cpp ../Rock.cpp ../Bomb.cpp ../Enemy.cpp ../EnemyBasic.cpp ../Item.cpp)
 add_executable(runAllTests ${TEST_SOURCE_FILES})
 target_link_libraries(runAllTests gtest gtest_main)
 

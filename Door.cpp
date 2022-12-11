@@ -8,7 +8,7 @@ Door::Door(unsigned short direction) {
         case 0:
             //sopra
             setSize(Vector2f(90,40));
-            setPosition(480-getSize().x/2,180);
+            setPosition(480-getSize().x/2,184);
             break;
         case 1:
             //destra
@@ -18,12 +18,12 @@ Door::Door(unsigned short direction) {
         case 2:
             //sotto
             setSize(Vector2f(90,40));
-            setPosition(480-getSize().x/2,680);
+            setPosition(480-getSize().x/2,676);
             break;
         case 3:
             //sinistra
             setSize(Vector2f(40,90));
-            setPosition(6,380);
+            setPosition(10,380);
             break;
         default:
             break;

@@ -20,8 +20,7 @@ public:
 
 
     virtual ~Character();
-    //TODO bool CanFly;
-    //TODO int MoveSet;
+
 
     //Public Functions
     void setLife(float Life);
