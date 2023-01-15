@@ -4,7 +4,7 @@ project(IsaacGame)
 set(CMAKE_CXX_STANDARD 20)
 
 set(EXECUTABLE_NAME IsaacGame)
-add_executable(${EXECUTABLE_NAME} main.cpp Game.cpp Menu.cpp Floor.cpp Room.cpp Character.cpp Isaac.cpp Bullet.cpp Door.cpp Rock.cpp Bomb.cpp Enemy.cpp EnemyBasic.cpp Item.cpp)
+add_executable(${EXECUTABLE_NAME} main.cpp Game.cpp Menu.cpp Floor.cpp Room.cpp Character.cpp Isaac.cpp Bullet.cpp Door.cpp Rock.cpp Bomb.cpp Enemy.cpp EnemyBasic.cpp Item.cpp Observer.cpp AchievementsDisplay.cpp)
 
 
 #SFML

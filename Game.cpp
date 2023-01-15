@@ -3,10 +3,18 @@
 
 void Game::InitVariable() {
 
+    //Isaac
     isaac = make_unique<Isaac>(Vector2f(444,400));
     ActualFloor = 0;
     KeyTime=isaac->Tear;
 
+    //Missions
+    textureM[0].loadFromFile("./Texture/Mission0.png");
+    missions[0] = make_unique<AchievementsDisplay>(isaac.get(),&textureM[0]);
+    textureM[1].loadFromFile("./Texture/Mission1.png");
+    missions[1] = make_unique<AchievementsDisplay>(isaac.get(),&textureM[1]);
+    textureM[2].loadFromFile("./Texture/Mission2.png");
+    missions[2] = make_unique<AchievementsDisplay>(isaac.get(),&textureM[2]);
 }
 
 //Window
@@ -99,21 +107,25 @@ void Game::updateInput() {
     //Shoot up
     if (Keyboard::isKeyPressed(Keyboard::Up) && KeyTime >=isaac->Tear) {
         isaac->Shoot(0,-1);
+        isaac->shoot++;
         KeyTime = 0;
     }
     //Shoot right
     if (Keyboard::isKeyPressed(Keyboard::Right) && KeyTime >=isaac->Tear) {
         isaac->Shoot(1,0);
+        isaac->shoot++;
         KeyTime = 0;
     }
     //Shoot down
     if (Keyboard::isKeyPressed(Keyboard::Down) && KeyTime >=isaac->Tear) {
         isaac->Shoot(0,1);
+        isaac->shoot++;
         KeyTime = 0;
     }
     //Shoot left
     if (Keyboard::isKeyPressed(Keyboard::Left) && KeyTime >=isaac->Tear) {
         isaac->Shoot(-1,0);
+        isaac->shoot++;
         KeyTime = 0;
     }
 
@@ -174,8 +186,19 @@ void Game::renderStats() {
 //Isaac
 void Game::renderIsaac() {
     isaac->Draw(*window);
+    //Missions
+    if(missions[0]->update(isaac->kill,2)){
+        missions[0]->drawAchievements(*(window));
+    }
+    if(missions[1]->update(isaac->shoot,5)){
+        missions[1]->drawAchievements(*(window));
+    }
+    if(missions[2]->update(isaac->room,2)){
+        missions[2]->drawAchievements(*(window));
+    }
 }
 void Game::updateIsaac() {
+
     updateInput();
     if(isaac->getLife()<=0)
         window->close();
@@ -262,6 +285,7 @@ void Game::updateRoom() {
             isaac->bullets.clear();
             isaac->bombs.clear();
             floor->ActualRoom.x--;
+            isaac->room++;
 
         }
     //Porta destra
@@ -271,6 +295,8 @@ void Game::updateRoom() {
             isaac->bullets.clear();
             isaac->bombs.clear();
             floor->ActualRoom.y++;
+            isaac->room++;
+
 
         }
     //Porta giu
@@ -280,6 +306,8 @@ void Game::updateRoom() {
             isaac->bullets.clear();
             isaac->bombs.clear();
             floor->ActualRoom.x++;
+            isaac->room++;
+
 
         }
     //Porta sinistra
@@ -289,6 +317,8 @@ void Game::updateRoom() {
             isaac->bullets.clear();
             isaac->bombs.clear();
             floor->ActualRoom.y--;
+            isaac->room++;
+
 
         }
     for (int j = floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Items.size()-1;j>=0;j--) {
@@ -319,6 +349,7 @@ void Game::updateEnemies() {
 
         }
         if(floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Enemies[i]->getLife()<=0) {
+            isaac->kill++;
             delete floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Enemies[i];
             floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Enemies.erase(floor->room[floor->ActualRoom.x][floor->ActualRoom.y].Enemies.begin() + i);
         }
@@ -378,7 +409,6 @@ bool Game::IsaacMoveIsPossible(float dirX, float dirY) {
         }
     }
     return (clone.getPosition().x<880 && clone.getPosition().x>35 && clone.getPosition().y<615 && clone.getPosition().y>210 && !collisionRock);
-    delete &clone;
 }
 
 

@@ -12,12 +12,12 @@ private:
 
 public:
     EnemyBasic(Vector2f position);
-    virtual ~EnemyBasic();
+    ~EnemyBasic();
 
-    void InitFigure(Vector2f position);
-    void InitEnemy();
-    void UpdateEnemy(Isaac isaac);
-    void Move(float dirX, float dirY);
+    void InitFigure(Vector2f position) override;
+    void InitEnemy() override;
+    void UpdateEnemy(Isaac isaac) override;
+    void Move(float dirX, float dirY) override;
 };
 
 

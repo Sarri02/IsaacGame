@@ -6,7 +6,8 @@
 #include <SFML/Graphics.hpp>
 #include "Menu.h"
 #include "Floor.h"
-#include "Isaac.h"
+#include "Character.h"
+#include "AchievementsDisplay.h"
 
 
 #define MaxFloor 6
@@ -23,6 +24,9 @@ private:
 
     //Texture Stats
     Texture textureStats;
+
+    //Texture Missions
+    Texture textureM[3];
 
     //Function private
     static bool CheckCollision(RectangleShape one, RectangleShape two);
@@ -66,6 +70,7 @@ public:
     //Isaac
     unique_ptr<Isaac> isaac;
     bool IsaacMoveIsPossible(float dirX, float dirY);
+    unique_ptr<AchievementsDisplay>  missions[3];
 
 
     //Map floor

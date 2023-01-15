@@ -69,7 +69,5 @@ void EnemyBasic::Move(float dirX, float dirY) {
     EnemyFigure.move(getSpeed()*dirX,getSpeed()*dirY);
 }
 
-EnemyBasic::~EnemyBasic() {
-
-}
+EnemyBasic::~EnemyBasic() = default;
 

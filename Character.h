@@ -3,10 +3,11 @@
 
 #include <SFML/Graphics.hpp>
 
+using namespace std;
 
 using namespace sf;
 
-class Character{
+class Character {
 
 protected:
 
@@ -17,8 +18,6 @@ protected:
     //Private Functions
 
 public:
-
-
     virtual ~Character();
 
 

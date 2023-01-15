@@ -37,6 +37,11 @@ void Isaac::InitIsaac() {
     this->setLife(4);
     this->setSpeed(4);
     this->InitBullet();
+
+    //Missions
+    kill=0;
+    shoot=0;
+    room=1;
 }
 
 //Init Isaac Figure
