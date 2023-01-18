@@ -6,7 +6,9 @@
 #include "Character.h"
 #include "Bullet.h"
 #include "Bomb.h"
-#include "Observer.h"
+#include "AchievementsDisplay.h"
+
+
 
 
 using namespace sf;
@@ -24,6 +26,11 @@ private:
     void InitIsaac();
     void InitIsaacFigure(Vector2f position);
     void InitBullet();
+
+    //Achievement
+    int kill;
+    int room;
+    int shoot;
 
 public:
 
@@ -57,15 +64,10 @@ public:
     void Draw(RenderWindow &window);
 
     //Achievement
-    list< Observer* > observers;
-    int shoot;
-    int kill;
-    int room;
+    void addShoot(AchievementsDisplay * mission);
+    void addRoom(AchievementsDisplay * mission);
+    void addKill(AchievementsDisplay * mission);
 
-    virtual void registerObserver(Observer* obs) {
-        observers.push_back(obs);    }
-    virtual void removeObserver(Observer* obs) {
-        observers.remove(obs);    }
 
 
 };

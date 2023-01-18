@@ -1,22 +1,26 @@
 #ifndef FLOOR_CPP_ACHIEVEMENTSDISPLAY_H
 #define FLOOR_CPP_ACHIEVEMENTSDISPLAY_H
 
-#include "Isaac.h"
+#include "Observer.h"
+#include "Character.h"
 
 class AchievementsDisplay : public Observer {
 private:
-    Isaac *subject;
+    Character *subject;
     int value;
+    int control;
     int time;
     RectangleShape achievements;
 
 
 public:
-    AchievementsDisplay(Isaac *isaact, Texture * t);
+    AchievementsDisplay (Character * isaac, Texture * t, int control);
 
     ~AchievementsDisplay() override;
 
-    bool update(int value,int control) override;
+    void update(int value) override;
+
+    bool isDrawable();
 
     void drawAchievements(RenderWindow & window);
 

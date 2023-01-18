@@ -7,7 +7,6 @@
 #include "Menu.h"
 #include "Floor.h"
 #include "Character.h"
-#include "AchievementsDisplay.h"
 
 
 #define MaxFloor 6
@@ -70,6 +69,7 @@ public:
     //Isaac
     unique_ptr<Isaac> isaac;
     bool IsaacMoveIsPossible(float dirX, float dirY);
+
     unique_ptr<AchievementsDisplay>  missions[3];
 
 

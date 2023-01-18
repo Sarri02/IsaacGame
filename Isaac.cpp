@@ -88,6 +88,24 @@ Vector2f Isaac::GetPosition() {
     return Vector2f (xPosIsaac,yPosIsaac);
 }
 
+void Isaac::addShoot(AchievementsDisplay *mission) {
+    shoot++;
+    mission->update(shoot);
+
+}
+
+void Isaac::addRoom(AchievementsDisplay *mission) {
+    room++;
+    mission->update(room);
+
+}
+
+void Isaac::addKill(AchievementsDisplay *mission) {
+    kill++;
+    mission->update(kill);
+
+}
+
 
 
 

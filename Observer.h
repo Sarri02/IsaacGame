@@ -12,7 +12,7 @@ protected:
     virtual ~Observer() = default;
 
 public:
-    virtual bool update(int value,int control) = 0;
+    virtual void update(int value) = 0;
 };
 
 #endif

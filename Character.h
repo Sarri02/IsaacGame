@@ -2,6 +2,8 @@
 #define ISAAC_CHARACTER_H
 
 #include <SFML/Graphics.hpp>
+#include "Observer.h"
+
 
 using namespace std;
 
@@ -29,6 +31,15 @@ public:
     void TakeDamage(float damage);
 
     virtual void Draw(RenderWindow &window) = 0;
+
+
+    //Observer list
+    list< Observer* > observers;
+
+    virtual void registerObserver(Observer* obs) {
+        observers.push_back(obs);    }
+    virtual void removeObserver(Observer* obs) {
+        observers.remove(obs);    }
 
 };
 
